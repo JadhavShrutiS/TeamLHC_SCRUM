@@ -1,5 +1,3 @@
-package TeamLHC_SCRUM;
-
 import java.util.Scanner;
 
 public class UI {
