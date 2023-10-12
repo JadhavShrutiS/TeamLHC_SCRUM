@@ -5,11 +5,11 @@ public class ProjectFACADE {
     private ProjectBoard projectBoard;
     private UserList userList;
 
-    public User login(string emailID, String password) {
+    public User login(String emailID, String password) {
 
     }
 
-    public User signUp(String firstName, string LastName, String emailID, string password) {
+    public User signUp(String firstName, String LastName, String emailID, String password) {
 
     }
 
@@ -17,7 +17,7 @@ public class ProjectFACADE {
 
     }
 
-    public ArrayList<Projects> getAllProjects() {
+    public ArrayList<Project> getAllProjects() {
 
     }
 
@@ -42,6 +42,6 @@ public class ProjectFACADE {
     }
 
     public boolean createReport(Project project) {
-        
+
     }
 }
