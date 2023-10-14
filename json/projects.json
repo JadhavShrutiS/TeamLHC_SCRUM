@@ -15,20 +15,17 @@
         "comments":[{"userid":"bd507ca8-d68d-4e3b-9ba5-e780709d5c4b", "date": "10/12/23", "comment": "Oh wow amazing"}]
     },{
         "projectID":"0b396c4a-ae0c-46b7-8f3c-0f7e56690c3f",
-        "users":[{"role":"srum master", "id":2},{"role":"developer","id":1}],
+        "users":[{"role":"srum master", "id":"99aa6979-f71c-4db1-9e58-34b5e1351f2c"},{"role":"developer","id":"bd507ca8-d68d-4e3b-9ba5-e780709d5c4b"}],
         "name":"Server Watcher",
         "description":"Build a program that tracks the security, accesibility, and stability of a chosen server.",
         "columns": 
         [
-            {"name": "todo",
-            "tasks":[]},
-            {"name": "in progress",
-            "tasks":[]},
-            {"name": "done",
-            "tasks":[]}
+            {"ID" : "ad38d1d8-a9a2-484e-b889-830c5b703128","name": "todo"},
+            {"ID" : "9f7b7baa-36b3-477b-9279-f309febcddb2","name": "progress"},
+            {"ID" : "871fe61d-0241-4d4b-a183-5845744acf84","name": "done"}
         ],
         "supervisor":"Elisa Kheram",
         "status":"In Progress",
-        "comments":[{"userid":1, "date": "10/12/23", "comment": "Oh wow amazing"}]
+        "comments":[{"userid":"bd507ca8-d68d-4e3b-9ba5-e780709d5c4b", "date": "10/12/23", "comment": "Need quick update"}]
     }
 ]
