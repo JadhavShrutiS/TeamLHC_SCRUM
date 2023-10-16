@@ -24,14 +24,10 @@ public class ProjectFACADE {
 
     public boolean createProject(String name) {
         return true;
-
     }
-
     public boolean createColumn(String name) {
         return true;
-
     }
-
     public boolean createTask(Project project, Column column) {
         return true;
 
