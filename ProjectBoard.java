@@ -47,4 +47,8 @@ public class ProjectBoard {
         return 2;
         
     }
+    public ArrayList<Project> getAllProjects()
+    {
+        return projects;
+    }
 }
