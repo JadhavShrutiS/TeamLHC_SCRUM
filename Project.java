@@ -17,7 +17,8 @@ public class Project {
     public void deleteColumn(Column column) {
 
     }
-    public completedTask(Task task) {
+    public boolean completedTask(Task task) {
+        return true;
 
     }
     public void addComment(Comment comment) {
