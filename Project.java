@@ -8,23 +8,22 @@ public class Project {
     public String description;
     public ArrayList<Column> columns;
     public Role supervisor;
-    public Status status;
     public ArrayList<Comment> comments;
     public ArrayList<User> users;
     public Role role;
-    public void addColumn(Column) {
+    public void addColumn(Column column) {
 
     }
-    public void deleteColumn(Column) {
+    public void deleteColumn(Column column) {
 
     }
-    public completedTask(Task) {
+    public completedTask(Task task) {
 
     }
-    public void addComment(Comment) {
+    public void addComment(Comment comment) {
 
     }
-    public void addUser (User) {
+    public void addUser (User user) {
 
     }
     public void createReport() {
