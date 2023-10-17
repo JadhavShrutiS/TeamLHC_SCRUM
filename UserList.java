@@ -21,7 +21,16 @@ public class UserList {
         return users;
     }
 
-    public boolean addUser(String firstName, String lastName, String emailID, String password) {
+    public boolean addUser(String firstName, String lastName, String emailID, String password) 
+    {   boolean x = true;
+        int y = 0;
+        //loop through userList- check for unique email
+        //true if email is not found
+        users = DataLoader.getUsers();
+        while(x && y != users.size()){
+            y++;
+        }
+
         return true;
     }
 }
