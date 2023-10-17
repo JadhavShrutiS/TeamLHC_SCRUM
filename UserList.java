@@ -5,19 +5,23 @@ public class UserList {
     private UserList userList;
 
     private UserList() {
-        this.users = users;
-        this.userList = userList;
+        DataLoader.getUsers();
     }
 
     public UserList getInstance() {
+        //users = new ArrayList<>(users);
         return userList;
     }
 
     public User getUser(String userName) {
-        return null;
+        
+        return users.get(0);
     }
 
     public boolean addUser(String firstName, String lastName, String emailID, String password) {
-        return true;
+        if (firstName != null && lastName != null && emailID != null && password != null)
+            return users.add(null);
+        else
+            return false;
     }
 }
