@@ -17,7 +17,27 @@ public class UserList {
         return users.get(0);
     }
 
-    public boolean addUser(String firstName, String lastName, String emailID, String password) {
+    public boolean addUser(String emailID) //only checking if we can add user based on emailID!!
+    {
+        //loop through userlist-check for unqiue email
+        //true if email is not found
+        users = DataLoader.getUsers();
+        for(int i=0;i<users.size();i++)
+        {
+            if(users.get(i).userEmail.equalsIgnoreCase(emailID))
+            {
+                return false;
+            }
+        }
         return true;
+    }
+
+    public void add(User newUser)
+    {
+        users.add(newUser);
+    }
+
+    public String toString(){
+        return " asd";
     }
 }

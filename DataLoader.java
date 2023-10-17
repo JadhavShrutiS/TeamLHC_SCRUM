@@ -42,4 +42,11 @@ public class DataLoader extends DataConstants{
 		return new ArrayList<Project>();
 	}
 
+	public static void main(String[] args)
+	{
+	
+		System.out.println(getUsers().toString());
+		
+	
+	}
 }

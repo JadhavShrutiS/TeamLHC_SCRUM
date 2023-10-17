@@ -1,15 +1,15 @@
 [
     {
-        "userID": "bd507ca8-d68d-4e3b-9ba5-e780709d5c4b",
+        "uuid": "bd507ca8-d68d-4e3b-9ba5-e780709d5c4b",
         "firstName":"Wes",
         "lastName":"Wilson",
-        "emailID":"wwes@gmail.com",
-        "password":"willYouNot377%"
+        "userEmail":"wwes@gmail.com",
+        "userPassword":"willYouNot377%"
     },{
-        "userID":"99aa6979-f71c-4db1-9e58-34b5e1351f2c",
+        "uuid":"99aa6979-f71c-4db1-9e58-34b5e1351f2c",
         "firstName":"Francis",
         "lastName":"Moez",
-        "emailID":"mfrancis@gmail.com",
-        "password":"!088YeloHare"
+        "userEmail":"mfrancis@gmail.com",
+        "userPassword":"!088YeloHare"
     }
 ]

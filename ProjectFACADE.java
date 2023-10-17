@@ -9,7 +9,13 @@ public class ProjectFACADE {
         return user;
     }
 
-    public User signUp(String firstName, String LastName, String emailID, String password) {
+    public User signUp(String firstName, String LastName, String emailID, String password) 
+    {
+        if(userList.addUser(emailID))
+        {
+            User newUser = new User(null, firstName, LastName, emailID, password);
+            userList.add(newUser);
+        }
         return user;
     }
 
