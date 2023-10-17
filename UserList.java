@@ -4,7 +4,8 @@ public class UserList {
     private ArrayList<User> users;
     private static UserList userList;
 
-    private UserList() {
+    public UserList() 
+    {
         DataLoader.getUsers();
     }
 
@@ -37,7 +38,4 @@ public class UserList {
         users.add(newUser);
     }
 
-    public String toString(){
-        return " asd";
-    }
 }
