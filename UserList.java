@@ -2,14 +2,13 @@ import java.util.ArrayList;
 
 public class UserList {
     private ArrayList<User> users;
-    private UserList userList;
+    private static UserList userList;
 
     private UserList() {
         DataLoader.getUsers();
     }
 
     public UserList getInstance() {
-        //users = new ArrayList<>(users);
         return userList;
     }
 
@@ -19,9 +18,6 @@ public class UserList {
     }
 
     public boolean addUser(String firstName, String lastName, String emailID, String password) {
-        if (firstName != null && lastName != null && emailID != null && password != null)
-            return users.add(null);
-        else
-            return false;
+        return true;
     }
 }
