@@ -8,7 +8,7 @@ public class ProjectBoard {
     public ArrayList<Report> reports;
     public static ProjectBoard projectBoard;
     
-    private static void ProjectBoard() {
+    private ProjectBoard() {
 
     }
     public static ProjectBoard getInstance() {
