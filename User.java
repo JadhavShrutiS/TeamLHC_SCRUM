@@ -44,15 +44,15 @@ public class User {
         return this.uuid+" "+this.firstName+" "+this.lastName+" "+this.userEmail+" "+this.userPassword;
     }
 
-    public Object getId() {
+    public UUID getId() {
         return this.uuid;
     }
 
-    public Object getFirstName() {
+    public String getFirstName() {
         return this.firstName;
     }
 
-    public Object getLastName() {
+    public String getLastName() {
         return this.lastName;
     }
 
@@ -60,7 +60,7 @@ public class User {
         return this.userEmail;
     }
 
-    public Object getPassword() {
+    public String getPassword() {
         return this.userPassword;
     }
 }

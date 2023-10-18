@@ -17,13 +17,16 @@ public class UserList {
         return userList;
     }
 
-    public User getUser(String userName, String userPassword) {
+    public User getUser(String userEmail, String userPassword) {
         
         for(int i=0;i<users.size();i++)
         {
-            if(users.get(i).)
+            if(users.get(i).getEmailID().equalsIgnoreCase(userEmail) && users.get(i).getPassword().equalsIgnoreCase(userPassword))
+            {
+                return users.get(i);
+            }
         }
-        return users.get(0);
+        return null;
     }
 
     public boolean addUser(String emailID) //only checking if we can add user based on emailID!!
