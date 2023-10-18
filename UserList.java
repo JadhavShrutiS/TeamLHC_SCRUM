@@ -6,15 +6,23 @@ public class UserList {
 
     public UserList() 
     {
-        DataLoader.getUsers();
+        
+        users= DataLoader.getUsers();
     }
 
     public UserList getInstance() {
+        if(userList == null){
+            userList = new UserList();
+        }
         return userList;
     }
 
-    public User getUser(String userName) {
+    public User getUser(String userName, String userPassword) {
         
+        for(int i=0;i<users.size();i++)
+        {
+            if(users.get(i).)
+        }
         return users.get(0);
     }
 
@@ -33,9 +41,14 @@ public class UserList {
         return true;
     }
 
-    public void add(User newUser)
+    public void add(String firstName, String lastName, String userEmail, String userPassword)
     {
-        users.add(newUser);
+        User user = new User(firstName, lastName, userEmail, userPassword);
+        users.add(user);
+    }
+    public void saveUsers()
+    {
+        DataWriter.saveUsers();
     }
 
 }
