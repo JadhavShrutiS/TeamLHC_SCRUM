@@ -43,4 +43,24 @@ public class User {
     {
         return this.uuid+" "+this.firstName+" "+this.lastName+" "+this.userEmail+" "+this.userPassword;
     }
+
+    public Object getId() {
+        return this.uuid;
+    }
+
+    public Object getFirstName() {
+        return this.firstName;
+    }
+
+    public Object getLastName() {
+        return this.lastName;
+    }
+
+    public Object getEmailID() {
+        return this.userEmail;
+    }
+
+    public Object getPassword() {
+        return this.userPassword;
+    }
 }
