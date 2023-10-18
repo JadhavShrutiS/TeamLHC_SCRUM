@@ -56,7 +56,7 @@ public class User {
         return this.lastName;
     }
 
-    public Object getEmailID() {
+    public String getEmailID() {
         return this.userEmail;
     }
 
