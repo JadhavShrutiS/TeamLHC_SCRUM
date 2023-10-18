@@ -11,4 +11,9 @@ public class UI {
     public void displayMainMenu() {
 
     }
+
+    public static void main(String[] args) {
+        UI ui = new UI();
+        ui.run();
+    }
 }
