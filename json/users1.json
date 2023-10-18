@@ -1,9 +1,1 @@
-[
-    {
-        "firstName": "John",
-        "lastName": "Smith",
-        "password": "1234",
-        "emailID": "John@email",
-        "userID": "43636345345"
-    }
-]
+[{"firstName":"Wes","lastName":"Wilson","password":"willYouNot377%","emailID":"wwes@gmail.com","userID":"bd507ca8-d68d-4e3b-9ba5-e780709d5c4b"},{"firstName":"Francis","lastName":"Moez","password":"!088YeloHare","emailID":"mfrancis@gmail.com","userID":"99aa6979-f71c-4db1-9e58-34b5e1351f2c"},{"firstName":"amy","lastName":"smith","password":"12345","emailID":"asmith@gmail.com","userID":"a0c528c1-b92c-4104-ab09-eed13d4aee96"}]

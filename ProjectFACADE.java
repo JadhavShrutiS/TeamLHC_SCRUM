@@ -12,7 +12,12 @@ public class ProjectFACADE {
 
     public Boolean signUp(String firstName, String LastName, String emailID, String password) 
     {
-         return UserList.getInstance().addUser(firstName, LastName, emailID,password);
+         return UserList.getInstance().add(firstName, LastName, emailID,password);
+    }
+
+
+    public User getUser(){
+        return user;
     }
 
     public Project getProjectByName(String name) {

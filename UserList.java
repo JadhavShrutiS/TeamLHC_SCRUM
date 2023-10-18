@@ -10,7 +10,7 @@ public class UserList {
         users= DataLoader.getUsers();
     }
 
-    public UserList getInstance() {
+    public static UserList getInstance() {
         if(userList == null){
             userList = new UserList();
         }
@@ -21,6 +21,7 @@ public class UserList {
         
         for(int i=0;i<users.size();i++)
         {
+            //User user = users.get(i);
             if(users.get(i).getEmailID().equalsIgnoreCase(userEmail) && users.get(i).getPassword().equalsIgnoreCase(userPassword))
             {
                 return users.get(i);
@@ -44,14 +45,20 @@ public class UserList {
         return true;
     }
 
-    public void add(String firstName, String lastName, String userEmail, String userPassword)
+    public boolean add(String firstName, String lastName, String userEmail, String userPassword)
     {
         User user = new User(firstName, lastName, userEmail, userPassword);
         users.add(user);
+        return true;
     }
     public void saveUsers()
     {
         DataWriter.saveUsers();
+    }
+
+    public ArrayList<User> getUsers()
+    {
+        return users;
     }
 
 }

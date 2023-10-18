@@ -12,7 +12,7 @@ public class DataWriter extends DataConstants{
         
         UserList users = UserList.getInstance();
 		ArrayList<User> userList = users.getUsers();
-        ArrayList<User> userList = new ArrayList<>();
+        //ArrayList<User> userList = new ArrayList<>();
         /* 
         User john = new User();
         userList.add(john);
@@ -24,7 +24,7 @@ public class DataWriter extends DataConstants{
 			jsonUsers.add(getUserJSON(userList.get(i)));
 		}
 		
-        try (FileWriter file = new FileWriter("json/users1.json")) {
+        try (FileWriter file = new FileWriter("json/users.json")) {
  
             file.write(jsonUsers.toJSONString());
             file.flush();
@@ -36,11 +36,11 @@ public class DataWriter extends DataConstants{
 
     public static JSONObject getUserJSON(User user) {
 		JSONObject userDetails = new JSONObject();
-		userDetails.put("userID",user.getId().toString());
-		userDetails.put("firstName", user.getFirstName());
-		userDetails.put("lastName", user.getLastName());
-		userDetails.put("emailID", user.getEmailID());
-		userDetails.put("password", user.getPassword());
+		userDetails.put(USER_ID,user.getId().toString());
+		userDetails.put(USER_FIRST_NAME, user.getFirstName());
+		userDetails.put(USER_LAST_NAME, user.getLastName());
+		userDetails.put(USER_EMAIL, user.getEmailID());
+		userDetails.put(USER_PASSWORD, user.getPassword());
         
         return userDetails;
 	}

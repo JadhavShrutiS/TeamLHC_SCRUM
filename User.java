@@ -25,18 +25,11 @@ public class User {
     //for new user
     public User(String firstName, String lastName, String userEmail, String userPassword) {
     
-       this.firstName = firstName;
+       this.uuid = UUID.randomUUID();
+        this.firstName = firstName;
        this.lastName = lastName;
        this.userEmail = userEmail;
        this.userPassword = userPassword;
-    }
-    
-    protected void login() {
-        
-    }
-
-    protected void logout() {
-
     }
 
     public String toString()
