@@ -9,13 +9,14 @@ public class DataWriter extends DataConstants{
 
     public static void saveUsers()
     {
-        /* 
+        
         UserList users = UserList.getInstance();
 		ArrayList<User> userList = users.getUsers();
-        */
         ArrayList<User> userList = new ArrayList<>();
+        /* 
         User john = new User();
         userList.add(john);
+        */
 
 		JSONArray jsonUsers = new JSONArray();
 		
@@ -35,11 +36,11 @@ public class DataWriter extends DataConstants{
 
     public static JSONObject getUserJSON(User user) {
 		JSONObject userDetails = new JSONObject();
-		userDetails.put("userID", "43636345345");//user.getId().toString());
-		userDetails.put("firstName", "John");//user.getFirstName());
-		userDetails.put("lastName", "Smith");//user.getLastName());
-		userDetails.put("emailID", "John@email");//user.getEmailID());
-		userDetails.put("password", "1234");//user.getPassword());
+		userDetails.put("userID",user.getId().toString());
+		userDetails.put("firstName", user.getFirstName());
+		userDetails.put("lastName", user.getLastName());
+		userDetails.put("emailID", user.getEmailID());
+		userDetails.put("password", user.getPassword());
         
         return userDetails;
 	}
