@@ -44,10 +44,6 @@ public class ProjectFACADE {
 
     }
 
-    public void addCommentTask(Task task) {
-
-    }
-
     public boolean createReport(Project project) {
         return true;
 
