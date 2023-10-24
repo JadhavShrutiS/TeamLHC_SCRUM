@@ -1,31 +1,59 @@
+import java.util.UUID;
+
 public class User {
+    private UUID uuid;
     private String firstName;
     private String lastName;
-    private String emailID;
-    private String password;
-    private Role role;
-
-    protected void login() {
-
-    }
-
-    protected void logout() {
+    public String userEmail;
+    private String userPassword;
+   
+    //for demo
+    public User()
+    {
 
     }
-
-    public void addTask() {
-
+    
+    //for existing user
+    public User(UUID uuid, String firstName, String lastName, String userEmail, String userPassword) {
+       this.uuid = uuid;
+       this.firstName = firstName;
+       this.lastName = lastName;
+       this.userEmail = userEmail;
+       this.userPassword = userPassword;
     }
 
-    public void addProject() {
-
+    //for new user
+    public User(String firstName, String lastName, String userEmail, String userPassword) {
+    
+       this.uuid = UUID.randomUUID();
+        this.firstName = firstName;
+       this.lastName = lastName;
+       this.userEmail = userEmail;
+       this.userPassword = userPassword;
     }
 
-    public void addComment() {
-
+    public String toString()
+    {
+        return this.uuid+" "+this.firstName+" "+this.lastName+" "+this.userEmail+" "+this.userPassword;
     }
 
-    public void addDocument() {
-        
+    public UUID getId() {
+        return this.uuid;
+    }
+
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    public String getEmailID() {
+        return this.userEmail;
+    }
+
+    public String getPassword() {
+        return this.userPassword;
     }
 }

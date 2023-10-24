@@ -12,7 +12,6 @@ public abstract class Task {
     public ArrayList<Comments> taskComments;
     public int taskPriority;
     public ArrayList<String> links;
-    public ArrayList<String> comments; //why twice?
     public Date date;
     public ArrayList<Task> subTasks;
     //UUID for task, project and columns??

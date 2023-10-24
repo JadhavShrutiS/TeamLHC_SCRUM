@@ -2,8 +2,6 @@
     {
         "taskID":"b454f548-c654-43a1-a805-9d7bb4b34f8c",
         "userID": ["bd507ca8-d68d-4e3b-9ba5-e780709d5c4b"],
-        "ColumnID": "c20f827b-b3f2-4841-8694-e4135d559765",
-        "projectID":"fc9f86df-008f-43da-b027-93714ce957a7",
         "taskName":"Group C Assistance",
         "taskDescription":"Offer assistance regarding implementation to group C",
         "taskPriority":1,
@@ -16,13 +14,11 @@
         ]
     },{
         "taskID":"0f241e31-c4ca-4f75-9cf3-fb7da18e692f",
-        "userID":2,
-        "ColumnID":2,
-        "projectID":2,
+        "userID":"99aa6979-f71c-4db1-9e58-34b5e1351f2c",
         "taskName":"Stability Enum",
         "taskDescription":"Create an enum that records the current stability of the server",
         "taskPriority":1,
-        "comments":[{"userid":1, "date": "10/12/23", "comment": "Oh wow amazing"}],
+        "comments":[{"userid":"bd507ca8-d68d-4e3b-9ba5-e780709d5c4b", "date": "10/12/23", "comment": "this is interesting"}],
         "subTasks":
         [
             "Connect the enum with the 'server' class",
