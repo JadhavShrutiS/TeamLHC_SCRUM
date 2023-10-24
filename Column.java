@@ -6,18 +6,26 @@ import java.util.ArrayList;
 
  public class Column {
 
-    public ArrayList<Task> taskList;
-    public String name;
+   public ArrayList<Task> taskList;
+   public String name;
 
-    Column(){
+   Column(){
 
-    }
+   }
 
-    public void addTask(Task task){
+   public void addTask(Task task){
 
-    }
+   }
 
-    public void deleteTask(Task task){
+   public void deleteTask(Task task){
 
-    }
- }
+   }
+
+   public String getName() {
+      return this.name;
+   }
+
+   public void editName(String newName) {
+      this.name = newName;
+   }
+}
