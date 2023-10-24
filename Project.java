@@ -13,13 +13,15 @@ public class Project {
     private ArrayList<Comment> comments;
     private ArrayList<User> users;
     private ArrayList<Role> roles;
+    private User supervisor;
 
-    public Project(String name, String description, UUID uuid, ArrayList<User> users, ArrayList<Role> roles) {
+    public Project(String name, String description, UUID uuid, ArrayList<User> users, ArrayList<Role> roles, User supervisor) {
         this.name = name;
         this.uuid = uuid;
         this.description = description;
         this.users = users;
         this.roles = roles;
+        this.supervisor = supervisor;
         this.columns = new ArrayList<Column>();
         this.comments = new ArrayList<Comment>();
     }
@@ -73,5 +75,8 @@ public class Project {
         return this.comments;
     }
 
+    public User getSupervisor() {
+        return this.supervisor;
+    }
 
 }

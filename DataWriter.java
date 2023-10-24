@@ -47,6 +47,39 @@ public class DataWriter extends DataConstants{
 
     public static boolean saveProjects()
     {
+        ArrayList<Project> projects = ProjectBoard.getInstance().getAllProjects();
+        //ArrayList<User> userList = new ArrayList<>();
+        /* 
+        User john = new User();
+        userList.add(john);
+        */
+
+		JSONArray jsonProjects = new JSONArray();
+		
+        for(int i=0; i< projects.size(); i++) {
+			jsonProjects.add(getProjectJSON(projects.get(i)));
+		}
+		
+        try (FileWriter file = new FileWriter("json/projects1.json")) {
+ 
+            file.write(jsonProjects.toJSONString());
+            file.flush();
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static JSONObject getProjectJSON(Project project) {
+		JSONObject projectDetails = new JSONObject();
+		projectDetails.put(projectID, project.getUUID());
+		projectDetails.put(, user.getFirstName());
+		projectDetails.put(, user.getLastName());
+		projectDetails.put(, user.getEmailID());
+		projectDetails.put(, user.getPassword());
+        
+        return projectDetails;
+
         return true;
     }
 
