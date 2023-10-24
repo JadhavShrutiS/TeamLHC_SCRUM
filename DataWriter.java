@@ -45,14 +45,9 @@ public class DataWriter extends DataConstants{
         return userDetails;
 	}
 
-    public static boolean saveProjects()
+    public static void saveProjects()
     {
         ArrayList<Project> projects = ProjectBoard.getInstance().getAllProjects();
-        //ArrayList<User> userList = new ArrayList<>();
-        /* 
-        User john = new User();
-        userList.add(john);
-        */
 
 		JSONArray jsonProjects = new JSONArray();
 		
@@ -73,14 +68,11 @@ public class DataWriter extends DataConstants{
     public static JSONObject getProjectJSON(Project project) {
 		JSONObject projectDetails = new JSONObject();
 		projectDetails.put(projectID, project.getUUID());
-		projectDetails.put(, user.getFirstName());
-		projectDetails.put(, user.getLastName());
-		projectDetails.put(, user.getEmailID());
-		projectDetails.put(, user.getPassword());
-        
-        return projectDetails;
-
-        return true;
+		projectDetails.put(user, projectDetails.put(project, projectDetails));
+		projectDetails.put(name, project.getName());
+		projectDetails.put(, );
+		projectDetails.put(, );
+        }
     }
 
     public static void main(String[] args) {
