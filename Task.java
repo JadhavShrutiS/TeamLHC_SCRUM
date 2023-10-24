@@ -9,14 +9,14 @@ import java.util.UUID;
 public abstract class Task {
 
     public UUID taskUUID;
+    public UUID userUUID;
     public String taskName;
     public String taskDescription;
-    public ArrayList<Comment> taskComments;
     public int taskPriority;
+    public ArrayList<Comment> taskComments;
     public ArrayList<String> links;
     public Date date;
     public ArrayList<Task> subTasks;
-    public UUID userUUID;
 
     Task(){
 
@@ -31,24 +31,20 @@ public abstract class Task {
 
     }
 
-    public Task createTask(Project project, Column column){
-        
-    }
-
     public  void setTaskName(String taskName){
         this.taskName = taskName;
     }
 
     public void setTaskDescription(String taskDescription){
+        this.taskDescription = taskDescription;
+    }
 
+    public void setPriorityColor(int taskPriority){
+        this.taskPriority = taskPriority;
     }
 
     public void addComment(Comment comment){
-
-    }
-
-    public void setPriorityColor(String priorityColor){
-
+        taskComments.add(taskComments.size(), comment);
     }
 
     public Task addSubTask(){
