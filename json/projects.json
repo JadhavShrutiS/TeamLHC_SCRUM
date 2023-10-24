@@ -6,11 +6,10 @@
         "description":"Implement real-time document reports for all local sport teams and games.",
         "columns": 
         [
-            {"ID" : "c20f827b-b3f2-4841-8694-e4135d559765","name": "todo"},
-            {"ID" : "95367d89-a128-4ce0-8c33-06b01e43f920","name": "progress"},
-            {"ID" : "5d9da0ca-8fa7-43e0-a9fe-074772caf928","name": "done"}
+            {"name": "todo","tasks":[]},
+            {"name": "progress","tasks":[]},
+            {"name": "done","tasks":[]}
         ],
-        "supervisor":"Matt Garden",
         "status":"Finished",
         "comments":[{"userid":"bd507ca8-d68d-4e3b-9ba5-e780709d5c4b", "date": "10/12/23", "comment": "Oh wow amazing"}]
     },{
@@ -20,11 +19,10 @@
         "description":"Build a program that tracks the security, accesibility, and stability of a chosen server.",
         "columns": 
         [
-            {"ID" : "ad38d1d8-a9a2-484e-b889-830c5b703128","name": "todo"},
-            {"ID" : "9f7b7baa-36b3-477b-9279-f309febcddb2","name": "progress"},
-            {"ID" : "871fe61d-0241-4d4b-a183-5845744acf84","name": "done"}
+            {"name": "todo","tasks":[]},
+            {"name": "progress","tasks":[]},
+            {"name": "done","tasks":[]}
         ],
-        "supervisor":"Elisa Kheram",
         "status":"In Progress",
         "comments":[{"userid":"bd507ca8-d68d-4e3b-9ba5-e780709d5c4b", "date": "10/12/23", "comment": "Need quick update"}]
     }
