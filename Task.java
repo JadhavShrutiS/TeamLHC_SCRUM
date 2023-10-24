@@ -18,13 +18,15 @@ public abstract class Task {
     public Date date;
     public ArrayList<Task> subTasks;
 
-    Task(){
-
+    Task(String taskName){
+        this.taskUUID = UUID.randomUUID();
+        this.userUUID = 
+        this.taskName = taskName;
     }
 
     Task(String taskName, String taskDescription, int taskPriority){
         this.taskUUID = UUID.randomUUID();
-        this.userUUID = UUID.randomUUID();
+        this.userUUID =
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         this.taskPriority = taskPriority;
@@ -47,8 +49,8 @@ public abstract class Task {
         taskComments.add(taskComments.size(), comment);
     }
 
-    public Task addSubTask(){
+   // public Task addSubTask(){
 
-    }
+    //}
 
 }
