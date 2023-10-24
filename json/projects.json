@@ -10,7 +10,6 @@
             {"name": "progress","tasks":[]},
             {"name": "done","tasks":[]}
         ],
-        "status":"Finished",
         "comments":[{"userid":"bd507ca8-d68d-4e3b-9ba5-e780709d5c4b", "date": "10/12/23", "comment": "Oh wow amazing"}]
     },{
         "projectID":"0b396c4a-ae0c-46b7-8f3c-0f7e56690c3f",
@@ -23,7 +22,6 @@
             {"name": "progress","tasks":[]},
             {"name": "done","tasks":[]}
         ],
-        "status":"In Progress",
         "comments":[{"userid":"bd507ca8-d68d-4e3b-9ba5-e780709d5c4b", "date": "10/12/23", "comment": "Need quick update"}]
     }
 ]
