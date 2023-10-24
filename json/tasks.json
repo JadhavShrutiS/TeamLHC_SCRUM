@@ -2,8 +2,6 @@
     {
         "taskID":"b454f548-c654-43a1-a805-9d7bb4b34f8c",
         "userID": ["bd507ca8-d68d-4e3b-9ba5-e780709d5c4b"],
-        "columnID":"c20f827b-b3f2-4841-8694-e4135d559765",
-        "projectID":"fc9f86df-008f-43da-b027-93714ce957a7",
         "taskName":"Group C Assistance",
         "taskDescription":"Offer assistance regarding implementation to group C",
         "taskPriority":1,
@@ -17,8 +15,6 @@
     },{
         "taskID":"0f241e31-c4ca-4f75-9cf3-fb7da18e692f",
         "userID":"99aa6979-f71c-4db1-9e58-34b5e1351f2c",
-        "projectID":"0b396c4a-ae0c-46b7-8f3c-0f7e56690c3f",
-        "columnID":"ad38d1d8-a9a2-484e-b889-830c5b703128",
         "taskName":"Stability Enum",
         "taskDescription":"Create an enum that records the current stability of the server",
         "taskPriority":1,
