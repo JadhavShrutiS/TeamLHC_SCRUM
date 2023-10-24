@@ -20,4 +20,6 @@ import java.util.ArrayList;
     public void deleteTask(Task task){
 
     }
+
+    public Task getTask()
  }
