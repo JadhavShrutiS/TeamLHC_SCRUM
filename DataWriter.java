@@ -67,11 +67,11 @@ public class DataWriter extends DataConstants{
 
     public static JSONObject getProjectJSON(Project project) {
 		JSONObject projectDetails = new JSONObject();
-		projectDetails.put(projectID, project.getUUID());
-		projectDetails.put(user, projectDetails.put(project, projectDetails));
-		projectDetails.put(name, project.getName());
-		projectDetails.put(, );
-		projectDetails.put(, );
+		projectDetails.put("projectID", project.getUUID());
+		projectDetails.put("user", );
+        projectDetails.put("description", project.getDescription());
+		projectDetails.put("columns", );
+		projectDetails.put("comments", );
         }
     }
 
