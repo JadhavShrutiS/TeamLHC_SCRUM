@@ -1,5 +1,6 @@
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * @author Sri Nandury
@@ -7,47 +8,49 @@ import java.util.ArrayList;
 
 public abstract class Task {
 
+    public UUID taskUUID;
+    public UUID userUUID;
     public String taskName;
     public String taskDescription;
-    public ArrayList<Comments> taskComments;
     public int taskPriority;
+    public ArrayList<Comment> taskComments;
     public ArrayList<String> links;
     public Date date;
     public ArrayList<Task> subTasks;
-    //UUID for task, project and columns??
-    //task created by user's UUID 
-    //assignee user UUID
 
-    Task(){
-
+    Task(String taskName){
+        this.taskUUID = UUID.randomUUID();
+        this.userUUID = 
+        this.taskName = taskName;
     }
 
-    public Task createTask(Column column){
-
-    }
-
-    public Task createTask(Project project, Column column){
+    Task(String taskName, String taskDescription, int taskPriority){
+        this.taskUUID = UUID.randomUUID();
+        this.userUUID =
+        this.taskName = taskName;
+        this.taskDescription = taskDescription;
+        this.taskPriority = taskPriority;
 
     }
 
     public  void setTaskName(String taskName){
-
+        this.taskName = taskName;
     }
 
     public void setTaskDescription(String taskDescription){
+        this.taskDescription = taskDescription;
+    }
 
+    public void setPriorityColor(int taskPriority){
+        this.taskPriority = taskPriority;
     }
 
     public void addComment(Comment comment){
-
+        taskComments.add(taskComments.size(), comment);
     }
 
-    public void setPriorityColor(String priorityColor){
+   // public Task addSubTask(){
 
-    }
-
-    public Task addSubTask(){
-
-    }
+    //}
 
 }
