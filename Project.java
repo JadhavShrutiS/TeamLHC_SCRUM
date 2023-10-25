@@ -72,6 +72,10 @@ public class Project {
     public ArrayList<Comment> getComments() {
         return this.comments;
     }
+    public Task getTask()
+    {
+        //cycle through all tasks in project and return task
+    }
 
 
 }

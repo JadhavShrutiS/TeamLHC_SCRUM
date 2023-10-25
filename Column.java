@@ -14,18 +14,14 @@ import java.util.ArrayList;
    }
 
    public void addTask(Task task){
-
+    taskList.add(taskList.size(), task);
    }
 
    public void deleteTask(Task task){
-
+    taskList.remove(task);
    }
 
-   public String getName() {
-      return this.name;
+   public void createTask(){
+    
    }
-
-   public void editName(String newName) {
-      this.name = newName;
-   }
-}
+ }
