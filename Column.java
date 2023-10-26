@@ -9,7 +9,7 @@ import java.util.ArrayList;
    public ArrayList<Task> taskList;
    public String name;
 
-   Column(String name){
+  Column(String name){
     this.name = name;
    }
 
@@ -24,5 +24,10 @@ import java.util.ArrayList;
    public void createTask(String taskName){
     Task task = new Task(taskName);
     addTask(task);
+   }   
+   
+   public String getName() {
+    return this.name;
    }
+
  }

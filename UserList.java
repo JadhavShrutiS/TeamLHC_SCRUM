@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class UserList {
     private ArrayList<User> users;
@@ -62,7 +63,12 @@ public class UserList {
     }
     public User getUser(UUID id)
     {
-        //finish the method
+        for(int i=0; i<users.size(); i++)
+        {
+            if(users.get(i).getId().equals(id))
+                return users.get(i);
+        }
+        return null;
     }
 
 }

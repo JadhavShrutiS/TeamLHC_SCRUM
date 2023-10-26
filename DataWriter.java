@@ -7,7 +7,8 @@ import java.util.UUID;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-public class DataWriter extends DataConstants{
+public class DataWriter extends DataConstants
+{
 
     public static void saveUsers()
     {
@@ -66,7 +67,8 @@ public class DataWriter extends DataConstants{
         }
     }
 
-    public static JSONObject getProjectJSON(Project project) {
+    public static JSONObject getProjectJSON(Project project) 
+    {
 		JSONObject projectDetails = new JSONObject();
 		projectDetails.put("projectID", project.getUUID());
         JSONArray users = new JSONArray();
@@ -89,19 +91,19 @@ public class DataWriter extends DataConstants{
         JSONArray columns = new JSONArray();
         for (int i=0; i<project.getColumns().size(); i++) {
             JSONObject column = new JSONObject();
-            column.put()
+            column.put("name", project.getColumns().get(i).getName());
+            column.put("tasks", project.getColumns().get(i).getTasks());
+            columns.add(column);
         }
 		projectDetails.put("columns", );
 		//projectDetails.put("comments", );
 
         return projectDetails;
+        }
     }
-    
 
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         System.out.println("hi");
-        saveProjects();
-
+        //saveProjects();
     }
-    
 }
