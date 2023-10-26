@@ -23,4 +23,20 @@ public class Comment {
     public void editComment() {
         
     }
+
+    public UUID getUserID()
+    {
+        return this.userID;
     }
+
+    public Date getDate()
+    {
+        return this.date;
+    }
+
+    public String getComment()
+    {
+        return this.comment;
+    }
+
+}

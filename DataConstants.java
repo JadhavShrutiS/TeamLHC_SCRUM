@@ -25,7 +25,10 @@ public class DataConstants {
     protected static final String TASK_NAME="taskName";
     protected static final String TASK_DESCRIPTION="taskDescription";
     protected static final String TASK_PRIORITY="taskPriority";
-    protected static final Object TASK_COMMENT ="comments";
+    protected static final String TASK_COMMENT ="comments";
+    protected static final String TASK_COMMENT_USER_ID = "commentuserid";
+    protected static final String TASK_COMMENT_DATE = "date";
+    protected static final String TASK_COMMENT_STRING = "comment";
     protected static final String TASK_SUBTASKS="subTasks";
 
 

@@ -14,10 +14,6 @@ public class UI {
         System.out.println("Logged in as: " + currentUser);
 
         //Task Related Checks
-        app.addTask("Hehe","Hehe",1);
-        Task currentTask = app.getTask("Hehe");
-        System.out.println("Task "+ currentTask);
-        System.out.println(app.getTasks());
         app.addTask("Trial", "Again", 3);
         System.out.println(app.getTask("Trial"));
         System.out.println(app.getTasks());

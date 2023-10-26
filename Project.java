@@ -7,9 +7,9 @@ import java.util.UUID;
  * @author Yug Desai
  */
 public class Project {
-    private String projName;
-    private UUID uuid;
-    private String projDescription;
+    private String projectName;
+    private UUID projectID;
+    private String projectDescription;
     private ArrayList<Column> columns;
     private ArrayList<Comment> comments;
     //private ArrayList<User> users;
@@ -21,9 +21,9 @@ public class Project {
     
     public Project()
     {
-        this.projName= "Project1";
-        this.uuid =UUID.randomUUID();
-        this.projDescription = "Project Description";
+        this.projectName= "Project1";
+        this.projectID =UUID.randomUUID();
+        this.projectDescription = "Project Description";
         this.columns = new ArrayList<Column>();
         this.comments =  new ArrayList<Comment>();
         this.users = new HashMap<Role, User>();
@@ -32,9 +32,9 @@ public class Project {
     }
     
     public Project(String name, String description, UUID uuid, ArrayList<User> users) {
-        this.projName = name;
-        this.uuid = uuid;
-        this.projDescription = description;
+        this.projectName = name;
+        this.projectID = uuid;
+        this.projectDescription = description;
         //this.users = users;
         this.columns = new ArrayList<Column>();
         this.comments = new ArrayList<Comment>();
@@ -43,9 +43,9 @@ public class Project {
     //testing
     public Project(UUID projectID, String projectName, String projectDescription)
     {
-        this.uuid = projectID;
-        this.projName = projectName;
-        this.projDescription = projectDescription;
+        this.projectID = projectID;
+        this.projectName = projectName;
+        this.projectDescription = projectDescription;
     }
 
     public void deleteColumn(Column column) {
@@ -71,16 +71,16 @@ public class Project {
         
     }
 
-    public String getName() {
-        return this.name;
+    public String getProjectName() {
+        return this.projectName;
     }
 
-    public UUID getUUID() {
-        return this.uuid;
+    public UUID getProjectID() {
+        return this.projectID;
     }
 
-    public String getDescription() {
-        return this.description;
+    public String getProjectDescription() {
+        return this.projectDescription;
     }
 
     public HashMap<Role,User> getUsers() {

@@ -106,11 +106,11 @@ public class DataLoader extends DataConstants{
 
 				//multiple user ids in a list
 				ArrayList<UUID> userIDs = new ArrayList<UUID>();
-				JSONArray users = (JSONArray)TaskJSON.get(TASK_USER_ID);
-				for(int j=0;j<users.size();j++)
-				{
-					userIDs.add(UUID.fromString((String)users.get(i)));
-				}
+				//JSONArray users = (JSONArray)TaskJSON.get(TASK_USER_ID);
+				//for(int j=0;j<users.size();j++)
+				//{
+					//userIDs.add(UUID.fromString((String)users.get(i)));
+				//}
 
 				String taskName = (String)TaskJSON.get(TASK_NAME);
 				String taskDescription = (String)TaskJSON.get(TASK_DESCRIPTION);
@@ -119,7 +119,7 @@ public class DataLoader extends DataConstants{
 				//comments
 				ArrayList<Comment> taskComments = new ArrayList<Comment>();
 				JSONArray comments = (JSONArray)TaskJSON.get(TASK_COMMENT);
-				for(int j =0;j<comments.size();j++)
+				for(int j =0;j<comments.size()-1;j++)
 				{
 					JSONObject commentJSON = (JSONObject)comments.get(i);
 

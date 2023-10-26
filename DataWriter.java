@@ -67,9 +67,64 @@ public class DataWriter extends DataConstants
     public static JSONObject getTaskJSON(Task task)
     {
         JSONObject taskDetails = new JSONObject();
+        taskDetails.put(TASK_ID,task.getTaskId().toString());
+        //write users
+        JSONObject users = new JSONObject();
+
+        if(task.getUserIDs()!=null)
+        {
+            for(int i=0;i<task.getUserIDs().size();i++)
+            {
+                users.put(TASK_USER_ID, task.getUserIDs().get(i));
+
+            }
+        }
+        else
+        {
+            users.put(TASK_USER_ID, "none");
+        }
+            
 		taskDetails.put(TASK_NAME,task.getTaskName());
 		taskDetails.put(TASK_DESCRIPTION, task.getTaskDescription());
 		taskDetails.put(TASK_PRIORITY, Integer.toString(task.getTaskPriority()));
+        //write comments
+        JSONArray taskComments = new JSONArray();
+
+        if(task.getTaskComments()!=null)
+        {
+            for(int i =0;i<task.getTaskComments().size();i++)
+            {
+                JSONObject comment = new JSONObject();
+                comment.put(TASK_COMMENT_USER_ID,task.getTaskComments().get(i).getUserID().toString());
+                comment.put(TASK_COMMENT_DATE,task.getTaskComments().get(i).getDate().toString());
+                comment.put(TASK_COMMENT_STRING,task.getTaskComments().get(i).getComment());
+                taskComments.add(comment);
+            }
+
+        }
+        else
+        {
+            JSONObject comment = new JSONObject();
+            comment.put(TASK_COMMENT_USER_ID,null);
+            comment.put(TASK_COMMENT_DATE,null);
+            comment.put(TASK_COMMENT_STRING,null);
+            taskComments.add(comment);
+        }
+        //write subtasks
+        JSONObject subtasks = new JSONObject();
+
+        if(task.getSubtasks()!=null)
+        {
+            for(int i=0;i<task.subTasks.size();i++)
+            {
+                subtasks.put(TASK_SUBTASKS, task.getSubtasks().get(i));
+
+            }
+        }
+        else
+        {
+            subtasks.put(TASK_SUBTASKS,null);
+        }
         
         return taskDetails;
     }

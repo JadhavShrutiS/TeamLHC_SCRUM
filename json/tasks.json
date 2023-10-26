@@ -5,7 +5,7 @@
         "taskName":"Group C Assistance",
         "taskDescription":"Offer assistance regarding implementation to group C",
         "taskPriority":"1",
-	    "comments":[{"userid":"99aa6979-f71c-4db1-9e58-34b5e1351f2c", "date": "10/12/23", "comment": "Oh wow amazing"}],
+	    "comments":[{"commentuserid":"99aa6979-f71c-4db1-9e58-34b5e1351f2c", "date": "2023-10-26", "comment": "Oh wow amazing"}],
         "subTasks":
         [
             "Take notes of current progress",
@@ -18,7 +18,7 @@
         "taskName":"Stability Enum",
         "taskDescription":"Create an enum that records the current stability of the server",
         "taskPriority":"1",
-        "comments":[{"userid":"bd507ca8-d68d-4e3b-9ba5-e780709d5c4b", "date": "10/12/23", "comment": "this is interesting"}],
+        "comments":[{"commentuserid":"bd507ca8-d68d-4e3b-9ba5-e780709d5c4b", "date": "2023-10-26", "comment": "this is interesting"}],
         "subTasks":
         [
             "Connect the enum with the 'server' class",

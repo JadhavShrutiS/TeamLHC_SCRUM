@@ -9,9 +9,11 @@ public class ProjectBoard {
     public ArrayList<Report> reports;
     public static ProjectBoard projectBoard;
     
-    private ProjectBoard() {
-
+    public ProjectBoard()
+    {
+        projects = DataLoader.getProjects();
     }
+
     public static ProjectBoard getInstance() {
         
         if(projectBoard==null)
@@ -20,8 +22,17 @@ public class ProjectBoard {
         }
         return projectBoard;
     }
-    public Project getProject(String name) {
-        return projects.get(0);
+    public Project getProject(String projectName) 
+    {
+        for(int i=0;i<projects.size();i++)
+        {
+            //User user = users.get(i);
+            if(projects.get(i).getProjectName().equalsIgnoreCase(projectName))
+            {
+                return projects.get(i);
+            }
+        }
+        return null;
 
     }
     public boolean add(UUID projectID, String projectName,String projectDescription)

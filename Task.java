@@ -19,7 +19,7 @@ public class Task {
     //existing tasks
     public Task(UUID taskUUID,ArrayList<UUID> userIDs,String taskName, String taskDescription, int taskPriority, ArrayList<Comment> taskComments,ArrayList<String> subtasks)
     {
-        this.taskID = UUID.randomUUID(); 
+        this.taskID = taskUUID; 
         this.userIDs = userIDs;
         this.taskName = taskName;
         this.taskDescription = taskDescription;
@@ -32,6 +32,7 @@ public class Task {
     public Task(String taskName, String taskDescription, int taskPriority){
         this.taskID = UUID.randomUUID(); 
         this.taskName = taskName;
+        this.userIDs = userIDs;
         this.taskDescription = taskDescription;
         this.taskPriority = taskPriority;
     }
@@ -82,6 +83,10 @@ public class Task {
         return this.taskID+" "+this.userIDs+" "+this.taskName+" "+this.taskDescription+" "+this.taskPriority;
     }
 
+    public UUID getTaskId()
+    {
+        return this.taskID;
+    }
     public String getTaskName()
     {
         return this.taskName;
@@ -93,6 +98,18 @@ public class Task {
     public int getTaskPriority()
     {
         return this.taskPriority;
+    }
+    public ArrayList<UUID> getUserIDs()
+    {
+        return this.userIDs;
+    }
+    public ArrayList<Comment> getTaskComments()
+    {
+        return this.taskComments;
+    }
+    public ArrayList<String> getSubtasks()
+    {
+        return this.subTasks;
     }
 
 }
