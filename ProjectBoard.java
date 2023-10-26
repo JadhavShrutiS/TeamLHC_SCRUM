@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * @author Yug Desai
@@ -23,9 +24,9 @@ public class ProjectBoard {
         return projects.get(0);
 
     }
-    public boolean add(String projectName,String description, ArrayList<User> users, ArrayList<Column> columns )
+    public boolean add(UUID projectID, String projectName,String projectDescription)
     {
-        Project project = new Project(firstName, lastName, userEmail, userPassword);
+        Project project = new Project(projectID, projectName,projectDescription);
         projects.add(project);
         return true;
     }
