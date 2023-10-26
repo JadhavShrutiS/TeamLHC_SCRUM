@@ -23,7 +23,14 @@ public class ProjectBoard {
         return projects.get(0);
 
     }
-    public void addProject(Project project) {
+    public boolean add(String projectName,String description, ArrayList<User> users, ArrayList<Column> columns )
+    {
+        Project project = new Project(firstName, lastName, userEmail, userPassword);
+        projects.add(project);
+        return true;
+    }
+    public void addProject(Project project) 
+    {
 
     }
     public Project viewProject() {
