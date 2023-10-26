@@ -60,5 +60,9 @@ public class UserList {
     {
         return users;
     }
+    public User getUser(UUID id)
+    {
+        //finish the method
+    }
 
 }

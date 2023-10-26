@@ -9,28 +9,34 @@ import java.util.UUID;
 public abstract class Task {
 
     public UUID taskUUID;
-    public UUID userUUID;
+    public User user;
     public String taskName;
     public String taskDescription;
     public int taskPriority;
     public ArrayList<Comment> taskComments;
     public ArrayList<String> links;
     public Date date;
-    public ArrayList<Task> subTasks;
+    public ArrayList<String> subTasks;
 
     Task(String taskName){
         this.taskUUID = UUID.randomUUID();
-        this.userUUID = 
+        this.user = user;
         this.taskName = taskName;
     }
 
-    Task(String taskName, String taskDescription, int taskPriority){
+    Task(User user, String taskName, String taskDescription){
         this.taskUUID = UUID.randomUUID();
-        this.userUUID =
+        this.user = user; 
+        this.taskName = taskName;
+        this.taskDescription = taskDescription;
+    }
+
+    Task(User user, String taskName, String taskDescription, int taskPriority){
+        this.taskUUID = UUID.randomUUID();
+        this.user = user; 
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         this.taskPriority = taskPriority;
-
     }
 
     public  void setTaskName(String taskName){
@@ -49,8 +55,8 @@ public abstract class Task {
         taskComments.add(taskComments.size(), comment);
     }
 
-   // public Task addSubTask(){
-
-    //}
+    public void addSubTask(String subTask){
+        subTasks.add(subTasks.size(), subTask);
+    }
 
 }
