@@ -17,6 +17,7 @@ public class Task {
     public ArrayList<String> links;
     public Date date;
     public ArrayList<String> subTasks;
+    public UUID userUUID;
 
     Task(String taskName){
         this.taskUUID = UUID.randomUUID();
@@ -34,6 +35,16 @@ public class Task {
     Task(User user, String taskName, String taskDescription, int taskPriority){
         this.taskUUID = UUID.randomUUID();
         this.user = user; 
+        this.taskName = taskName;
+        this.taskDescription = taskDescription;
+        this.taskPriority = taskPriority;
+    }
+
+    //create task- testing
+    public void Task(UUID taskID, UUID userID, String taskName, String taskDescription, int taskPriority)
+    {
+        this.taskUUID = taskID;
+        this.userUUID = userID; 
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         this.taskPriority = taskPriority;
@@ -57,6 +68,12 @@ public class Task {
 
     public void addSubTask(String subTask){
         subTasks.add(subTasks.size(), subTask);
+    }
+
+    //testing
+    public String toString()
+    {
+        return this.taskUUID+" "+this.userUUID+" "+this.taskName+" "+this.taskDescription+" "+this.taskPriority;
     }
 
 }

@@ -56,8 +56,15 @@ public class DataLoader extends DataConstants{
 				UUID projectID = UUID.fromString((String)projectJSON.get(PROJECT_ID));
 				
 				JSONArray users = (JSONArray)projectJSON.get(PROJECT_USERS);
-				for(int j=0; j < users.size(); j++){
+				for(int j=0; j < users.size(); j++)
+				{
+
+					JSONObject user = (JSONObject)users.get(i);
+
+					String role = (String)user.get(PROJECT_USER_ROLE);
+					UUID userID = UUID.fromString((String)user.get(PROJECT_USER_ID));
 					
+
 				}
 				
 
