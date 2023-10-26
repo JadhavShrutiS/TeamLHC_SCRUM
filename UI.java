@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class UI {
     private Scanner scanner;
-    private ProjectFACADE facade;
+    private ProjectFACADE app;
 
     public void run() {
-        ProjectFACADE app = new ProjectFACADE();
+        app = new ProjectFACADE();
 
         app.signUp("bobby", "smith", "bsmith@gmail.com", "12345");
         app.logout();

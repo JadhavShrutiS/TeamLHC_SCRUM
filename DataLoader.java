@@ -4,6 +4,7 @@ import java.util.UUID;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import java.sql.Date;
 /**
  * @author Sri
  * @author Shruti
@@ -100,12 +101,46 @@ public class DataLoader extends DataConstants{
 				JSONObject TaskJSON = (JSONObject)TasksJSON.get(i);
 				
 				UUID taskID = UUID.fromString((String)TaskJSON.get(TASK_ID));
-				//UUID userID = UUID.fromString((String)TaskJSON.get(TASK_USER_ID));
+
+				//UUID userID = UUID.fromString((String)TaskJSON.get(TASK_USER_ID));//there can be multiple users
+
+				//multiple user ids in a list
+				ArrayList<UUID> userIDs = new ArrayList<UUID>();
+				JSONArray users = (JSONArray)TaskJSON.get(TASK_USER_ID);
+				for(int j=0;j<users.size();j++)
+				{
+					userIDs.add(UUID.fromString((String)users.get(i)));
+				}
+
 				String taskName = (String)TaskJSON.get(TASK_NAME);
 				String taskDescription = (String)TaskJSON.get(TASK_DESCRIPTION);
 				int taskPriority = Integer.parseInt((String)TaskJSON.get(TASK_PRIORITY));
-				//need to do comments and subtasks
-				Tasks.add(new Task(taskID, taskName, taskDescription, taskPriority));			
+
+				//comments
+				ArrayList<Comment> taskComments = new ArrayList<Comment>();
+				JSONArray comments = (JSONArray)TaskJSON.get(TASK_COMMENT);
+				for(int j =0;j<comments.size();j++)
+				{
+					JSONObject commentJSON = (JSONObject)comments.get(i);
+
+					UUID commentUserID = UUID.fromString((String)commentJSON.get(TASK_COMMENT_USER_ID));
+					Date date = Date.valueOf((String)commentJSON.get(TASK_COMMENT_DATE));
+					String commentString = (String)commentJSON.get(TASK_COMMENT_STRING);
+
+					taskComments.add(new Comment(commentUserID, date, commentString));
+				}
+
+				//subtasks
+				ArrayList<String> subtasks = new ArrayList<String>();
+				JSONArray subtask = (JSONArray)TaskJSON.get(TASK_SUBTASKS);
+				for(int j=0;j<subtask.size();j++)
+				{
+					subtasks.add((String)subtask.get(i));
+				}
+
+				Tasks.add(new Task(taskID,userIDs,taskName,taskDescription,taskPriority,taskComments,subtasks));
+				//Tasks.add(new Task(UUID taskUUID,ArrayList<UUID> userIDs,String taskName, String taskDescription, int taskPriority, ArrayList<Comment> taskComments,ArrayList<String> subtasks))
+				//Tasks.add(new Task(taskID, taskName, taskDescription, taskPriority));			
 			}
 			
 			return Tasks;

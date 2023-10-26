@@ -1,4 +1,4 @@
-import java.sql.Date;
+//import java.sql.Date;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -8,32 +8,29 @@ import java.util.UUID;
 
 public class Task {
 
-    public UUID taskUUID;
-    public User user;
+    public UUID taskID;
+    public ArrayList<UUID> userIDs;
     public String taskName;
     public String taskDescription;
     public int taskPriority;
     public ArrayList<Comment> taskComments;
-    public ArrayList<String> links;
-    public Date date;
     public ArrayList<String> subTasks;
-    public UUID userUUID;
-
-    Task(String taskName){
-        this.taskUUID = UUID.randomUUID();
-        this.user = user;
-        this.taskName = taskName;
-    }
-
-    Task(User user, String taskName, String taskDescription){
-        this.taskUUID = UUID.randomUUID();
-        this.user = user; 
+    
+    //existing tasks
+    public Task(UUID taskUUID,ArrayList<UUID> userIDs,String taskName, String taskDescription, int taskPriority, ArrayList<Comment> taskComments,ArrayList<String> subtasks)
+    {
+        this.taskID = UUID.randomUUID(); 
+        this.userIDs = userIDs;
         this.taskName = taskName;
         this.taskDescription = taskDescription;
+        this.taskPriority = taskPriority;
+        this.taskComments = taskComments;
+        this.subTasks = subtasks;
     }
 
+    //for new Task
     public Task(String taskName, String taskDescription, int taskPriority){
-        this.taskUUID = UUID.randomUUID(); 
+        this.taskID = UUID.randomUUID(); 
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         this.taskPriority = taskPriority;
@@ -42,36 +39,47 @@ public class Task {
     //create task- testing
     public Task(UUID taskID, String taskName, String taskDescription, int taskPriority)
     {
-        this.taskUUID = taskID; 
+        this.taskID = taskID; 
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         this.taskPriority = taskPriority;
     }
 
+    //most helpful in setting/changing task Name
     public  void setTaskName(String taskName){
         this.taskName = taskName;
     }
 
+    //most helpful in setting/changing task Description
     public void setTaskDescription(String taskDescription){
         this.taskDescription = taskDescription;
     }
 
-    public void setPriorityColor(int taskPriority){
+    //most helpful in setting/changing priority
+    public void setPriority(int taskPriority){
         this.taskPriority = taskPriority;
     }
 
+    //adds comments to ArrayList of comments 
     public void addComment(Comment comment){
-        taskComments.add(taskComments.size(), comment);
+        taskComments.add(comment);
     }
 
-    public void addSubTask(String subTask){
-        subTasks.add(subTasks.size(), subTask);
+    //adds subTask to the array list of subtask for a task
+    public void addSubTask(String subTask)
+    {
+        subTasks.add(subTask);
     }
 
+    //adds user to a task with their uuid
+    public void addUser(User user)
+    {
+        userIDs.add(user.getId());
+    }
     //testing
     public String toString()
     {
-        return this.taskUUID+" "+this.userUUID+" "+this.taskName+" "+this.taskDescription+" "+this.taskPriority;
+        return this.taskID+" "+this.userIDs+" "+this.taskName+" "+this.taskDescription+" "+this.taskPriority;
     }
 
     public String getTaskName()
