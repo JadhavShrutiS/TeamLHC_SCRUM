@@ -1,35 +1,51 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.UUID;
 
 /**
  * @author Yug Desai
  */
 public class Project {
-    private String name;
+    private String projName;
     private UUID uuid;
-    private String description;
+    private String projDescription;
     private ArrayList<Column> columns;
     private ArrayList<Comment> comments;
-    private ArrayList<User> users;
-    private User supervisor;
-    private User productOwner;
+    //private ArrayList<User> users;
+    private HashMap<Role, User> users;
+    private Role scrumMaster;
+    private Role developer;
+    private Role productOwner;
 
-    public Project(String name, String description, UUID uuid, ArrayList<User> users, User supervisor, User productOwner) {
-        this.name = name;
+    
+    public Project()
+    {
+        this.projName= "Project1";
+        this.uuid =UUID.randomUUID();
+        this.projDescription = "Project Description";
+        this.columns = new ArrayList<Column>();
+        this.comments =  new ArrayList<Comment>();
+        this.users = new HashMap<Role, User>();
+        users.put(developer, null);
+
+    }
+    
+    public Project(String name, String description, UUID uuid, ArrayList<User> users) {
+        this.projName = name;
         this.uuid = uuid;
-        this.description = description;
-        this.users = users;
-        this.supervisor = supervisor;
-        this.productOwner = productOwner;
+        this.projDescription = description;
+        //this.users = users;
         this.columns = new ArrayList<Column>();
         this.comments = new ArrayList<Comment>();
     }
+
+    //testing
     public Project(UUID projectID, String projectName, String projectDescription)
     {
         this.uuid = projectID;
-        this.name = projectName;
-        this.description = projectDescription;
+        this.projName = projectName;
+        this.projDescription = projectDescription;
     }
 
     public void deleteColumn(Column column) {
@@ -41,12 +57,14 @@ public class Project {
 
     }
 
-    public void addComment(Comment comment) {
+    public void addComment(Comment comment) 
+    {
         comments.add(comment);
     }
 
-    public void addUser (User user) {
-        users.add(user);
+    public void addUsers(Role role, User user) 
+    {
+       users.put(role, user);
     }
 
     public void createReport() {
@@ -65,16 +83,8 @@ public class Project {
         return this.description;
     }
 
-    public ArrayList<User> getUsers() {
+    public HashMap<Role,User> getUsers() {
         return this.users;
-    }
-
-    public User getSupervisor() {
-        return this.supervisor;
-    }
-
-    public User getProductOwner() {
-        return this.productOwner;
     }
 
     public ArrayList<Column> getColumns() {

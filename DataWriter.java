@@ -37,6 +37,44 @@ public class DataWriter extends DataConstants
         }
     }
 
+    public static void saveTasks()
+    {
+        TaskList tasks = TaskList.getInstance();
+		ArrayList<Task> taskList = tasks.getTasks();
+        //ArrayList<User> userList = new ArrayList<>();
+        /* 
+        User john = new User();
+        userList.add(john);
+        */
+
+		JSONArray jsonTasks = new JSONArray();
+		
+        for(int i=0; i< taskList.size(); i++) {
+			jsonTasks.add(getTaskJSON(taskList.get(i)));
+		}
+		
+        try (FileWriter file = new FileWriter("json/tasks1.json")) {
+ 
+            file.write(jsonTasks.toJSONString());
+            file.flush();
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static JSONObject getTaskJSON(Task task)
+    {
+        JSONObject taskDetails = new JSONObject();
+		taskDetails.put(TASK_NAME,task.getTaskName());
+		taskDetails.put(TASK_DESCRIPTION, task.getTaskDescription());
+		taskDetails.put(TASK_PRIORITY, task.getTaskPriority());
+        
+        return taskDetails;
+    }
+
+
     public static JSONObject getUserJSON(User user) {
 		JSONObject userDetails = new JSONObject();
 		userDetails.put(USER_ID,user.getId().toString());
@@ -66,7 +104,7 @@ public class DataWriter extends DataConstants
             e.printStackTrace();
         }
     }
-
+/* 
     public static JSONObject getProjectJSON(Project project) 
     {
 		JSONObject projectDetails = new JSONObject();
@@ -112,9 +150,9 @@ public class DataWriter extends DataConstants
         return projectDetails;
         }
     }
-
+*/
         public static void main(String[] args) {
         System.out.println("hi");
         //saveProjects();
     }
-
+}

@@ -12,7 +12,7 @@ public class Task {
     public User user;
     public String taskName;
     public String taskDescription;
-    public int taskPriority;
+    public String taskPriority;
     public ArrayList<Comment> taskComments;
     public ArrayList<String> links;
     public Date date;
@@ -32,19 +32,17 @@ public class Task {
         this.taskDescription = taskDescription;
     }
 
-    Task(User user, String taskName, String taskDescription, int taskPriority){
-        this.taskUUID = UUID.randomUUID();
-        this.user = user; 
+    public Task(String taskName, String taskDescription, String taskPriority){
+        this.taskUUID = UUID.randomUUID(); 
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         this.taskPriority = taskPriority;
     }
 
     //create task- testing
-    public void Task(UUID taskID, UUID userID, String taskName, String taskDescription, int taskPriority)
+    public Task(UUID taskID, String taskName, String taskDescription, String taskPriority)
     {
-        this.taskUUID = taskID;
-        this.userUUID = userID; 
+        this.taskUUID = taskID; 
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         this.taskPriority = taskPriority;
@@ -74,6 +72,19 @@ public class Task {
     public String toString()
     {
         return this.taskUUID+" "+this.userUUID+" "+this.taskName+" "+this.taskDescription+" "+this.taskPriority;
+    }
+
+    public String getTaskName()
+    {
+        return this.taskName;
+    }
+    public String getTaskDescription()
+    {
+        return this.taskDescription;
+    }
+    public String getTaskPriority()
+    {
+        return this.taskPriority;
     }
 
 }

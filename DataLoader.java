@@ -17,7 +17,7 @@ public class DataLoader extends DataConstants{
 		try {
 			FileReader reader = new FileReader(USER_FILE_NAME);
 			JSONParser parser = new JSONParser();	
-			JSONArray peopleJSON = (JSONArray)new JSONParser().parse(reader);
+			JSONArray peopleJSON = (JSONArray)parser.parse(reader);
 			
 			for(int i=0; i < peopleJSON.size(); i++) {
 				JSONObject personJSON = (JSONObject)peopleJSON.get(i);
@@ -47,7 +47,7 @@ public class DataLoader extends DataConstants{
 		try {
 			FileReader reader = new FileReader(PROJECT_FILE_NAME);
 			JSONParser parser = new JSONParser();	
-			JSONArray projectsJSON = (JSONArray)new JSONParser().parse(reader);
+			JSONArray projectsJSON = (JSONArray)parser.parse(reader);
 			
 			for(int i=0; i < projectsJSON.size(); i++) 
 			{
@@ -92,21 +92,21 @@ public class DataLoader extends DataConstants{
 		ArrayList<Task> Tasks = new ArrayList<Task>();
 		
 		try {
-			FileReader reader = new FileReader(USER_FILE_NAME);
+			FileReader reader = new FileReader(TASK_FILE_NAME);
 			JSONParser parser = new JSONParser();	
-			JSONArray peopleJSON = (JSONArray)new JSONParser().parse(reader);
+			JSONArray TasksJSON = (JSONArray)parser.parse(reader);
 			
-			for(int i=0; i < peopleJSON.size(); i++) {
-				JSONObject personJSON = (JSONObject)peopleJSON.get(i);
+			for(int i=0; i < TasksJSON.size(); i++) {
+				JSONObject TaskJSON = (JSONObject)TasksJSON.get(i);
 				
-				String lastName = (String)personJSON.get(USER_LAST_NAME);
-				String userEmail = (String)personJSON.get(USER_EMAIL);
-				String userPassword = (String)personJSON.get(USER_PASSWORD);
-				
-				String firstName = (String)personJSON.get(USER_FIRST_NAME);
-				UUID id = UUID.fromString((String)personJSON.get(USER_ID));
-				
-				Tasks.add(new User(id, firstName, lastName, userEmail, userPassword));			}
+				UUID taskID = UUID.fromString((String)TaskJSON.get(TASK_ID));
+				//UUID userID = UUID.fromString((String)TaskJSON.get(TASK_USER_ID));
+				String taskName = (String)TaskJSON.get(TASK_NAME);
+				String taskDescription = (String)TaskJSON.get(TASK_DESCRIPTION);
+				String taskPriority = (String)TaskJSON.get(TASK_ID);
+				//need to do comments and subtasks
+				Tasks.add(new Task(taskID, taskName, taskDescription, taskPriority));			
+			}
 			
 			return Tasks;
 			
@@ -121,6 +121,7 @@ public class DataLoader extends DataConstants{
 	{
 	
 		System.out.println(getUsers().toString());
+		System.out.println(getTasks().toString());
 		
 	
 	}

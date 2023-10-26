@@ -26,7 +26,7 @@ public class User {
     public User(String firstName, String lastName, String userEmail, String userPassword) {
     
        this.uuid = UUID.randomUUID();
-        this.firstName = firstName;
+       this.firstName = firstName;
        this.lastName = lastName;
        this.userEmail = userEmail;
        this.userPassword = userPassword;

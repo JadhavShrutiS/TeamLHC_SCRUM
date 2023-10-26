@@ -11,7 +11,8 @@ public class UserList {
         users= DataLoader.getUsers();
     }
 
-    public static UserList getInstance() {
+    public static UserList getInstance() 
+    {
         if(userList == null){
             userList = new UserList();
         }
@@ -61,6 +62,7 @@ public class UserList {
     {
         return users;
     }
+    
     public User getUser(UUID id)
     {
         for(int i=0; i<users.size(); i++)
