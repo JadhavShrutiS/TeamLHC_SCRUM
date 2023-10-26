@@ -67,18 +67,33 @@ public class DataWriter extends DataConstants{
 
     public static JSONObject getProjectJSON(Project project) {
 		JSONObject projectDetails = new JSONObject();
+		projectDetails.put("projectID", project.getUUID());
         JSONArray users = new JSONArray();
-        users.add("name:"+users.getN);
-		projectDetails.put(projectID, project.getUUID());
-		projectDetails.put(user, projectDetails.put(project, projectDetails));
-		projectDetails.put(name, project.getName());
-		projectDetails.put(, );
-		projectDetails.put(, );
+        JSONObject supervisor = new JSONObject();
+        supervisor.put("role", "scrum master");
+        supervisor.put("id", project.getSupervisor().getId());
+        JSONObject productOwner = new JSONObject();
+        productOwner.put("role", "product owner");
+        productOwner.put("id", project.getProductOwner().getId());
+        users.add(supervisor);
+        users.add(productOwner);
+        for (int i = 0; i < project.getUsers().size(); i++) {
+            JSONObject user = new JSONObject();
+            user.put("role", "developer");
+            user.put("id", project.getUsers().get(i).getId());
+            users.add(user);
+        }
+		projectDetails.put("user", users);
+        projectDetails.put("description", project.getDescription());
+		//projectDetails.put("columns", );
+		//projectDetails.put("comments", );
         }
     }
 
     public static void main(String[] args) {
-        saveUsers();
+        System.out.println("hi");
+        saveProjects();
+
     }
     
 }
