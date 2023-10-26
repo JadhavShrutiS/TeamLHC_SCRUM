@@ -88,15 +88,26 @@ public class DataWriter extends DataConstants
         }
 		projectDetails.put("user", users);
         projectDetails.put("description", project.getDescription());
+
         JSONArray columns = new JSONArray();
         for (int i=0; i<project.getColumns().size(); i++) {
             JSONObject column = new JSONObject();
             column.put("name", project.getColumns().get(i).getName());
-            column.put("tasks", project.getColumns().get(i).getTasks());
+            column.put("tasks", project.getColumns().get(i).getTaskList());
             columns.add(column);
         }
-		projectDetails.put("columns", );
-		//projectDetails.put("comments", );
+		projectDetails.put("columns", columns);
+
+        JSONArray comments = new JSONArray();
+        for (int i=0; i<project.getComments().size(); i++) {
+            JSONObject comment = new JSONObject();
+            comment.put("userid", project.getComments().get(i).getUserId());
+            comment.put("date", project.getComments().get(i),getDate());
+            comment.put("comment", project.getComments().get(i).getComment());
+            comments.add(comment);
+        }
+		projectDetails.put("comments", comments);
+
 
         return projectDetails;
         }
