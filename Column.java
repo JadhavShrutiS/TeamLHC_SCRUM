@@ -9,8 +9,8 @@ import java.util.ArrayList;
    public ArrayList<Task> taskList;
    public String name;
 
-   Column(){
-
+   Column(String name){
+    this.name = name;
    }
 
    public void addTask(Task task){
@@ -21,7 +21,8 @@ import java.util.ArrayList;
     taskList.remove(task);
    }
 
-   public void createTask(){
-    
+   public void createTask(String taskName){
+    Task task = new Task(taskName);
+    addTask(task);
    }
  }
