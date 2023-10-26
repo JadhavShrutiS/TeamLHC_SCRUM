@@ -1,7 +1,7 @@
 [
     {
         "taskID":"b454f548-c654-43a1-a805-9d7bb4b34f8c",
-        "userID": ["bd507ca8-d68d-4e3b-9ba5-e780709d5c4b"],
+        "userID": ["bd507ca8-d68d-4e3b-9ba5-e780709d5c4b","99aa6979-f71c-4db1-9e58-34b5e1351f2c"],
         "taskName":"Group C Assistance",
         "taskDescription":"Offer assistance regarding implementation to group C",
         "taskPriority":"1",

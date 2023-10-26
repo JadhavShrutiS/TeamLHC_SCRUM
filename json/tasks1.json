@@ -1,1 +1,22 @@
-[{"taskDescription":"Offer assistance regarding implementation to group C","taskPriority":"1","taskName":"Group C Assistance"},{"taskDescription":"Create an enum that records the current stability of the server","taskPriority":"1","taskName":"Stability Enum"},{"taskDescription":"Hehe","taskPriority":"1","taskName":"Hehe"},{"taskDescription":"Again","taskPriority":"3","taskName":"Trial"}]
+[
+    {
+        "taskDescription": "Offer assistance regarding implementation to group C",
+        "taskPriority": "1",
+        "taskName": "Group C Assistance"
+    },
+    {
+        "taskDescription": "Create an enum that records the current stability of the server",
+        "taskPriority": "1",
+        "taskName": "Stability Enum"
+    },
+    {
+        "taskDescription": "Hehe",
+        "taskPriority": "1",
+        "taskName": "Hehe"
+    },
+    {
+        "taskDescription": "Again",
+        "taskPriority": "3",
+        "taskName": "Trial"
+    }
+]
