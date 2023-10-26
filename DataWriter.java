@@ -69,7 +69,7 @@ public class DataWriter extends DataConstants
         JSONObject taskDetails = new JSONObject();
 		taskDetails.put(TASK_NAME,task.getTaskName());
 		taskDetails.put(TASK_DESCRIPTION, task.getTaskDescription());
-		taskDetails.put(TASK_PRIORITY, task.getTaskPriority());
+		taskDetails.put(TASK_PRIORITY, Integer.toString(task.getTaskPriority()));
         
         return taskDetails;
     }

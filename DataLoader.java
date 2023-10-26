@@ -103,7 +103,7 @@ public class DataLoader extends DataConstants{
 				//UUID userID = UUID.fromString((String)TaskJSON.get(TASK_USER_ID));
 				String taskName = (String)TaskJSON.get(TASK_NAME);
 				String taskDescription = (String)TaskJSON.get(TASK_DESCRIPTION);
-				String taskPriority = (String)TaskJSON.get(TASK_ID);
+				int taskPriority = Integer.parseInt((String)TaskJSON.get(TASK_PRIORITY));
 				//need to do comments and subtasks
 				Tasks.add(new Task(taskID, taskName, taskDescription, taskPriority));			
 			}

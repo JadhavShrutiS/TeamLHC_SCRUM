@@ -55,7 +55,7 @@ public class TaskList {
         }
         return true;
     }
-    public boolean add(String taskName, String taskDescription, String taskPriority)
+    public boolean add(String taskName, String taskDescription, int taskPriority)
     {
         Task task = new Task(taskName, taskDescription, taskPriority);
         tasks.add(task);
