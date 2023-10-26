@@ -9,7 +9,11 @@ import java.util.ArrayList;
    public ArrayList<Task> taskList;
    public String name;
 
-   Column(String name){
+   public String getName() {
+    return this.name;
+  }
+
+  Column(String name){
     this.name = name;
    }
 
