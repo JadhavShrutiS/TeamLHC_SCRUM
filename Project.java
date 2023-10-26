@@ -12,14 +12,16 @@ public class Project {
     private ArrayList<Column> columns;
     private ArrayList<Comment> comments;
     private ArrayList<User> users;
-    private ArrayList<Role> roles;
+    private User supervisor;
+    private User productOwner;
 
-    public Project(String name, String description, UUID uuid, ArrayList<User> users, ArrayList<Role> roles) {
+    public Project(String name, String description, UUID uuid, ArrayList<User> users, User supervisor, User productOwner) {
         this.name = name;
         this.uuid = uuid;
         this.description = description;
         this.users = users;
-        this.roles = roles;
+        this.supervisor = supervisor;
+        this.productOwner = productOwner;
         this.columns = new ArrayList<Column>();
         this.comments = new ArrayList<Comment>();
     }
@@ -61,8 +63,12 @@ public class Project {
         return this.users;
     }
 
-    public ArrayList<Role> getRoles() {
-        return this.roles;
+    public User getSupervisor() {
+        return this.supervisor;
+    }
+
+    public User getProductOwner() {
+        return this.productOwner;
     }
 
     public ArrayList<Column> getColumns() {
