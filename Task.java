@@ -9,7 +9,7 @@ import java.util.UUID;
 public abstract class Task {
 
     public UUID taskUUID;
-    public UUID userUUID;
+    public User user;
     public String taskName;
     public String taskDescription;
     public int taskPriority;
@@ -20,13 +20,13 @@ public abstract class Task {
 
     Task(String taskName){
         this.taskUUID = UUID.randomUUID();
-        this.userUUID = 
+        this.user = user;
         this.taskName = taskName;
     }
 
-    Task(String taskName, String taskDescription, int taskPriority){
+    Task(User user, String taskName, String taskDescription, int taskPriority){
         this.taskUUID = UUID.randomUUID();
-        this.userUUID =
+        this.user = user; 
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         this.taskPriority = taskPriority;
