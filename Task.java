@@ -6,7 +6,7 @@ import java.util.UUID;
  * @author Sri Nandury
  */
 
-public abstract class Task {
+public class Task {
 
     public UUID taskUUID;
     public User user;
@@ -16,12 +16,19 @@ public abstract class Task {
     public ArrayList<Comment> taskComments;
     public ArrayList<String> links;
     public Date date;
-    public ArrayList<Task> subTasks;
+    public ArrayList<String> subTasks;
 
     Task(String taskName){
         this.taskUUID = UUID.randomUUID();
         this.user = user;
         this.taskName = taskName;
+    }
+
+    Task(User user, String taskName, String taskDescription){
+        this.taskUUID = UUID.randomUUID();
+        this.user = user; 
+        this.taskName = taskName;
+        this.taskDescription = taskDescription;
     }
 
     Task(User user, String taskName, String taskDescription, int taskPriority){
@@ -30,7 +37,6 @@ public abstract class Task {
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         this.taskPriority = taskPriority;
-
     }
 
     public  void setTaskName(String taskName){
@@ -49,8 +55,8 @@ public abstract class Task {
         taskComments.add(taskComments.size(), comment);
     }
 
-   // public Task addSubTask(){
-
-    //}
+    public void addSubTask(String subTask){
+        subTasks.add(subTasks.size(), subTask);
+    }
 
 }
