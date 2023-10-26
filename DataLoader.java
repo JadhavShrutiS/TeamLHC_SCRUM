@@ -47,13 +47,20 @@ public class DataLoader extends DataConstants{
 		try {
 			FileReader reader = new FileReader(PROJECT_FILE_NAME);
 			JSONParser parser = new JSONParser();	
-			JSONArray projectJSON = (JSONArray)new JSONParser().parse(reader);
+			JSONArray projectsJSON = (JSONArray)new JSONParser().parse(reader);
 			
-			for(int i=0; i < projectJSON.size(); i++) 
+			for(int i=0; i < projectsJSON.size(); i++) 
 			{
+				JSONObject projectJSON = (JSONObject)projectsJSON.get(i);
 				
-				
-				projects.add(new Project(id, firstName, lastName, userEmail, userPassword));			
+				UUID projectID = UUID.fromString((String)projectJSON.get(PROJECT_ID));
+				//users?? 
+				String projectName = (String)projectJSON.get(PROJECT_NAME);
+				String projectDescription = (String)projectJSON.get(PROJECT_DESCRIPTION);
+				//columns??
+				//Comments??
+
+				projects.add(new Project(projectID, projectName, projectDescription));			
 			}
 			
 			return projects;
