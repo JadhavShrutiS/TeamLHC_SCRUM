@@ -25,6 +25,12 @@ public class Project {
         this.columns = new ArrayList<Column>();
         this.comments = new ArrayList<Comment>();
     }
+    public Project(UUID projectID, String projectName, String projectDescription)
+    {
+        this.uuid = projectID;
+        this.name = projectName;
+        this.description = projectDescription;
+    }
 
     public void deleteColumn(Column column) {
         columns.remove(column);
