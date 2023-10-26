@@ -6,7 +6,7 @@ import java.util.UUID;
  * @author Sri Nandury
  */
 
-public abstract class Task {
+public class Task {
 
     public UUID taskUUID;
     public User user;

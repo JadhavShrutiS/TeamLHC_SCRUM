@@ -90,6 +90,7 @@ public class DataWriter extends DataConstants
 		//projectDetails.put("columns", );
 		//projectDetails.put("comments", );
         }
+    }
 
         public static void main(String[] args) {
         System.out.println("hi");
