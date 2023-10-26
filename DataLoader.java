@@ -54,7 +54,15 @@ public class DataLoader extends DataConstants{
 				JSONObject projectJSON = (JSONObject)projectsJSON.get(i);
 				
 				UUID projectID = UUID.fromString((String)projectJSON.get(PROJECT_ID));
-				ArrayList<User> users = (ArrayList)projectJSON.get(PROJECT_USERS);
+				
+				JSONArray users = (JSONArray)projectJSON.get(PROJECT_USERS);
+				for(int j=0; j < users.size(); j++){
+					
+				}
+				
+
+				//ArrayList<User> users = (ArrayList)projectJSON.get(PROJECT_USERS);
+				
 				String projectName = (String)projectJSON.get(PROJECT_NAME);
 				String projectDescription = (String)projectJSON.get(PROJECT_DESCRIPTION);
 				//columns??
@@ -74,6 +82,32 @@ public class DataLoader extends DataConstants{
 	public static ArrayList<Task> getTasks()
 	{
 		//test this out...first
+		ArrayList<Task> Tasks = new ArrayList<Task>();
+		
+		try {
+			FileReader reader = new FileReader(USER_FILE_NAME);
+			JSONParser parser = new JSONParser();	
+			JSONArray peopleJSON = (JSONArray)new JSONParser().parse(reader);
+			
+			for(int i=0; i < peopleJSON.size(); i++) {
+				JSONObject personJSON = (JSONObject)peopleJSON.get(i);
+				
+				String lastName = (String)personJSON.get(USER_LAST_NAME);
+				String userEmail = (String)personJSON.get(USER_EMAIL);
+				String userPassword = (String)personJSON.get(USER_PASSWORD);
+				
+				String firstName = (String)personJSON.get(USER_FIRST_NAME);
+				UUID id = UUID.fromString((String)personJSON.get(USER_ID));
+				
+				Tasks.add(new User(id, firstName, lastName, userEmail, userPassword));			}
+			
+			return Tasks;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
 	}
 
 	public static void main(String[] args)

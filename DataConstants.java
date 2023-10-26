@@ -10,11 +10,11 @@ public class DataConstants {
 
     protected static final String PROJECT_FILE_NAME = "json/projects.json";
     protected static final String PROJECT_ID= "projectID";
-    protected static final Object PROJECT_USERS="users";
+    protected static final String PROJECT_USERS="users";
     protected static final String PROJECT_NAME="name";
     protected static final String PROJECT_DESCRIPTION="description";
-    protected static final Object PROJECT_COLUMNS="columns";
-    protected static final Object PROEJCT_COMMENT ="comments";
+    protected static final String PROJECT_COLUMNS="columns";
+    protected static final String PROEJCT_COMMENT ="comments";
 
 
     protected static final String TASK_FILE_NAME = "json/tasks.json";
