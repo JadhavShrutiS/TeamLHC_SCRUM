@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-public class DataWriter extends DataConstants{
+public class DataWriter extends DataConstants
+{
 
     public static void saveUsers()
     {
@@ -65,7 +66,8 @@ public class DataWriter extends DataConstants{
         }
     }
 
-    public static JSONObject getProjectJSON(Project project) {
+    public static JSONObject getProjectJSON(Project project) 
+    {
 		JSONObject projectDetails = new JSONObject();
 		projectDetails.put("projectID", project.getUUID());
         JSONArray users = new JSONArray();
@@ -88,12 +90,9 @@ public class DataWriter extends DataConstants{
 		//projectDetails.put("columns", );
 		//projectDetails.put("comments", );
         }
-    }
 
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         System.out.println("hi");
-        saveProjects();
-
+        //saveProjects();
     }
-    
 }
