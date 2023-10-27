@@ -106,11 +106,11 @@ public class DataLoader extends DataConstants{
 
 				//multiple user ids in a list
 				ArrayList<UUID> userIDs = new ArrayList<UUID>();
-				//JSONArray users = (JSONArray)TaskJSON.get(TASK_USER_ID);
-				//for(int j=0;j<users.size();j++)
-				//{
-					//userIDs.add(UUID.fromString((String)users.get(i)));
-				//}
+				JSONArray users = (JSONArray)TaskJSON.get(TASK_USER_ID);
+				for(int j=0;j<users.size();j++)
+				{
+					userIDs.add(UUID.fromString((String)users.get(j)));
+				}
 
 				String taskName = (String)TaskJSON.get(TASK_NAME);
 				String taskDescription = (String)TaskJSON.get(TASK_DESCRIPTION);
@@ -119,9 +119,9 @@ public class DataLoader extends DataConstants{
 				//comments
 				ArrayList<Comment> taskComments = new ArrayList<Comment>();
 				JSONArray comments = (JSONArray)TaskJSON.get(TASK_COMMENT);
-				for(int j =0;j<comments.size()-1;j++)
+				for(int j =0;j<comments.size();j++)
 				{
-					JSONObject commentJSON = (JSONObject)comments.get(i);
+					JSONObject commentJSON = (JSONObject)comments.get(j);
 
 					UUID commentUserID = UUID.fromString((String)commentJSON.get(TASK_COMMENT_USER_ID));
 					Date date = Date.valueOf((String)commentJSON.get(TASK_COMMENT_DATE));
@@ -135,12 +135,11 @@ public class DataLoader extends DataConstants{
 				JSONArray subtask = (JSONArray)TaskJSON.get(TASK_SUBTASKS);
 				for(int j=0;j<subtask.size();j++)
 				{
-					subtasks.add((String)subtask.get(i));
+					subtasks.add((String)subtask.get(j));
 				}
 
 				Tasks.add(new Task(taskID,userIDs,taskName,taskDescription,taskPriority,taskComments,subtasks));
-				//Tasks.add(new Task(UUID taskUUID,ArrayList<UUID> userIDs,String taskName, String taskDescription, int taskPriority, ArrayList<Comment> taskComments,ArrayList<String> subtasks))
-				//Tasks.add(new Task(taskID, taskName, taskDescription, taskPriority));			
+		
 			}
 			
 			return Tasks;

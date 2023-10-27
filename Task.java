@@ -32,7 +32,6 @@ public class Task {
     public Task(String taskName, String taskDescription, int taskPriority){
         this.taskID = UUID.randomUUID(); 
         this.taskName = taskName;
-        this.userIDs = userIDs;
         this.taskDescription = taskDescription;
         this.taskPriority = taskPriority;
     }
@@ -80,7 +79,7 @@ public class Task {
     //testing
     public String toString()
     {
-        return this.taskID+" "+this.userIDs+" "+this.taskName+" "+this.taskDescription+" "+this.taskPriority;
+        return this.taskID+" "+this.userIDs+" "+this.taskName+" "+this.taskDescription+" "+this.taskPriority+" "+this.taskComments;
     }
 
     public UUID getTaskId()

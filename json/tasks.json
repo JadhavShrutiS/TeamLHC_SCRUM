@@ -14,7 +14,7 @@
         ]
     },{
         "taskID":"0f241e31-c4ca-4f75-9cf3-fb7da18e692f",
-        "userID":"99aa6979-f71c-4db1-9e58-34b5e1351f2c",
+        "userID":["99aa6979-f71c-4db1-9e58-34b5e1351f2c"],
         "taskName":"Stability Enum",
         "taskDescription":"Create an enum that records the current stability of the server",
         "taskPriority":"1",

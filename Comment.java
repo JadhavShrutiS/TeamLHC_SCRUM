@@ -39,4 +39,9 @@ public class Comment {
         return this.comment;
     }
 
+    public String toString()
+    {
+        return "useriD "+this.getUserID()+" Date "+this.getDate()+" Comment "+this.getComment();
+    }
+
 }
