@@ -15,27 +15,16 @@ public class Project {
     private ArrayList<User> users;
     private User scrumMaster;
     private User productOwner;
-
-    
-    public Project()
-    {
-        this.projectName= "Project1";
-        this.projectID =UUID.randomUUID();
-        this.projectDescription = "Project Description";
-        this.columns = new ArrayList<Column>();
-        this.comments =  new ArrayList<Comment>();
-
-    }
     
     //existing projects
-    public Project(UUID projectID, String projectName, String projectDescription, ArrayList<Column> columns, ArrayList<Comment> comment, ArrayList<User> users, User scrumMaster2, User productOwner2) {
+    public Project(UUID projectID, String projectName, String projectDescription, ArrayList<Column> columns, ArrayList<Comment> comment, ArrayList<User> users, User scrumMaster, User productOwner) {
         this.projectName = projectName;
         this.projectID = projectID;
         this.projectDescription = projectDescription;
         this.users = users;
         this.columns = columns;
-        this.scrumMaster = scrumMaster2;
-        this.productOwner = productOwner2;
+        this.scrumMaster = scrumMaster;
+        this.productOwner = productOwner;
         this.comments = comment;
     }
 
