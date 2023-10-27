@@ -68,8 +68,14 @@ public class DataWriter extends DataConstants
     {
         JSONObject taskDetails = new JSONObject();
         taskDetails.put(TASK_ID,task.getTaskId().toString());
+		taskDetails.put(TASK_NAME,task.getTaskName());
+		taskDetails.put(TASK_DESCRIPTION, task.getTaskDescription());
+		taskDetails.put(TASK_PRIORITY, Integer.toString(task.getTaskPriority()));
         //write users
         //JSONObject users = new JSONObject();
+        
+
+
 
         if(task.getUserIDs()!=null)
         {
@@ -83,32 +89,30 @@ public class DataWriter extends DataConstants
         {
             taskDetails.put(TASK_USER_ID, "none");
         }
-            
-		taskDetails.put(TASK_NAME,task.getTaskName());
-		taskDetails.put(TASK_DESCRIPTION, task.getTaskDescription());
-		taskDetails.put(TASK_PRIORITY, Integer.toString(task.getTaskPriority()));
-        //write comments
+        
+        //write comments- works!!!!
         JSONArray taskComments = new JSONArray();
-
         if(task.getTaskComments()!=null)
         {
             for(int i =0;i<task.getTaskComments().size();i++)
             {
                 JSONObject comment = new JSONObject();
-                taskDetails.put(TASK_COMMENT_USER_ID,task.getTaskComments().get(i).getUserID().toString());
-                taskDetails.put(TASK_COMMENT_DATE,task.getTaskComments().get(i).getDate().toString());
-                taskDetails.put(TASK_COMMENT_STRING,task.getTaskComments().get(i).getComment());
+                comment.put(TASK_COMMENT_USER_ID,task.getTaskComments().get(i).getUserID().toString());
+                comment.put(TASK_COMMENT_DATE,task.getTaskComments().get(i).getDate().toString());
+                comment.put(TASK_COMMENT_STRING,task.getTaskComments().get(i).getComment());
                 taskComments.add(comment);
+                taskDetails.put(TASK_COMMENT, taskComments);
             }
 
         }
         else
         {
             JSONObject comment = new JSONObject();
-            taskDetails.put(TASK_COMMENT_USER_ID,"");
-            taskDetails.put(TASK_COMMENT_DATE,"");
-            taskDetails.put(TASK_COMMENT_STRING,"");
+            comment.put(TASK_COMMENT_USER_ID,"");
+            comment.put(TASK_COMMENT_DATE,"");
+            comment.put(TASK_COMMENT_STRING,"");
             taskComments.add(comment);
+            taskDetails.put(TASK_COMMENT, taskComments);
         }
         //write subtasks
         //JSONObject subtasks = new JSONObject();
