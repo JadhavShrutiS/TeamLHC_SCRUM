@@ -41,6 +41,46 @@ public class DataLoader extends DataConstants{
 		return null;
 	}
 
+	public static User getUser(UUID uuid)
+	{
+		try 
+		{
+			FileReader reader = new FileReader(USER_FILE_NAME);
+			JSONParser parser = new JSONParser();	
+			JSONArray peopleJSON = (JSONArray)parser.parse(reader);
+			
+			for(int i=0; i < peopleJSON.size(); i++) 
+			{
+				JSONObject personJSON = (JSONObject)peopleJSON.get(i);
+
+				UUID id = UUID.fromString((String)personJSON.get(USER_ID));
+
+				if(id.equals(uuid))
+				{
+					String lastName = (String)personJSON.get(USER_LAST_NAME);
+					String userEmail = (String)personJSON.get(USER_EMAIL);
+					String userPassword = (String)personJSON.get(USER_PASSWORD);
+				
+					String firstName = (String)personJSON.get(USER_FIRST_NAME);
+					User user = new User(id, firstName, lastName, userEmail, userPassword);
+					return user;
+				}
+
+
+
+			}
+
+		} 
+		
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+
     public static ArrayList<Project> getProjects()
 	{
 		ArrayList<Project> projects = new ArrayList<Project>();
@@ -117,8 +157,6 @@ public class DataLoader extends DataConstants{
 
 	public static Task getTask(UUID uuid)
 	{
-		ArrayList<Task> Tasks = new ArrayList<Task>();
-		
 		try {
 			FileReader reader = new FileReader(TASK_FILE_NAME);
 			JSONParser parser = new JSONParser();	
@@ -128,7 +166,7 @@ public class DataLoader extends DataConstants{
 			{
 				JSONObject TaskJSON = (JSONObject)TasksJSON.get(i);
 
-				UUID taskID = UUID.fromString((String)TaskJSON.get(TASK_ID);
+				UUID taskID = UUID.fromString((String)TaskJSON.get(TASK_ID));
 				if(taskID.equals(uuid))
 				{
 
@@ -168,7 +206,7 @@ public class DataLoader extends DataConstants{
 						subtasks.add((String)subtask.get(j));
 					}
 
-					return new Task(taskID,userIDs,taskName,taskDescription,taskPriority,taskComments,subtasks);
+					Task task = new Task(taskID,userIDs,taskName,taskDescription,taskPriority,taskComments,subtasks);
 				}
 				
 			}
@@ -180,7 +218,7 @@ public class DataLoader extends DataConstants{
 		return null;
 	}
 
-/* 
+ 
 	public static ArrayList<Task> getTasks()
 	{
 		//test this out...first
@@ -244,7 +282,7 @@ public class DataLoader extends DataConstants{
 		
 		return null;
 	}
-*/
+
 	public static void main(String[] args)
 	{
 	
