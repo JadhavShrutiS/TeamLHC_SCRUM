@@ -1,9 +1,9 @@
 [
     {
         "projectID":"fc9f86df-008f-43da-b027-93714ce957a7",
-        "usersids":["bd507ca8-d68d-4e3b-9ba5-e780709d5c4b","99aa6979-f71c-4db1-9e58-34b5e1351f2c"],
-        "scrummaster": ["bd507ca8-d68d-4e3b-9ba5-e780709d5c4b"],
-        "productowner": ["99aa6979-f71c-4db1-9e58-34b5e1351f2c"],
+        "userids":["bd507ca8-d68d-4e3b-9ba5-e780709d5c4b","99aa6979-f71c-4db1-9e58-34b5e1351f2c"],
+        "scrummaster": "bd507ca8-d68d-4e3b-9ba5-e780709d5c4b",
+        "productowner": "99aa6979-f71c-4db1-9e58-34b5e1351f2c",
         "name":"RipReport",
         "description":"Implement real-time document reports for all local sport teams and games.",
         "columns": 
@@ -15,9 +15,9 @@
         "comments":[{"userid":"bd507ca8-d68d-4e3b-9ba5-e780709d5c4b", "date": "10/12/23", "comment": "Oh wow amazing"}]
     },{
         "projectID":"0b396c4a-ae0c-46b7-8f3c-0f7e56690c3f",
-        "usersids":["99aa6979-f71c-4db1-9e58-34b5e1351f2c","bd507ca8-d68d-4e3b-9ba5-e780709d5c4b"],
-        "scrummaster": ["99aa6979-f71c-4db1-9e58-34b5e1351f2c"],
-        "productowner": ["bd507ca8-d68d-4e3b-9ba5-e780709d5c4b"],
+        "userids":["99aa6979-f71c-4db1-9e58-34b5e1351f2c","bd507ca8-d68d-4e3b-9ba5-e780709d5c4b"],
+        "scrummaster": "99aa6979-f71c-4db1-9e58-34b5e1351f2c",
+        "productowner": "bd507ca8-d68d-4e3b-9ba5-e780709d5c4b",
         "name":"Server Watcher",
         "description":"Build a program that tracks the security, accesibility, and stability of a chosen server.",
         "columns": 
