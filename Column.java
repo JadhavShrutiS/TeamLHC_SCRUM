@@ -25,22 +25,22 @@ import java.util.UUID;
     tasks.remove(task);
   }
 
-  public void createTask(String taskName, String description, int priority, String type, User tester) {
+  public void createTask(String taskName, String description, int priority, String title, User tester) {
    if (tester != null) {
-      Task task = new Bug(taskName, description, priority, type, tester);
+      Task task = new Bug(taskName, description, priority, title, tester);
       tasks.add(task);
    } else {
-      Task task = new Feature(taskName, description, priority, type);
+      Task task = new Feature(taskName, description, priority, title);
       tasks.add(task);
    }
 }
 
-   public void createTask(UUID taskUUID, ArrayList<UUID> userIDs, String taskName, String taskDescription, int taskPriority, ArrayList<Comment> taskComments, ArrayList<String> subtasks, String type, User tester) {
+   public void createTask(UUID taskUUID, ArrayList<User> users, String taskName, String taskDescription, int taskPriority, ArrayList<Comment> taskComments, ArrayList<String> subtasks, String title, User tester) {
       if (tester != null) {
-      Task task = new Bug(taskUUID, userIDs, taskName, taskDescription, taskPriority, taskComments, subtasks, type, tester);
+      Task task = new Bug(taskUUID, users, taskName, taskDescription, taskPriority, taskComments, subtasks, title, tester);
       tasks.add(task);
    } else {
-      Task task = new Feature(taskUUID, userIDs, taskName, taskDescription, taskPriority, taskComments, subtasks, type);
+      Task task = new Feature(taskUUID, users, taskName, taskDescription, taskPriority, taskComments, subtasks, title);
       tasks.add(task);
    }
    }

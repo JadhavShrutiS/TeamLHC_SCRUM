@@ -14,8 +14,8 @@ public class Feature extends Task{
         this.feature = feature;
     }
 
-    Feature(UUID taskUUID,ArrayList<UUID> userIDs,String taskName, String taskDescription, int taskPriority, ArrayList<Comment> taskComments, ArrayList<String> subtasks, String feature) {
-        super(taskUUID, userIDs, taskName, taskDescription, taskPriority, taskComments, subtasks);
+    Feature(UUID taskUUID,ArrayList<User> users,String taskName, String taskDescription, int taskPriority, ArrayList<Comment> taskComments, ArrayList<String> subtasks, String feature) {
+        super(taskUUID, users, taskName, taskDescription, taskPriority, taskComments, subtasks);
         this.feature = feature;
     }
 

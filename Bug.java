@@ -16,8 +16,8 @@ public class Bug extends Task {
         this.tester = tester;
     }
 
-    Bug(UUID taskUUID,ArrayList<UUID> userIDs,String taskName, String taskDescription, int taskPriority, ArrayList<Comment> taskComments, ArrayList<String> subtasks, String bug, User tester) {
-        super(taskUUID, userIDs, taskName, taskDescription, taskPriority, taskComments, subtasks);
+    Bug(UUID taskUUID,ArrayList<User> users,String taskName, String taskDescription, int taskPriority, ArrayList<Comment> taskComments, ArrayList<String> subtasks, String bug, User tester) {
+        super(taskUUID, users, taskName, taskDescription, taskPriority, taskComments, subtasks);
         this.bug = bug;
         this.tester = tester;
     }
