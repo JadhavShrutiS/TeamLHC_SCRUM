@@ -25,15 +25,27 @@ import java.util.UUID;
     tasks.remove(task);
   }
 
-  public void createTask(String taskName, String description, int prioirty, String type) {
-   if (type == "bug") {
-      Task task = new Bug(taskName, description, prioirty);
+  public void createTask(String taskName, String description, int priority, String type, User tester) {
+   if (tester != null) {
+      Task task = new Bug(taskName, description, priority, type, tester);
+      tasks.add(task);
    } else {
-      Task task = new Feature(taskName, description, prioirty);
+      Task task = new Feature(taskName, description, priority, type);
+      tasks.add(task);
    }
-    
-    tasks.add(task);
-  }   
+}
+
+   public void createTask(UUID taskUUID, ArrayList<UUID> userIDs, String taskName, String taskDescription, int taskPriority, ArrayList<Comment> taskComments, ArrayList<String> subtasks, String type, User tester) {
+      if (tester != null) {
+      Task task = new Bug(taskUUID, userIDs, taskName, taskDescription, taskPriority, taskComments, subtasks, type, tester);
+      tasks.add(task);
+   } else {
+      Task task = new Feature(taskUUID, userIDs, taskName, taskDescription, taskPriority, taskComments, subtasks, type);
+      tasks.add(task);
+   }
+   }
+   
+
    
   public String getName() {
     return this.name;
