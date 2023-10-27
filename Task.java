@@ -6,7 +6,7 @@ import java.util.UUID;
  * @author Sri Nandury
  */
 
-public class Task {
+public abstract class Task {
 
     public UUID taskID;
     public ArrayList<UUID> userIDs;
