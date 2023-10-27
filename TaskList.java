@@ -55,13 +55,13 @@ public class TaskList {
         }
         return true;
     }
-    
-    public boolean add(String taskName, String description, int priority, String type, User tester) {
+
+    public boolean add(String taskName, String description, int priority, String title, User tester) {
         if (tester != null) {
-           Task task = new Bug(taskName, description, priority, type, tester);
+           Task task = new Bug(taskName, description, priority, title, tester);
            tasks.add(task);
         } else {
-           Task task = new Feature(taskName, description, priority, type);
+           Task task = new Feature(taskName, description, priority, title);
            tasks.add(task);
         }
         return true;
