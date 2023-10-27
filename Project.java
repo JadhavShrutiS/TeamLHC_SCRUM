@@ -12,10 +12,9 @@ public class Project {
     private String projectDescription;
     private ArrayList<Column> columns;
     private ArrayList<Comment> comments;
-    private HashMap<Role, User> users;
-    private Role scrumMaster;
-    private Role developer;
-    private Role productOwner;
+    private ArrayList<User> users;
+    private User scrumMaster;
+    private User productOwner;
 
     
     public Project()
@@ -25,27 +24,33 @@ public class Project {
         this.projectDescription = "Project Description";
         this.columns = new ArrayList<Column>();
         this.comments =  new ArrayList<Comment>();
-        this.users = new HashMap<Role, User>();
-        users.put(developer, null);
 
     }
     
     //existing projects
-    public Project(UUID projectID, String projectName, String projectDescription, ArrayList<Column> columns, ArrayList<Comment> comment, HashMap<Role, User> users) {
+    public Project(UUID projectID, String projectName, String projectDescription, ArrayList<Column> columns, ArrayList<Comment> comment, ArrayList<User> users, User scrumMaster, User productOwner) {
         this.projectName = projectName;
         this.projectID = projectID;
         this.projectDescription = projectDescription;
         this.users = users;
         this.columns = columns;
+        this.scrumMaster = scrumMaster;
+        this.productOwner = productOwner;
         this.comments = comment;
     }
 
-    //testing
-    public Project(UUID projectID, String projectName, String projectDescription)
+    //new projects
+    public Project(String projectName, String projectDescription)
     {
-        this.projectID = projectID;
+        this.projectID = UUID.randomUUID();
         this.projectName = projectName;
         this.projectDescription = projectDescription;
+        this.users = null;
+        this.columns=null;
+        this.comments=null;
+        this.scrumMaster = null;
+        this.productOwner = null;
+
     }
 
     public void deleteColumn(Column column) {
