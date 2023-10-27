@@ -33,4 +33,8 @@ import java.util.ArrayList;
     return this.name;
   }
 
+  public ArrayList<Task> getTasks() {
+   return this.taskList;
+  }
+
  }

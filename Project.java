@@ -88,7 +88,7 @@ public class Project {
         return this.projectDescription;
     }
 
-    public HashMap<Role,User> getUsers() {
+    public ArrayList<User> getUsers() {
         return this.users;
     }
 
@@ -104,6 +104,14 @@ public class Project {
     {
         //cycle through all tasks in project and return task
         return null;
+    }
+
+    public User getScrumMaster() {
+        return scrumMaster;
+    }
+
+    public User getProductOwner() {
+        return productOwner;
     }
 
 

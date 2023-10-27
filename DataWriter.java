@@ -168,34 +168,32 @@ public class DataWriter extends DataConstants
             e.printStackTrace();
         }
     }
-/* 
+ 
     public static JSONObject getProjectJSON(Project project) 
     {
 		JSONObject projectDetails = new JSONObject();
-		projectDetails.put("projectID", project.getUUID());
-        JSONArray users = new JSONArray();
-        JSONObject supervisor = new JSONObject();
-        supervisor.put("role", "scrum master");
-        supervisor.put("id", project.getSupervisor().getId());
-        JSONObject productOwner = new JSONObject();
-        productOwner.put("role", "product owner");
-        productOwner.put("id", project.getProductOwner().getId());
-        users.add(supervisor);
-        users.add(productOwner);
-        for (int i = 0; i < project.getUsers().size(); i++) {
-            JSONObject user = new JSONObject();
-            user.put("role", "developer");
-            user.put("id", project.getUsers().get(i).getId());
-            users.add(user);
+		projectDetails.put("projectID", project.getProjectID());
+        
+        JSONArray userids = new JSONArray();
+        for (int i=0; i<project.getUsers().size(); i++) {
+            userids.add(i, project.getUsers().get(i));
         }
-		projectDetails.put("user", users);
-        projectDetails.put("description", project.getDescription());
+        projectDetails.put("userids", userids);
+        projectDetails.put("scrummaster", project.getScrumMaster());
+        projectDetails.put("productowner", project.getProductOwner());
+        projectDetails.put("description", project.getProjectDescription());
 
         JSONArray columns = new JSONArray();
         for (int i=0; i<project.getColumns().size(); i++) {
             JSONObject column = new JSONObject();
             column.put("name", project.getColumns().get(i).getName());
-            column.put("tasks", project.getColumns().get(i).getTaskList());
+            JSONArray tasks = new JSONArray();
+            for (int j=0; j<project.getColumns().get(i).getTasks().size(); j++) {
+                JSONObject task = new JSONObject();
+                task.put("tasks", project.getColumns().get(i).getTasks().get(j));
+                tasks.add(j, task);
+            }
+            column.put("tasks", tasks);
             columns.add(column);
         }
 		projectDetails.put("columns", columns);
@@ -203,8 +201,8 @@ public class DataWriter extends DataConstants
         JSONArray comments = new JSONArray();
         for (int i=0; i<project.getComments().size(); i++) {
             JSONObject comment = new JSONObject();
-            comment.put("userid", project.getComments().get(i).getUserId());
-            comment.put("date", project.getComments().get(i),getDate());
+            comment.put("userid", project.getComments().get(i).getUserID());
+            comment.put("date", project.getComments().get(i).getDate());
             comment.put("comment", project.getComments().get(i).getComment());
             comments.add(comment);
         }
@@ -213,8 +211,8 @@ public class DataWriter extends DataConstants
 
         return projectDetails;
         }
-    }
-*/
+    
+
         public static void main(String[] args) {
         System.out.println("hi");
         //saveProjects();
