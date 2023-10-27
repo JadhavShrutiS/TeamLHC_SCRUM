@@ -100,7 +100,7 @@ public class DataLoader extends DataConstants{
 				}
 
 				User scrumMaster = getUser(UUID.fromString((String)projectJSON.get(PROJECT_USER_SCRUMMASTER)));
-				User productOwnder = getUser(UUID.fromString((String)projectJSON.get(PROJECT_USER_PRODUCTOWNER)));
+				User productOwner = getUser(UUID.fromString((String)projectJSON.get(PROJECT_USER_PRODUCTOWNER)));
 
 				//Comments
 				ArrayList<Comment> projectComments = new ArrayList<Comment>();
@@ -200,20 +200,18 @@ public class DataLoader extends DataConstants{
 						subtasks.add((String)subtask.get(j));
 					}
 
-					String taskType = (String)TaskJSON.get(TASK_TYPE);
-					UUID tester = UUID.fromString((String)TaskJSON.get(TASK_TESTER));
+					String title = (String)TaskJSON.get(TASK_TYPE);
+					User tester = getUser(UUID.fromString((String)TaskJSON.get(TASK_TESTER)));
+					Task task;
 					if(tester!=null)
 					{
-						//
-						Task task = new Bug()
+						task = new Bug(taskID,Users,taskName,taskDescription,taskPriority,taskComments,subtasks,title,tester);
 					}
 					else
 					{
-						Task task new feature()
+						task = new Feature(taskID, Users, taskName, taskDescription, taskPriority, taskComments, subtasks, title);
 					}
-
-
-					Task task = new Task(taskID,Users,taskName,taskDescription,taskPriority,taskComments,subtasks);
+					return task;
 				}
 				
 			}
@@ -277,7 +275,20 @@ public class DataLoader extends DataConstants{
 					subtasks.add((String)subtask.get(j));
 				}
 
-				Tasks.add(new Task(taskID,userIDs,taskName,taskDescription,taskPriority,taskComments,subtasks));
+				String title = (String)TaskJSON.get(TASK_TYPE);
+				User tester = getUser(UUID.fromString((String)TaskJSON.get(TASK_TESTER)));
+				Task task;
+				if(tester!=null)
+				{
+					task = new Bug(taskID,Users,taskName,taskDescription,taskPriority,taskComments,subtasks,title,tester);
+				}
+				else
+				{
+					task = new Feature(taskID, Users, taskName, taskDescription, taskPriority, taskComments, subtasks, title);
+				}
+					Tasks.add(task);
+
+				//Tasks.add(new Task(taskID,userIDs,taskName,taskDescription,taskPriority,taskComments,subtasks));
 		
 			}
 			
