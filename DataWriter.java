@@ -79,11 +79,13 @@ public class DataWriter extends DataConstants
 
         if(task.getUserIDs()!=null)
         {
+            JSONArray userids = new JSONArray();
             for(int i=0;i<task.getUserIDs().size();i++)
             {
-                taskDetails.put(TASK_USER_ID, task.getUserIDs().get(i).toString());
-
+                //taskDetails.put(TASK_USER_ID, task.getUserIDs().get(i).toString());
+                userids.add(i, task.getUserIDs().get(i).toString());
             }
+            taskDetails.put("userids", userids);
         }
         else
         {
@@ -114,21 +116,24 @@ public class DataWriter extends DataConstants
             taskComments.add(comment);
             taskDetails.put(TASK_COMMENT, taskComments);
         }
-        //write subtasks
         //JSONObject subtasks = new JSONObject();
 
         if(task.getSubtasks()!=null)
         {
+            JSONArray subtasks = new JSONArray();
             for(int i=0;i<task.subTasks.size();i++)
             {
-                taskDetails.put(TASK_SUBTASKS, task.getSubtasks().get(i));
-
+                //taskDetails.put(TASK_SUBTASKS, task.getSubtasks().get(i));
+                subtasks.add(i, task.getSubtasks().get(i));
             }
+            taskDetails.put("subtasks", subtasks);
         }
         else
         {
             taskDetails.put(TASK_SUBTASKS,null);
         }
+
+
         
         return taskDetails;
     }
