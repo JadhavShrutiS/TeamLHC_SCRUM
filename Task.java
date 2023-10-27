@@ -39,15 +39,6 @@ public abstract class Task {
         this.userIDs = null;
     }
 
-    //create task- testing
-    public Task(UUID taskID, String taskName, String taskDescription, int taskPriority)
-    {
-        this.taskID = taskID; 
-        this.taskName = taskName;
-        this.taskDescription = taskDescription;
-        this.taskPriority = taskPriority;
-    }
-
     //most helpful in setting/changing task Name
     public  void setTaskName(String taskName){
         this.taskName = taskName;
