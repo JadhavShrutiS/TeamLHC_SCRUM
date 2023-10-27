@@ -12,7 +12,6 @@ public class Project {
     private String projectDescription;
     private ArrayList<Column> columns;
     private ArrayList<Comment> comments;
-    //private ArrayList<User> users;
     private HashMap<Role, User> users;
     private Role scrumMaster;
     private Role developer;
@@ -31,13 +30,14 @@ public class Project {
 
     }
     
-    public Project(String name, String description, UUID uuid, ArrayList<User> users) {
-        this.projectName = name;
-        this.projectID = uuid;
-        this.projectDescription = description;
-        //this.users = users;
-        this.columns = new ArrayList<Column>();
-        this.comments = new ArrayList<Comment>();
+    //existing projects
+    public Project(UUID projectID, String projectName, String projectDescription, ArrayList<Column> columns, ArrayList<Comment> comment, HashMap<Role, User> users) {
+        this.projectName = projectName;
+        this.projectID = projectID;
+        this.projectDescription = projectDescription;
+        this.users = users;
+        this.columns = columns;
+        this.comments = comment;
     }
 
     //testing
