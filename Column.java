@@ -25,8 +25,13 @@ import java.util.UUID;
     tasks.remove(task);
   }
 
-  public void createTask(String taskName, String description, int prioirty) {
-    Task task = new Task(taskName, description, prioirty);
+  public void createTask(String taskName, String description, int prioirty, String type) {
+   if (type == "bug") {
+      Task task = new Bug(taskName, description, prioirty);
+   } else {
+      Task task = new Feature(taskName, description, prioirty);
+   }
+    
     tasks.add(task);
   }   
    

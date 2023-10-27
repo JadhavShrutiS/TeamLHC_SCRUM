@@ -67,9 +67,9 @@ public class Project {
         comments.add(comment);
     }
 
-    public void addUsers(Role role, User user) 
+    public void addUsers(User user) 
     {
-       users.put(role, user);
+       users.add(user);
     }
 
     public void createReport() {

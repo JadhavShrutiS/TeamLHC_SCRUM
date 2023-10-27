@@ -20,8 +20,8 @@ public class Comment {
         this.userID = userID;
     }
 
-    public void editComment() {
-        
+    public void editComment(String comment) {
+        this.comment = comment;
     }
 
     public UUID getUserID()
