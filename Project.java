@@ -28,14 +28,14 @@ public class Project {
     }
     
     //existing projects
-    public Project(UUID projectID, String projectName, String projectDescription, ArrayList<Column> columns, ArrayList<Comment> comment, ArrayList<User> users, User scrumMaster, User productOwner) {
+    public Project(UUID projectID, String projectName, String projectDescription, ArrayList<Column> columns, ArrayList<Comment> comment, ArrayList<User> users, User scrumMaster2, User productOwner2) {
         this.projectName = projectName;
         this.projectID = projectID;
         this.projectDescription = projectDescription;
         this.users = users;
         this.columns = columns;
-        this.scrumMaster = scrumMaster;
-        this.productOwner = productOwner;
+        this.scrumMaster = scrumMaster2;
+        this.productOwner = productOwner2;
         this.comments = comment;
     }
 
