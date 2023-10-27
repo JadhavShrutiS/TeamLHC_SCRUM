@@ -9,7 +9,7 @@ import java.util.UUID;
 public abstract class Task {
 
     public UUID taskID;
-    public ArrayList<UUID> userIDs;
+    public ArrayList<User> users;
     public String taskName;
     public String taskDescription;
     public int taskPriority;
@@ -17,10 +17,10 @@ public abstract class Task {
     public ArrayList<String> subTasks;
     
     //existing tasks
-    public Task(UUID taskUUID,ArrayList<UUID> userIDs,String taskName, String taskDescription, int taskPriority, ArrayList<Comment> taskComments,ArrayList<String> subtasks)
+    public Task(UUID taskUUID,ArrayList<User> users,String taskName, String taskDescription, int taskPriority, ArrayList<Comment> taskComments,ArrayList<String> subtasks)
     {
         this.taskID = taskUUID; 
-        this.userIDs = userIDs;
+        this.users = users;
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         this.taskPriority = taskPriority;
@@ -36,7 +36,7 @@ public abstract class Task {
         this.taskPriority = taskPriority;
         this.taskComments = null;
         this.subTasks = null;
-        this.userIDs = null;
+        this.users = null;
     }
 
     //most helpful in setting/changing task Name
@@ -68,12 +68,12 @@ public abstract class Task {
     //adds user to a task with their uuid
     public void addUser(User user)
     {
-        userIDs.add(user.getId());
+        users.add(user);
     }
     //testing
     public String toString()
     {
-        return this.taskID+" "+this.userIDs+" "+this.taskName+" "+this.taskDescription+" "+this.taskPriority+" "+this.taskComments;
+        return this.taskID+" "+this.users+" "+this.taskName+" "+this.taskDescription+" "+this.taskPriority+" "+this.taskComments;
     }
 
     public UUID getTaskId()
@@ -92,9 +92,9 @@ public abstract class Task {
     {
         return this.taskPriority;
     }
-    public ArrayList<UUID> getUserIDs()
+    public ArrayList<User> getUsers()
     {
-        return this.userIDs;
+        return this.users;
     }
     public ArrayList<Comment> getTaskComments()
     {

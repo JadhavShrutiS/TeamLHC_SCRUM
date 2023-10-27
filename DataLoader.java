@@ -41,6 +41,7 @@ public class DataLoader extends DataConstants{
 		return null;
 	}
 
+	//get user by uuid	
 	public static User getUser(UUID uuid)
 	{
 		try 
@@ -48,35 +49,25 @@ public class DataLoader extends DataConstants{
 			FileReader reader = new FileReader(USER_FILE_NAME);
 			JSONParser parser = new JSONParser();	
 			JSONArray peopleJSON = (JSONArray)parser.parse(reader);
-			
 			for(int i=0; i < peopleJSON.size(); i++) 
 			{
 				JSONObject personJSON = (JSONObject)peopleJSON.get(i);
-
 				UUID id = UUID.fromString((String)personJSON.get(USER_ID));
-
 				if(id.equals(uuid))
 				{
 					String lastName = (String)personJSON.get(USER_LAST_NAME);
 					String userEmail = (String)personJSON.get(USER_EMAIL);
 					String userPassword = (String)personJSON.get(USER_PASSWORD);
-				
 					String firstName = (String)personJSON.get(USER_FIRST_NAME);
 					User user = new User(id, firstName, lastName, userEmail, userPassword);
 					return user;
 				}
-
-
-
 			}
-
 		} 
-		
 		catch (Exception e) 
 		{
 			e.printStackTrace();
 		}
-		
 		return null;
 	}
 
@@ -99,15 +90,17 @@ public class DataLoader extends DataConstants{
 				String projectName = (String)projectJSON.get(PROJECT_NAME);
 				String projectDescription = (String)projectJSON.get(PROJECT_DESCRIPTION);
 				
-				//ArrayList<User> users = (ArrayList)projectJSON.get(PROJECT_USERS);
-				ArrayList<UUID> userIDs = new ArrayList<UUID>();
-				JSONArray users = (JSONArray)projectJSON.get(PROJECT_USERS);
-				for(int j=0;j<users.size();j++)
+				ArrayList<User> Users = new ArrayList<User>();
+				JSONArray user = (JSONArray)projectJSON.get(TASK_USER_ID);
+				for(int j=0;j<user.size();j++)
 				{
-					userIDs.add(UUID.fromString((String)users.get(j)));
+					UUID userID = UUID.fromString((String)user.get(j));
+
+					Users.add(getUser(userID));
 				}
-				UUID scrumMaster = UUID.fromString((String)projectJSON.get(PROJECT_USER_SCRUMMASTER));
-				UUID productOwner = UUID.fromString((String)projectJSON.get(PROJECT_USER_PRODUCTOWNER));
+
+				User scrumMaster = getUser(UUID.fromString((String)projectJSON.get(PROJECT_USER_SCRUMMASTER)));
+				User productOwnder = getUser(UUID.fromString((String)projectJSON.get(PROJECT_USER_PRODUCTOWNER)));
 
 				//Comments
 				ArrayList<Comment> projectComments = new ArrayList<Comment>();
@@ -142,8 +135,7 @@ public class DataLoader extends DataConstants{
 					projectColumns.add(column);
 				}
 				
-				projects.add(new Project(projectID, projectName, projectDescription, projectColumns, projectComments, userIDs, scrumMaster, productOwner));
-				//projects.add(new Project(projectID, projectName, projectDescription));			
+				projects.add(new Project(projectID, projectName, projectDescription, projectColumns, projectComments, Users, scrumMaster, productOwner));			
 			}
 			
 			return projects;
@@ -154,7 +146,7 @@ public class DataLoader extends DataConstants{
 		
 		return null;
 	}
-
+/****************************************************************** */
 	public static Task getTask(UUID uuid)
 	{
 		try {
@@ -173,11 +165,13 @@ public class DataLoader extends DataConstants{
 					//UUID userID = UUID.fromString((String)TaskJSON.get(TASK_USER_ID));//there can be multiple users
 
 					//multiple user ids in a list
-					ArrayList<UUID> userIDs = new ArrayList<UUID>();
-					JSONArray users = (JSONArray)TaskJSON.get(TASK_USER_ID);
-					for(int j=0;j<users.size();j++)
+					ArrayList<User> Users = new ArrayList<User>();
+					JSONArray user = (JSONArray)TaskJSON.get(TASK_USER_ID);
+					for(int j=0;j<user.size();j++)
 					{
-						userIDs.add(UUID.fromString((String)users.get(j)));
+						UUID userID = UUID.fromString((String)user.get(j));
+
+						Users.add(getUser(userID));
 					}
 
 					String taskName = (String)TaskJSON.get(TASK_NAME);
@@ -206,7 +200,7 @@ public class DataLoader extends DataConstants{
 						subtasks.add((String)subtask.get(j));
 					}
 
-					Task task = new Task(taskID,userIDs,taskName,taskDescription,taskPriority,taskComments,subtasks);
+					Task task = new Task(taskID,Users,taskName,taskDescription,taskPriority,taskComments,subtasks);
 				}
 				
 			}
@@ -218,7 +212,7 @@ public class DataLoader extends DataConstants{
 		return null;
 	}
 
- 
+ /************************************************************* */
 	public static ArrayList<Task> getTasks()
 	{
 		//test this out...first
@@ -233,15 +227,15 @@ public class DataLoader extends DataConstants{
 				JSONObject TaskJSON = (JSONObject)TasksJSON.get(i);
 				
 				UUID taskID = UUID.fromString((String)TaskJSON.get(TASK_ID));
-
-				//UUID userID = UUID.fromString((String)TaskJSON.get(TASK_USER_ID));//there can be multiple users
-
-				//multiple user ids in a list
-				ArrayList<UUID> userIDs = new ArrayList<UUID>();
-				JSONArray users = (JSONArray)TaskJSON.get(TASK_USER_ID);
-				for(int j=0;j<users.size();j++)
+				
+				//multiple users in a list
+				ArrayList<User> Users = new ArrayList<User>();
+				JSONArray user = (JSONArray)TaskJSON.get(TASK_USER_ID);
+				for(int j=0;j<user.size();j++)
 				{
-					userIDs.add(UUID.fromString((String)users.get(j)));
+					UUID userID = UUID.fromString((String)user.get(j));
+
+					Users.add(getUser(userID));
 				}
 
 				String taskName = (String)TaskJSON.get(TASK_NAME);
