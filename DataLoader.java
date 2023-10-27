@@ -66,11 +66,11 @@ public class DataLoader extends DataConstants{
 				{
 					userIDs.add(UUID.fromString((String)users.get(j)));
 				}
-				String scrumMaster = (String)projectJSON.get(PROJECT_USER_SCRUMMASTER);
-				String productOwner = (String)projectJSON.get(PROJECT_USER_PRODUCTOWNER);
+				UUID scrumMaster = UUID.fromString((String)projectJSON.get(PROJECT_USER_SCRUMMASTER));
+				UUID productOwner = UUID.fromString((String)projectJSON.get(PROJECT_USER_PRODUCTOWNER));
 
 				//Comments
-				ArrayList<Comment> taskComments = new ArrayList<Comment>();
+				ArrayList<Comment> projectComments = new ArrayList<Comment>();
 				JSONArray comments = (JSONArray)projectJSON.get(PROEJCT_COMMENT);
 				for(int j =0;j<comments.size();j++)
 				{
@@ -80,7 +80,7 @@ public class DataLoader extends DataConstants{
 					Date date = Date.valueOf((String)commentJSON.get(PROJECT_COMMENT_DATE));
 					String commentString = (String)commentJSON.get(PROJECT_COMMENT_DATE);
 
-					taskComments.add(new Comment(commentUserID, date, commentString));
+					projectComments.add(new Comment(commentUserID, date, commentString));
 				}
 				//Column
 				ArrayList<Column> projectColumns = new ArrayList<Column>();
@@ -97,20 +97,12 @@ public class DataLoader extends DataConstants{
 						UUID taskuuid = UUID.fromString((String)columnTask.get(k));
 						//convert task uuid to task
 						columnTasks.add(getTask(taskuuid));
-
-
-
-
 					}
-
-
-
 					Column column = new Column(columnName,columnTasks);
 					projectColumns.add(column);
 				}
 				
-
-				//projects.add(new Project(projectID, projectName, projectDescription, columns, comment, users, scrumMaster, productOwner))
+				projects.add(new Project(projectID, projectName, projectDescription, projectColumns, projectComments, userIDs, scrumMaster, productOwner));
 				//projects.add(new Project(projectID, projectName, projectDescription));			
 			}
 			
