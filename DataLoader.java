@@ -200,6 +200,19 @@ public class DataLoader extends DataConstants{
 						subtasks.add((String)subtask.get(j));
 					}
 
+					String taskType = (String)TaskJSON.get(TASK_TYPE);
+					UUID tester = UUID.fromString((String)TaskJSON.get(TASK_TESTER));
+					if(tester!=null)
+					{
+						//
+						Task task = new Bug()
+					}
+					else
+					{
+						Task task new feature()
+					}
+
+
 					Task task = new Task(taskID,Users,taskName,taskDescription,taskPriority,taskComments,subtasks);
 				}
 				
