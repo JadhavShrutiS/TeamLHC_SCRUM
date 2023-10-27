@@ -16,7 +16,8 @@ public class DataConstants {
     protected static final String PROJECT_NAME="name";
     protected static final String PROJECT_DESCRIPTION="description";
     protected static final String PROJECT_COLUMNS="columns";
-    protected static final String PROJECT_COLUMN_NAME = ""
+    protected static final String PROJECT_COLUMN_NAME = "name";
+    protected static final String PROJECT_COLUMN_TASKS = "tasks";
     protected static final String PROEJCT_COMMENT ="comments";
     protected static final String PROJECT_COMMENT_USER_ID = "commentuserid";
     protected static final String PROJECT_COMMENT_DATE = "date";
