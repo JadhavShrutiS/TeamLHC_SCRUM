@@ -34,6 +34,9 @@ public class Task {
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         this.taskPriority = taskPriority;
+        this.taskComments = null;
+        this.subTasks = null;
+        this.userIDs = null;
     }
 
     //create task- testing
