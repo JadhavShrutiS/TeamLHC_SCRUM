@@ -91,14 +91,14 @@ public class DataLoader extends DataConstants{
 				String projectDescription = (String)projectJSON.get(PROJECT_DESCRIPTION);
 				
 				ArrayList<User> Users = new ArrayList<User>();
-				JSONArray user = (JSONArray)projectJSON.get(TASK_USER_ID);
-				if (user != null) {
-					for(int j=0;j<user.size();j++)
-					{
-						UUID userID = UUID.fromString((String)user.get(j));
-						Users.add(getUser(userID));
-					}
+				JSONArray user = (JSONArray)projectJSON.get(PROJECT_USERS);
+				for(int j=0;j<user.size();j++)
+				{
+					UUID userID = UUID.fromString((String)user.get(j));
+
+					Users.add(getUser(userID));
 				}
+
 				
 				User scrumMaster = getUser(UUID.fromString((String)projectJSON.get(PROJECT_USER_SCRUMMASTER)));
 				User productOwner = getUser(UUID.fromString((String)projectJSON.get(PROJECT_USER_PRODUCTOWNER)));

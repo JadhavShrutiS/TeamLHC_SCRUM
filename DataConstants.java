@@ -10,7 +10,7 @@ public class DataConstants {
 
     protected static final String PROJECT_FILE_NAME = "json/projects.json";
     protected static final String PROJECT_ID= "projectID";
-    protected static final String PROJECT_USERS="usersids";
+    protected static final String PROJECT_USERS="userids";
     protected static final String PROJECT_USER_SCRUMMASTER = "scrummaster";
     protected static final String PROJECT_USER_PRODUCTOWNER = "productowner";
     protected static final String PROJECT_NAME="name";
