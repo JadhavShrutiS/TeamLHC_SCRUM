@@ -182,7 +182,6 @@ public class DataWriter extends DataConstants
 		projectDetails.put("projectID", project.getProjectID().toString());
         
         JSONArray userids = new JSONArray();
-        System.out.println("There are "+project.getUsers().size()+" users");
         for (int i=0; i<project.getUsers().size(); i++) {
             userids.add(i, project.getUsers().get(i).getId().toString());
         }

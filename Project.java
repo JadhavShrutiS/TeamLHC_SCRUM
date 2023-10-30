@@ -40,6 +40,10 @@ public class Project {
 
     }
 
+    public void addColumn(Column column) {
+        columns.add(column);
+    }
+
     public void deleteColumn(Column column) {
         columns.remove(column);
     }
