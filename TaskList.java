@@ -8,12 +8,13 @@ public class TaskList {
     private ArrayList<Task> tasks;
     private static TaskList taskList;
 
+    //Create list of tasks
     public TaskList() 
     {
         this.tasks= DataLoader.getTasks();
     }
 
-
+    //Get instance of a task list
     public static TaskList getInstance() {
         if(taskList == null)
         {
@@ -22,6 +23,7 @@ public class TaskList {
         return taskList;
     }
 
+    //Get a task from the list by its name
     public Task getTask(String taskName)
     {
         for(int i=0;i<tasks.size();i++)
@@ -35,6 +37,7 @@ public class TaskList {
         return null;
     }
 
+    //Get all tasks from the list
     public ArrayList<Task> getTasks()
     {
         return this.tasks;
@@ -56,6 +59,7 @@ public class TaskList {
         return true;
     }
 
+    //Add a task to the list
     public boolean add(String taskName, String description, int priority, String title, User tester) {
         if (tester != null) {
            Bug task = new Bug(taskName, description, priority, title, tester);
