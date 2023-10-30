@@ -51,9 +51,9 @@ public class DataWriter extends DataConstants
 		
         for(int i=0; i< taskList.size(); i++) {
             if (taskList.get(i) instanceof Bug) {
-                jsonTasks.add(getBugJSON(((Bug)taskList.get(i))));
+                jsonTasks.add(getBugJSONtaskList.get(i));
             } else {
-                jsonTasks.add(getFeatureJSON(((Feature)taskList.get(i))));
+                jsonTasks.add(getFeatureJSON(taskList.get(i)));
             }
 			
 		}
@@ -134,7 +134,7 @@ public class DataWriter extends DataConstants
         }
 
         taskDetails.put("title", task.getBug());
-        taskDetails.put("tester", task.getTester().getId().toString());
+        taskDetails.put("tester", task.getTester());
 
         return taskDetails;
     }
@@ -258,9 +258,9 @@ public class DataWriter extends DataConstants
             JSONObject column = new JSONObject();
             column.put("name", project.getColumns().get(i).getName());
             JSONArray tasks = new JSONArray();
-            for (int j=0; j<project.getColumns().get(i).getTasks().size(); j++) {
+            for (int j=0; j<project.getColumns().get(i).getTaskList().size(); j++) {
                 JSONObject task = new JSONObject();
-                task.put("tasks", project.getColumns().get(i).getTasks().get(j));
+                task.put("tasks", project.getColumns().get(i).getTaskList().get(j));
                 tasks.add(j, task);
             }
             column.put("tasks", tasks);
