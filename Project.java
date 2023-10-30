@@ -59,10 +59,6 @@ public class Project {
        users.add(user);
     }
 
-    public void createReport() {
-        
-    }
-
     public String getProjectName() {
         return this.projectName;
     }
@@ -99,6 +95,11 @@ public class Project {
 
     public User getProductOwner() {
         return productOwner;
+    }
+
+    public String toString()
+    {
+        return this.projectID+" "+this.projectName+" "+this.projectDescription+" "+this.columns+" "+this.comments+" "+this.scrumMaster+" "+this.productOwner+" "+this.users;
     }
 
 
