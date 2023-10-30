@@ -39,20 +39,29 @@ public class Project {
         this.productOwner = null;
 
     }
+
+    public void addColumn(Column column) {
+        columns.add(column);
+    }
+
+    //Remove a column
     public void deleteColumn(Column column) {
         columns.remove(column);
     }
 
+    //Marks a task as completed
     public boolean completedTask(Task task) {
         return true;
 
     }
 
+    //Adds a comment to an array list of comments
     public void addComment(Comment comment) 
     {
         comments.add(comment);
     }
 
+    //Adds a user to an array list of users
     public void addUsers(User user) 
     {
        users.add(user);
