@@ -45,7 +45,7 @@ public class ProjectFACADE {
     }
 
     public ArrayList<Project> getAllProjects() {
-        return projectBoard.getAllProjects();
+        return ProjectBoard.getInstance().getAllProjects();
     }
 
     public boolean createProject(String name) {

@@ -97,5 +97,10 @@ public class Project {
         return productOwner;
     }
 
+    public String toString()
+    {
+        return this.projectID+" "+this.projectName+" "+this.projectDescription+" "+this.columns+" "+this.comments+" "+this.scrumMaster+" "+this.productOwner+" "+this.users;
+    }
+
 
 }

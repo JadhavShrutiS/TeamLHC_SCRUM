@@ -76,4 +76,8 @@ import java.util.UUID;
    }
    return null; 
    }
+   public String toString()
+   {
+      return "Column "+this.name+" Tasks: "+this.tasks;
+   }
 }

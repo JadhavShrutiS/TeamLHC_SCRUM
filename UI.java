@@ -17,6 +17,9 @@ public class UI {
         app.addTask("Trial", "Again", 3);
         System.out.println(app.getTask("Trial"));
         System.out.println(app.getTasks());
+
+        System.out.println(app.getAllProjects());
+
         app.logout();//to save the tasks to json file
     }
 
