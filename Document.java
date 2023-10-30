@@ -4,7 +4,7 @@ public class Document extends Task {
     
     public ArrayList<String> toDocument;
 
-    Document(){
+    public Document(){
         
     }
 }
