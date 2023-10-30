@@ -99,7 +99,7 @@ public class Project {
 
     public String toString()
     {
-        return this.projectID+" "+this.projectName+" "+this.projectDescription+" "+this.columns+" "+this.comments+" "+this.scrumMaster+" "+this.productOwner+" "+this.users;
+        return this.projectID+" "+this.projectName+" "+this.projectDescription+" "+this.columns+" "+this.comments+" "+this.scrumMaster+" "+this.productOwner+" USERSSSS!!!!!!!!!!!!!1"+this.users;
     }
 
 

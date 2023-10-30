@@ -15,8 +15,8 @@ public class UI {
 
         //Task Related Checks
         app.addTask("Trial", "Again", 3);
-        System.out.println(app.getTask("Trial"));
-        System.out.println(app.getTasks());
+        //System.out.println(app.getTask("Trial"));
+        //System.out.println(app.getTasks());
 
         System.out.println(app.getAllProjects());
 

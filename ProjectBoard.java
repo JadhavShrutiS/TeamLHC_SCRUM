@@ -55,26 +55,9 @@ public class ProjectBoard {
         return null;
     }
 
-    public void addReport() {
-
-    }
-
-
-    public void changeView() {
-
-    }
-
-    public void changeBackground() {
-
-    }
-
-    public int getNUmOfOpenTasks() {
-        return 2;
-        
-    }
-
     public ArrayList<Project> getAllProjects()
     {
         return projects;
     }
+
 }

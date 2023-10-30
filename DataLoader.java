@@ -96,7 +96,7 @@ public class DataLoader extends DataConstants{
 					for(int j=0;j<user.size();j++)
 					{
 						UUID userID = UUID.fromString((String)user.get(j));
-						Users.add(UserList.getInstance().getUser(userID));
+						Users.add(getUser(userID));
 					}
 				}
 				
