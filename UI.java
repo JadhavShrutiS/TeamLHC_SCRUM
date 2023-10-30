@@ -1,7 +1,7 @@
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class UI {
-    private Scanner scanner;
+    //private Scanner scanner;
     private ProjectFACADE app;
 
     public void run() {
