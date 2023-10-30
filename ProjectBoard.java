@@ -6,7 +6,6 @@ import java.util.UUID;
  */
 public class ProjectBoard {
     public ArrayList<Project> projects;
-    public ArrayList<Report> reports;
     public static ProjectBoard projectBoard;
     
     public ProjectBoard()
@@ -60,10 +59,6 @@ public class ProjectBoard {
 
     }
 
-    public Report viewReport() {
-        return reports.get(1);
-
-    }
 
     public void changeView() {
 

@@ -26,9 +26,6 @@ private ArrayList<Task> tasks;
     tasks.add(task);
   }
 
-  public void deleteTask(Task task){
-    tasks.remove(task);
-  }
 
   public void createTask(String taskName, String description, int priority, String title, User tester) {
    if (tester != null) {
