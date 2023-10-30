@@ -15,11 +15,6 @@ public class DataWriter extends DataConstants
         
         UserList users = UserList.getInstance();
 		ArrayList<User> userList = users.getUsers();
-        //ArrayList<User> userList = new ArrayList<>();
-        /* 
-        User john = new User();
-        userList.add(john);
-        */
 
 		JSONArray jsonUsers = new JSONArray();
 		
@@ -47,17 +42,6 @@ public class DataWriter extends DataConstants
         for (int i=0; i<taskList.size(); i++) {
             jsonTasks.add(getTaskJSON(taskList.get(i)));
         }
-        /*
-         * 
-        
-        for(int i=0; i< taskList.size(); i++) {
-            if (taskList.get(i) instanceof Bug) {
-                jsonTasks.add(getBugJSON(((Bug)taskList.get(i))));
-            } else {
-                jsonTasks.add(getFeatureJSON(((Feature)taskList.get(i))));
-            }
-			
-		} */
 		
         try (FileWriter file = new FileWriter("json/tasks1.json")) {
  
@@ -78,15 +62,12 @@ public class DataWriter extends DataConstants
 		taskDetails.put(TASK_NAME,task.getTaskName());
 		taskDetails.put(TASK_DESCRIPTION, task.getTaskDescription());
 		taskDetails.put(TASK_PRIORITY, Integer.toString(task.getTaskPriority()));
-        //write users
-        //JSONObject users = new JSONObject();
         
         if(task.getUsers()!=null)
         {
             JSONArray userids = new JSONArray();
             for(int i=0;i<task.getUsers().size();i++)
             {
-                //taskDetails.put(TASK_USER_ID, task.getUserIDs().get(i).toString());
                 userids.add(i, task.getUsers().get(i).getId().toString());
             }
             taskDetails.put("userids", userids);
@@ -96,7 +77,6 @@ public class DataWriter extends DataConstants
             taskDetails.put(TASK_USER_ID, "none");
         }
         
-        //write comments- works!!!!
         JSONArray taskComments = new JSONArray();
         if(task.getTaskComments()!=null)
         {
@@ -184,7 +164,7 @@ public class DataWriter extends DataConstants
         
         JSONArray userids = new JSONArray();
         for (int i=0; i<project.getUsers().size(); i++) {
-            userids.add(i, project.getUsers().get(i));
+            userids.add(i, project.getUsers().get(i).getId().toString());
         }
         projectDetails.put("userids", userids);
         projectDetails.put("scrummaster", project.getScrumMaster().getId().toString());
@@ -197,9 +177,7 @@ public class DataWriter extends DataConstants
             column.put("name", project.getColumns().get(i).getName());
             JSONArray tasks = new JSONArray();
             for (int j=0; j<project.getColumns().get(i).getTasks().size(); j++) {
-                JSONObject task = new JSONObject();
-                task.put("tasks", project.getColumns().get(i).getTasks().get(j).getTaskId().toString());
-                tasks.add(j, task);
+                tasks.add(j, project.getColumns().get(i).getTasks().get(j).getTaskId().toString());;
             }
             column.put("name", project.getColumns().get(i).getName());
             column.put("tasks", tasks);
@@ -220,10 +198,4 @@ public class DataWriter extends DataConstants
 
         return projectDetails;
         }
-    
-
-        public static void main(String[] args) {
-        System.out.println("hi");
-        //saveProjects();
-    }
 }

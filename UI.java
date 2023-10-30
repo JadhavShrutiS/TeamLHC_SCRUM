@@ -7,16 +7,16 @@ public class UI {
     public void run() {
         app = new ProjectFACADE();
 
-        app.signUp("bobby", "smith", "bsmith@gmail.com", "12345");
+        app.signUp("Atticus", "Madden", "amadden@gmail.com", "12345");
         app.logout();
-        app.login("bsmith@gmail.com", "12345");
+        app.login("amadden@gmail.com", "12345");
         User currentUser = app.getUser();
         System.out.println("Logged in as: " + currentUser);
 
         //Task Related Checks
         app.addTask("Trial", "Again", 3);
-        System.out.println(app.getTask("Trial"));
-        System.out.println(app.getTasks());
+        //System.out.println(app.getTask("Trial"));
+        //System.out.println(app.getTasks());
 
         System.out.println(app.getAllProjects());
 

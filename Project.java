@@ -40,6 +40,10 @@ public class Project {
 
     }
 
+    public void addColumn(Column column) {
+        columns.add(column);
+    }
+
     //Remove a column
     public void deleteColumn(Column column) {
         columns.remove(column);
@@ -103,7 +107,7 @@ public class Project {
 
     public String toString()
     {
-        return this.projectID+" "+this.projectName+" "+this.projectDescription+" "+this.columns+" "+this.comments+" "+this.scrumMaster+" "+this.productOwner+" "+this.users;
+        return this.projectID+" "+this.projectName+" "+this.projectDescription+" "+this.columns+" "+this.comments+" "+this.scrumMaster+" "+this.productOwner+" USERSSSS!!!!!!!!!!!!!1"+this.users;
     }
 
 
