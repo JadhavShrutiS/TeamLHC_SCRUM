@@ -51,9 +51,9 @@ public class DataWriter extends DataConstants
 		
         for(int i=0; i< taskList.size(); i++) {
             if (taskList.get(i) instanceof Bug) {
-                jsonTasks.add(getBugJSONtaskList.get(i));
+                jsonTasks.add(getBugJSON(((Bug)taskList.get(i))));
             } else {
-                jsonTasks.add(getFeatureJSON(taskList.get(i)));
+                jsonTasks.add(getFeatureJSON(((Feature)taskList.get(i))));
             }
 			
 		}
