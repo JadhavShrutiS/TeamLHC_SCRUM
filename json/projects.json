@@ -4,8 +4,8 @@
         "userids":["bd507ca8-d68d-4e3b-9ba5-e780709d5c4b","99aa6979-f71c-4db1-9e58-34b5e1351f2c"],
         "scrummaster": "bd507ca8-d68d-4e3b-9ba5-e780709d5c4b",
         "productowner": "99aa6979-f71c-4db1-9e58-34b5e1351f2c",
-        "name":"RipReport",
-        "description":"Implement real-time document reports for all local sport teams and games.",
+        "name":"Soap Free Washers",
+        "description":"Make some washers that are soap free.",
         "columns": 
         [
             {"name": "todo","tasks":["b454f548-c654-43a1-a805-9d7bb4b34f8c"]},
@@ -18,8 +18,8 @@
         "userids":["99aa6979-f71c-4db1-9e58-34b5e1351f2c","bd507ca8-d68d-4e3b-9ba5-e780709d5c4b"],
         "scrummaster": "99aa6979-f71c-4db1-9e58-34b5e1351f2c",
         "productowner": "bd507ca8-d68d-4e3b-9ba5-e780709d5c4b",
-        "name":"Server Watcher",
-        "description":"Build a program that tracks the security, accesibility, and stability of a chosen server.",
+        "name":"Air Computers",
+        "description":"Build computers that can float!",
         "columns": 
         [
             {"name": "todo","tasks":["b454f548-c654-43a1-a805-9d7bb4b34f8c"]},
