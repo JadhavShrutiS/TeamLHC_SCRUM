@@ -5,12 +5,13 @@ public class UserList {
     private ArrayList<User> users;
     private static UserList userList;
 
+    //Create list of users
     public UserList() 
     {
-        
         users= DataLoader.getUsers();
     }
 
+    //Get instance of a user list
     public static UserList getInstance() 
     {
         if(userList == null){
@@ -19,6 +20,7 @@ public class UserList {
         return userList;
     }
 
+    //Get a user from the list by their email and password
     public User getUser(String userEmail, String userPassword) {
         
         for(int i=0;i<users.size();i++)
@@ -47,6 +49,7 @@ public class UserList {
         return true;
     }
 
+    //Add a user to the list
     public boolean add(String firstName, String lastName, String userEmail, String userPassword)
     {
         User user = new User(firstName, lastName, userEmail, userPassword);
@@ -58,11 +61,13 @@ public class UserList {
         DataWriter.saveUsers();
     }
 
+    //Get all users from the list
     public ArrayList<User> getUsers()
     {
         return users;
     }
     
+    //Get a user by their uuid
     public User getUser(UUID id)
     {
         for(int i=0; i<users.size(); i++)
