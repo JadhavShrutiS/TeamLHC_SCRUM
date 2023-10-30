@@ -18,7 +18,9 @@
         ],
         "taskDescription": "Offer assistance regarding implementation to group C",
         "taskPriority": "1",
+        "tester": "bd507ca8-d68d-4e3b-9ba5-e780709d5c4b",
         "taskName": "Group C Assistance",
+        "title": "When you put a 0 in the program crashes",
         "taskID": "b454f548-c654-43a1-a805-9d7bb4b34f8c"
     },
     {
@@ -38,22 +40,9 @@
         ],
         "taskDescription": "Create an enum that records the current stability of the server",
         "taskPriority": "1",
+        "tester": null,
         "taskName": "Stability Enum",
+        "title": "Create a UI",
         "taskID": "0f241e31-c4ca-4f75-9cf3-fb7da18e692f"
-    },
-    {
-        "comments": [
-            {
-                "date": "",
-                "commentuserid": "",
-                "comment": ""
-            }
-        ],
-        "subTasks": null,
-        "taskDescription": "Again",
-        "taskPriority": "3",
-        "taskName": "Trial",
-        "userID": "none",
-        "taskID": "295849fe-d863-4082-b3ee-d4a29fda09c4"
     }
 ]
