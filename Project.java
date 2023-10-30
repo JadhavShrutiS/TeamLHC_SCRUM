@@ -39,7 +39,6 @@ public class Project {
         this.productOwner = null;
 
     }
-
     public void deleteColumn(Column column) {
         columns.remove(column);
     }

@@ -94,7 +94,7 @@ public class DataLoader extends DataConstants{
 				JSONArray user = (JSONArray)projectJSON.get(PROJECT_USERS);
 				for(int j=0;j<user.size();j++)
 				{
-						//Users.add(UserList.getInstance().getUser(UUID.fromString((String)user.get(j))));
+					//Users.add(UserList.getInstance().getUser(UUID.fromString((String)user.get(j))));
 					UUID userID = UUID.fromString((String)user.get(j));
 
 					Users.add(getUser(userID));
