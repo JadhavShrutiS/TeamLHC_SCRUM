@@ -86,7 +86,6 @@ public class DataWriter extends DataConstants
             JSONArray userids = new JSONArray();
             for(int i=0;i<task.getUsers().size();i++)
             {
-                //taskDetails.put(TASK_USER_ID, task.getUserIDs().get(i).toString());
                 userids.add(i, task.getUsers().get(i).getId().toString());
             }
             taskDetails.put("userids", userids);
@@ -183,8 +182,9 @@ public class DataWriter extends DataConstants
 		projectDetails.put("projectID", project.getProjectID().toString());
         
         JSONArray userids = new JSONArray();
+        System.out.println("There are "+project.getUsers().size()+" users");
         for (int i=0; i<project.getUsers().size(); i++) {
-            userids.add(i, project.getUsers().get(i));
+            userids.add(i, project.getUsers().get(i).getId().toString());
         }
         projectDetails.put("userids", userids);
         projectDetails.put("scrummaster", project.getScrumMaster().getId().toString());
@@ -197,9 +197,7 @@ public class DataWriter extends DataConstants
             column.put("name", project.getColumns().get(i).getName());
             JSONArray tasks = new JSONArray();
             for (int j=0; j<project.getColumns().get(i).getTasks().size(); j++) {
-                JSONObject task = new JSONObject();
-                task.put("tasks", project.getColumns().get(i).getTasks().get(j).getTaskId().toString());
-                tasks.add(j, task);
+                tasks.add(j, project.getColumns().get(i).getTasks().get(j).getTaskId().toString());;
             }
             column.put("name", project.getColumns().get(i).getName());
             column.put("tasks", tasks);

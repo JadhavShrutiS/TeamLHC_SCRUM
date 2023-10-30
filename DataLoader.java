@@ -100,7 +100,6 @@ public class DataLoader extends DataConstants{
 					}
 				}
 				
-
 				User scrumMaster = getUser(UUID.fromString((String)projectJSON.get(PROJECT_USER_SCRUMMASTER)));
 				User productOwner = getUser(UUID.fromString((String)projectJSON.get(PROJECT_USER_PRODUCTOWNER)));
 

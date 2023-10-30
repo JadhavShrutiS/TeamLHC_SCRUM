@@ -59,10 +59,6 @@ public class Project {
        users.add(user);
     }
 
-    public void createReport() {
-        
-    }
-
     public String getProjectName() {
         return this.projectName;
     }
