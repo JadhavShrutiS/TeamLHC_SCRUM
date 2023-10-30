@@ -122,11 +122,11 @@ public class DataLoader extends DataConstants{
 				JSONArray columns = (JSONArray)projectJSON.get(PROJECT_COLUMNS);
 				for(int j =0;j<columns.size();j++)
 				{
-					JSONObject columnJSON = (JSONObject)comments.get(j);
+					JSONObject columnJSON = (JSONObject)columns.get(j);
 					String columnName = (String)columnJSON.get(PROJECT_COLUMN_NAME);
 
 					ArrayList<Task> columnTasks = new ArrayList<Task>();
-					JSONArray columnTask = (JSONArray)projectJSON.get(PROJECT_COLUMN_TASKS);
+					JSONArray columnTask = (JSONArray)columnJSON.get(PROJECT_COLUMN_TASKS);
 					for(int k=0;k<columnTask.size();k++)
 					{
 						UUID taskuuid = UUID.fromString((String)columnTask.get(k));
@@ -203,7 +203,10 @@ public class DataLoader extends DataConstants{
 					}
 
 					String title = (String)TaskJSON.get(TASK_TITLE);
-					User tester = getUser(UUID.fromString((String)TaskJSON.get(TASK_TESTER)));
+					User tester = null;
+					if (TaskJSON.get(TASK_TESTER) != null) {
+						tester = getUser(UUID.fromString((String)TaskJSON.get(TASK_TESTER)));
+					}
 					Task task;
 					if(tester!=null)
 					{

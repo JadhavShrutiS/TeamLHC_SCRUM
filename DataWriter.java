@@ -192,8 +192,8 @@ public class DataWriter extends DataConstants
             userids.add(i, project.getUsers().get(i));
         }
         projectDetails.put("userids", userids);
-        projectDetails.put("scrummaster", project.getScrumMaster());
-        projectDetails.put("productowner", project.getProductOwner());
+        projectDetails.put("scrummaster", project.getScrumMaster().getId().toString());
+        projectDetails.put("productowner", project.getProductOwner().getId().toString());
         projectDetails.put("description", project.getProjectDescription());
 
         JSONArray columns = new JSONArray();
@@ -206,6 +206,7 @@ public class DataWriter extends DataConstants
                 task.put("tasks", project.getColumns().get(i).getTasks().get(j));
                 tasks.add(j, task);
             }
+            column.put("name", project.getColumns().get(i).getName());
             column.put("tasks", tasks);
             columns.add(column);
         }
@@ -214,8 +215,8 @@ public class DataWriter extends DataConstants
         JSONArray comments = new JSONArray();
         for (int i=0; i<project.getComments().size(); i++) {
             JSONObject comment = new JSONObject();
-            comment.put("userid", project.getComments().get(i).getUserID());
-            comment.put("date", project.getComments().get(i).getDate());
+            comment.put("userid", project.getComments().get(i).getUserID().toString());
+            comment.put("date", project.getComments().get(i).getDate().toString());
             comment.put("comment", project.getComments().get(i).getComment());
             comments.add(comment);
         }
