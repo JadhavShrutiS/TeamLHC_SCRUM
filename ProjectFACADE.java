@@ -70,5 +70,6 @@ public class ProjectFACADE {
     public void logout() {
         UserList.getInstance().saveUsers();
         TaskList.getInstance().saveTasks();
+        DataWriter.saveProjects();
     }
 }

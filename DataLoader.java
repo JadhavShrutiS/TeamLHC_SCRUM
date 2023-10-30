@@ -92,12 +92,14 @@ public class DataLoader extends DataConstants{
 				
 				ArrayList<User> Users = new ArrayList<User>();
 				JSONArray user = (JSONArray)projectJSON.get(TASK_USER_ID);
-				for(int j=0;j<user.size();j++)
-				{
-					UUID userID = UUID.fromString((String)user.get(j));
-
-					Users.add(getUser(userID));
+				if (user != null) {
+					for(int j=0;j<user.size();j++)
+					{
+						UUID userID = UUID.fromString((String)user.get(j));
+						Users.add(UserList.getInstance().getUser(userID));
+					}
 				}
+				
 
 				User scrumMaster = getUser(UUID.fromString((String)projectJSON.get(PROJECT_USER_SCRUMMASTER)));
 				User productOwner = getUser(UUID.fromString((String)projectJSON.get(PROJECT_USER_PRODUCTOWNER)));
@@ -276,7 +278,7 @@ public class DataLoader extends DataConstants{
 				}
 
 				String title = (String)TaskJSON.get(TASK_TITLE);
-				
+
 				User tester = null;
 				if (TaskJSON.get(TASK_TESTER) != null)
 					tester = getUser(UUID.fromString((String)TaskJSON.get(TASK_TESTER)));

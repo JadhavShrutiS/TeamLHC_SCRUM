@@ -8,7 +8,7 @@
         "description":"Implement real-time document reports for all local sport teams and games.",
         "columns": 
         [
-            {"name": "todo","tasks":[]},
+            {"name": "todo","tasks":["b454f548-c654-43a1-a805-9d7bb4b34f8c"]},
             {"name": "progress","tasks":[]},
             {"name": "done","tasks":[]}
         ],
