@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * @author Sri Nandury
@@ -6,14 +7,8 @@ import java.util.ArrayList;
 
  public class Column {
 
-   public ArrayList<Task> taskList;
-
-   public ArrayList<Task> getTaskList() {
-    return this.taskList;
-  }
-
   public String name;
-private ArrayList<Task> tasks;
+  private ArrayList<Task> tasks;
 
   public Column(String name, ArrayList<Task> tasks) 
   {
@@ -26,6 +21,9 @@ private ArrayList<Task> tasks;
     tasks.add(task);
   }
 
+  public void deleteTask(Task task){
+    tasks.remove(task);
+  }
 
   public void createTask(String taskName, String description, int priority, String title, User tester) {
    if (tester != null) {
@@ -48,25 +46,34 @@ private ArrayList<Task> tasks;
    }
    
 
-
-   public String getName() {
+   
+  public String getName() {
     return this.name;
   }
 
-  Column(String name){
-    this.name = name;
-   }
+  public ArrayList<Task> getTasks() {
+   return this.tasks;
+  }
 
-   public void addTask(Task task){
-    taskList.add(taskList.size(), task);
-   }
+  public void changeName(String name) {
+   this.name = name;
+  }
 
-   public void deleteTask(Task task){
-    taskList.remove(task);
+  public Task getTask(String name) {
+   for (int i=0; i<tasks.size(); i++) {
+      if (name == tasks.get(i).getTaskName()){
+         return tasks.get(i);
+      }
    }
+   return null;
+  }
 
-   public void createTask(String taskName){
-    Task task = new Task(taskName);
-    addTask(task);
+  public Task getTask(UUID taskid) {
+   for (int i=0; i<tasks.size(); i++) {
+      if (taskid == tasks.get(i).getTaskId()) {
+         return tasks.get(i);
+      }
    }
- }
+   return null; 
+   }
+}
