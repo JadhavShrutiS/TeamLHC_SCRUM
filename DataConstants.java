@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class DataConstants {
     protected static final String USER_FILE_NAME = "json/users.json";
 	protected static final String USER_ID = "uuid";

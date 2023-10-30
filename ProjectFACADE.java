@@ -3,8 +3,6 @@
 public class ProjectFACADE {
     private User user;
     private ProjectBoard projectBoard;
-    private UserList userList;
-    private TaskList taskList;
     private Task task;
 
     public User login(String emailID, String password) {
