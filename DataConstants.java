@@ -23,7 +23,6 @@ public class DataConstants {
     protected static final String PROJECT_COMMENT_DATE = "date";
     protected static final String PROJECT_COMMENT_STRING = "comment";
 
-
     protected static final String TASK_FILE_NAME = "json/tasks.json";
     protected static final String TASK_ID= "taskID";
     protected static final String TASK_USER_ID="userID";
@@ -35,6 +34,8 @@ public class DataConstants {
     protected static final String TASK_COMMENT_DATE = "date";
     protected static final String TASK_COMMENT_STRING = "comment";
     protected static final String TASK_SUBTASKS="subTasks";
+    protected static final String TASK_TYPE="title";
+    protected static final String TASK_TESTER="tester";
 
 
 

@@ -16,10 +16,10 @@ public class Bug extends Task {
         this.tester = tester;
     }
 
-    Bug(UUID taskUUID,ArrayList<User> users,String taskName, String taskDescription, int taskPriority, ArrayList<Comment> taskComments, ArrayList<String> subtasks, String bug, User tester) {
+    Bug(UUID taskUUID,ArrayList<User> users,String taskName, String taskDescription, int taskPriority, ArrayList<Comment> taskComments, ArrayList<String> subtasks, String bug, User tester2) {
         super(taskUUID, users, taskName, taskDescription, taskPriority, taskComments, subtasks);
         this.bug = bug;
-        this.tester = tester;
+        this.tester = tester2;
     }
 
     public String getBug() {
