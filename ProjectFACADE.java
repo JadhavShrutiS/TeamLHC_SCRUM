@@ -20,8 +20,8 @@ public class ProjectFACADE {
 
     public Boolean addTask(String taskName, String taskDesc, int priority)
     {
-        return TaskList.getInstance().add(taskName, taskDesc, priority);
-        
+        return TaskList.getInstance().addTask(taskName);
+        //return TaskList.getInstance().add(taskName, taskDesc, priority);
     }
 
     public Task getTask(String taskName)

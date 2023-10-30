@@ -58,10 +58,10 @@ public class TaskList {
 
     public boolean add(String taskName, String description, int priority, String title, User tester) {
         if (tester != null) {
-           Task task = new Bug(taskName, description, priority, title, tester);
+           Bug task = new Bug(taskName, description, priority, title, tester);
            tasks.add(task);
         } else {
-           Task task = new Feature(taskName, description, priority, title);
+           Feature task = new Feature(taskName, description, priority, title);
            tasks.add(task);
         }
         return true;

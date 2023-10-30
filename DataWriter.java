@@ -50,7 +50,12 @@ public class DataWriter extends DataConstants
 		JSONArray jsonTasks = new JSONArray();
 		
         for(int i=0; i< taskList.size(); i++) {
-			jsonTasks.add(getTaskJSON(taskList.get(i)));
+            if (taskList.get(i) instanceof Bug) {
+                jsonTasks.add(getBugJSON(((Bug)taskList.get(i))));
+            } else {
+                jsonTasks.add(getFeatureJSON(((Feature)taskList.get(i))));
+            }
+			
 		}
 		
         try (FileWriter file = new FileWriter("json/tasks1.json")) {
@@ -64,7 +69,7 @@ public class DataWriter extends DataConstants
     }
 
 
-    public static JSONObject getTaskJSON(Task task)
+    public static JSONObject getBugJSON(Bug task)
     {
         JSONObject taskDetails = new JSONObject();
         taskDetails.put(TASK_ID,task.getTaskId().toString());
@@ -74,16 +79,13 @@ public class DataWriter extends DataConstants
         //write users
         //JSONObject users = new JSONObject();
         
-
-
-
-        if(task.getUserIDs()!=null)
+        if(task.getUsers()!=null)
         {
             JSONArray userids = new JSONArray();
-            for(int i=0;i<task.getUserIDs().size();i++)
+            for(int i=0;i<task.getUsers().size();i++)
             {
                 //taskDetails.put(TASK_USER_ID, task.getUserIDs().get(i).toString());
-                userids.add(i, task.getUserIDs().get(i).toString());
+                userids.add(i, task.getUsers().get(i).getId().toString());
             }
             taskDetails.put("userids", userids);
         }
@@ -116,14 +118,12 @@ public class DataWriter extends DataConstants
             taskComments.add(comment);
             taskDetails.put(TASK_COMMENT, taskComments);
         }
-        //JSONObject subtasks = new JSONObject();
 
         if(task.getSubtasks()!=null)
         {
             JSONArray subtasks = new JSONArray();
             for(int i=0;i<task.subTasks.size();i++)
             {
-                //taskDetails.put(TASK_SUBTASKS, task.getSubtasks().get(i));
                 subtasks.add(i, task.getSubtasks().get(i));
             }
             taskDetails.put("subtasks", subtasks);
@@ -133,11 +133,81 @@ public class DataWriter extends DataConstants
             taskDetails.put(TASK_SUBTASKS,null);
         }
 
+        taskDetails.put("title", task.getBug());
+        taskDetails.put("tester", task.getTester().getId().toString());
 
-        
         return taskDetails;
     }
 
+    public static JSONObject getFeatureJSON(Feature task)
+    {
+        JSONObject taskDetails = new JSONObject();
+        taskDetails.put(TASK_ID,task.getTaskId().toString());
+		taskDetails.put(TASK_NAME,task.getTaskName());
+		taskDetails.put(TASK_DESCRIPTION, task.getTaskDescription());
+		taskDetails.put(TASK_PRIORITY, Integer.toString(task.getTaskPriority()));
+        //write users
+        //JSONObject users = new JSONObject();
+        
+        if(task.getUsers()!=null)
+        {
+            JSONArray userids = new JSONArray();
+            for(int i=0;i<task.getUsers().size();i++)
+            {
+                //taskDetails.put(TASK_USER_ID, task.getUserIDs().get(i).toString());
+                userids.add(i, task.getUsers().get(i).getId().toString());
+            }
+            taskDetails.put("userids", userids);
+        }
+        else
+        {
+            taskDetails.put(TASK_USER_ID, "none");
+        }
+        
+        //write comments- works!!!!
+        JSONArray taskComments = new JSONArray();
+        if(task.getTaskComments()!=null)
+        {
+            for(int i =0;i<task.getTaskComments().size();i++)
+            {
+                JSONObject comment = new JSONObject();
+                comment.put(TASK_COMMENT_USER_ID,task.getTaskComments().get(i).getUserID().toString());
+                comment.put(TASK_COMMENT_DATE,task.getTaskComments().get(i).getDate().toString());
+                comment.put(TASK_COMMENT_STRING,task.getTaskComments().get(i).getComment());
+                taskComments.add(comment);
+                taskDetails.put(TASK_COMMENT, taskComments);
+            }
+
+        }
+        else
+        {
+            JSONObject comment = new JSONObject();
+            comment.put(TASK_COMMENT_USER_ID,"");
+            comment.put(TASK_COMMENT_DATE,"");
+            comment.put(TASK_COMMENT_STRING,"");
+            taskComments.add(comment);
+            taskDetails.put(TASK_COMMENT, taskComments);
+        }
+
+        if(task.getSubtasks()!=null)
+        {
+            JSONArray subtasks = new JSONArray();
+            for(int i=0;i<task.subTasks.size();i++)
+            {
+                subtasks.add(i, task.getSubtasks().get(i));
+            }
+            taskDetails.put("subtasks", subtasks);
+        }
+        else
+        {
+            taskDetails.put(TASK_SUBTASKS,null);
+        }
+
+        taskDetails.put("title", task.getFeature());
+        taskDetails.put("tester", null);
+
+        return taskDetails;
+    }
 
     public static JSONObject getUserJSON(User user) {
 		JSONObject userDetails = new JSONObject();

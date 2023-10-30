@@ -200,7 +200,7 @@ public class DataLoader extends DataConstants{
 						subtasks.add((String)subtask.get(j));
 					}
 
-					String title = (String)TaskJSON.get(TASK_TYPE);
+					String title = (String)TaskJSON.get(TASK_TITLE);
 					User tester = getUser(UUID.fromString((String)TaskJSON.get(TASK_TESTER)));
 					Task task;
 					if(tester!=null)
@@ -275,8 +275,12 @@ public class DataLoader extends DataConstants{
 					subtasks.add((String)subtask.get(j));
 				}
 
-				String title = (String)TaskJSON.get(TASK_TYPE);
-				User tester = getUser(UUID.fromString((String)TaskJSON.get(TASK_TESTER)));
+				String title = (String)TaskJSON.get(TASK_TITLE);
+				
+				User tester = null;
+				if (TaskJSON.get(TASK_TESTER) != null)
+					tester = getUser(UUID.fromString((String)TaskJSON.get(TASK_TESTER)));
+				
 				Task task;
 				if(tester!=null)
 				{
