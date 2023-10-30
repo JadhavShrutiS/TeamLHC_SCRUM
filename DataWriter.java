@@ -41,11 +41,6 @@ public class DataWriter extends DataConstants
     {
         TaskList tasks = TaskList.getInstance();
 		ArrayList<Task> taskList = tasks.getTasks();
-        //ArrayList<User> userList = new ArrayList<>();
-        /* 
-        User john = new User();
-        userList.add(john);
-        */
 
 		JSONArray jsonTasks = new JSONArray();
 		
@@ -185,7 +180,7 @@ public class DataWriter extends DataConstants
     public static JSONObject getProjectJSON(Project project) 
     {
 		JSONObject projectDetails = new JSONObject();
-		projectDetails.put("projectID", project.getProjectID());
+		projectDetails.put("projectID", project.getProjectID().toString());
         
         JSONArray userids = new JSONArray();
         for (int i=0; i<project.getUsers().size(); i++) {
@@ -203,7 +198,7 @@ public class DataWriter extends DataConstants
             JSONArray tasks = new JSONArray();
             for (int j=0; j<project.getColumns().get(i).getTasks().size(); j++) {
                 JSONObject task = new JSONObject();
-                task.put("tasks", project.getColumns().get(i).getTasks().get(j));
+                task.put("tasks", project.getColumns().get(i).getTasks().get(j).getTaskId().toString());
                 tasks.add(j, task);
             }
             column.put("name", project.getColumns().get(i).getName());
