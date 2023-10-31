@@ -6,7 +6,7 @@ public class User {
     private String lastName;
     public String userEmail;
     private String userPassword;
-   
+    
     //for existing user
     public User(UUID uuid, String firstName, String lastName, String userEmail, String userPassword) {
        this.uuid = uuid;
