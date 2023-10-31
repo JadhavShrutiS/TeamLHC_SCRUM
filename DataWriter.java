@@ -175,9 +175,12 @@ public class DataWriter extends DataConstants
             JSONObject column = new JSONObject();
             column.put(PROJECT_COLUMN_NAME, project.getColumns().get(i).getName());
             JSONArray tasks = new JSONArray();
-            for (int j=0; j<project.getColumns().get(i).getTasks().size(); j++) {
+            if (project.getColumns().get(i).getTasks() != null) {
+                for (int j=0; j<project.getColumns().get(i).getTasks().size(); j++) {
                 tasks.add(j, project.getColumns().get(i).getTasks().get(j).getTaskId().toString());;
             }
+            }
+            
             column.put(PROJECT_COLUMN_NAME, project.getColumns().get(i).getName());
             column.put(PROJECT_COLUMN_TASKS, tasks);
             columns.add(column);
