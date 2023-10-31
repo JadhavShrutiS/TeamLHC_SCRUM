@@ -23,8 +23,8 @@ public class UI {
         currentProject.addTask(task);
         task.addComment(new Comment("Avoid Civilians Jeff", currentUser));
         currentProject.addColumn(new Column("Abandoned", null));
-
-        currentProject
+        Task getTask = currentProject.getTask("Curve the metal to make a cylindrical shape");
+        currentProject.moveTask(getTask, "Doing");
         
 
 

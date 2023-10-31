@@ -50,25 +50,10 @@ public class ProjectFACADE {
         return ProjectBoard.getInstance().getAllProjects();
     }
 
-    public boolean createProject(String name) {
-        return true;
-    }
-    public boolean createColumn(String name) {
-        return true;
-    }
-    public boolean createTask(Project project, Column column) {
-        return true;
-
-    }
-
     public void addCommentProject(Project project) {
 
     }
 
-    public boolean createReport(Project project) {
-        return true;
-
-    }
     public void logout() {
         UserList.getInstance().saveUsers();
         TaskList.getInstance().saveTasks();
