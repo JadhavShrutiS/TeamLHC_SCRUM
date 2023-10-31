@@ -26,8 +26,18 @@ public class Column {
    * Adds a task to a column
    * @param task The specified task for a column
    */
-  public void addtask(Task task){
-    tasks.add(task);
+  public void addtask(Task task)
+  {
+   if(this.tasks==null)
+   {
+      this.tasks = new ArrayList<Task>();
+      tasks.add(task);
+   }
+   else
+   {
+      tasks.add(task);
+   }
+    
   }
 
   /**

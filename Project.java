@@ -103,16 +103,17 @@ public class Project {
      */
     public void moveTask(Task task, String columnName)
     {
+        /*
         for(int i=0;i<columns.size();i++)
         {
             for(int j=0;j<columns.get(i).getTasks().size();j++)
             {
                 if(columns.get(i).getTasks().get(j).taskName.equalsIgnoreCase(task.taskName))
                 {
-                    columns.get(i).deleteTask(task);
+                    columns.get(i).getTasks().remove(task);
                 }
             }
-        }
+        } */
         getColumn(columnName).addtask(task);
     }
 
