@@ -109,7 +109,9 @@ public class Project {
             {
                 if(columns.get(i).getTasks().get(j).taskName.equalsIgnoreCase(task.taskName))
                 {
-                    columns.get(i).getTasks().remove(task);
+                    //columns.get(i).deleteTask(task);
+                    System.out.println(columns.get(i).getTasks());
+                    System.out.println("Column: "+columns.get(i).getName()+ "holds the task");
                 }
             }
         }

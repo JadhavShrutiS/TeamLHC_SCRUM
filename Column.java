@@ -22,6 +22,11 @@ public class Column {
     this.tasks = tasks;
   }
 
+  public Column(String name) {
+   this.name = name;
+   this.tasks = new ArrayList<Task>();
+  }
+
   /**
    * Adds a task to a column
    * @param task The specified task for a column
@@ -44,7 +49,8 @@ public class Column {
    * Removes a task from a column
    * @param task The specified task for a column
    */
-  public void deleteTask(Task task){
+  public void deleteTask(Task task)
+  {
     tasks.remove(task);
   }
 
