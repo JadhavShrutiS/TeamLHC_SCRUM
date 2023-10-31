@@ -1,8 +1,6 @@
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.UUID;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -15,11 +13,6 @@ public class DataWriter extends DataConstants
         
         UserList users = UserList.getInstance();
 		ArrayList<User> userList = users.getUsers();
-        //ArrayList<User> userList = new ArrayList<>();
-        /* 
-        User john = new User();
-        userList.add(john);
-        */
 
 		JSONArray jsonUsers = new JSONArray();
 		
@@ -47,17 +40,6 @@ public class DataWriter extends DataConstants
         for (int i=0; i<taskList.size(); i++) {
             jsonTasks.add(getTaskJSON(taskList.get(i)));
         }
-        /*
-         * 
-        
-        for(int i=0; i< taskList.size(); i++) {
-            if (taskList.get(i) instanceof Bug) {
-                jsonTasks.add(getBugJSON(((Bug)taskList.get(i))));
-            } else {
-                jsonTasks.add(getFeatureJSON(((Feature)taskList.get(i))));
-            }
-			
-		} */
 		
         try (FileWriter file = new FileWriter("json/tasks1.json")) {
  
@@ -78,8 +60,6 @@ public class DataWriter extends DataConstants
 		taskDetails.put(TASK_NAME,task.getTaskName());
 		taskDetails.put(TASK_DESCRIPTION, task.getTaskDescription());
 		taskDetails.put(TASK_PRIORITY, Integer.toString(task.getTaskPriority()));
-        //write users
-        //JSONObject users = new JSONObject();
         
         if(task.getUsers()!=null)
         {
@@ -95,7 +75,6 @@ public class DataWriter extends DataConstants
             taskDetails.put(TASK_USER_ID, "none");
         }
         
-        //write comments- works!!!!
         JSONArray taskComments = new JSONArray();
         if(task.getTaskComments()!=null)
         {
@@ -182,7 +161,6 @@ public class DataWriter extends DataConstants
 		projectDetails.put("projectID", project.getProjectID().toString());
         
         JSONArray userids = new JSONArray();
-        System.out.println("There are "+project.getUsers().size()+" users");
         for (int i=0; i<project.getUsers().size(); i++) {
             userids.add(i, project.getUsers().get(i).getId().toString());
         }
@@ -218,10 +196,4 @@ public class DataWriter extends DataConstants
 
         return projectDetails;
         }
-    
-
-        public static void main(String[] args) {
-        System.out.println("hi");
-        //saveProjects();
-    }
 }
