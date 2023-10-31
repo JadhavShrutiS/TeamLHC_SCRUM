@@ -1,31 +1,78 @@
 [
     {
-        "projectID":"fc9f86df-008f-43da-b027-93714ce957a7",
-        "userids":["bd507ca8-d68d-4e3b-9ba5-e780709d5c4b","99aa6979-f71c-4db1-9e58-34b5e1351f2c"],
+        "comments": [
+            {
+                "date": "2023-10-12",
+                "comment": "2023-10-12",
+                "userid": "bd507ca8-d68d-4e3b-9ba5-e780709d5c4b"
+            }
+        ],
+        "projname": "Soap Free Washers",
+        "userids": [
+            "bd507ca8-d68d-4e3b-9ba5-e780709d5c4b",
+            "99aa6979-f71c-4db1-9e58-34b5e1351f2c"
+        ],
         "scrummaster": "bd507ca8-d68d-4e3b-9ba5-e780709d5c4b",
-        "productowner": "99aa6979-f71c-4db1-9e58-34b5e1351f2c",
-        "name":"Soap Free Washers",
-        "description":"Make some washers that are soap free.",
-        "columns": 
-        [
-            {"name": "todo","tasks":["b454f548-c654-43a1-a805-9d7bb4b34f8c"]},
-            {"name": "progress","tasks":["0f241e31-c4ca-4f75-9cf3-fb7da18e692f"]},
-            {"name": "done","tasks":["0f241e31-c4ca-4f75-9cf3-fb7da18e692f"]}
+        "columns": [
+            {
+                "colname": "todo",
+                "tasks": [
+                    "b454f548-c654-43a1-a805-9d7bb4b34f8c"
+                ]
+            },
+            {
+                "colname": "progress",
+                "tasks": [
+                    "0f241e31-c4ca-4f75-9cf3-fb7da18e692f"
+                ]
+            },
+            {
+                "colname": "done",
+                "tasks": [
+                    "0f241e31-c4ca-4f75-9cf3-fb7da18e692f"
+                ]
+            }
         ],
-        "comments":[{"userid":"bd507ca8-d68d-4e3b-9ba5-e780709d5c4b", "date": "2023-10-12", "comment": "Oh wow amazing"}]
-    },{
-        "projectID":"0b396c4a-ae0c-46b7-8f3c-0f7e56690c3f",
-        "userids":["99aa6979-f71c-4db1-9e58-34b5e1351f2c","bd507ca8-d68d-4e3b-9ba5-e780709d5c4b"],
+        "projdescription": "Make some washers that are soap free.",
+        "projectID": "fc9f86df-008f-43da-b027-93714ce957a7",
+        "productowner": "99aa6979-f71c-4db1-9e58-34b5e1351f2c"
+    },
+    {
+        "comments": [
+            {
+                "date": "2023-10-12",
+                "comment": "2023-10-12",
+                "userid": "bd507ca8-d68d-4e3b-9ba5-e780709d5c4b"
+            }
+        ],
+        "projname": "Air Computers",
+        "userids": [
+            "99aa6979-f71c-4db1-9e58-34b5e1351f2c",
+            "bd507ca8-d68d-4e3b-9ba5-e780709d5c4b"
+        ],
         "scrummaster": "99aa6979-f71c-4db1-9e58-34b5e1351f2c",
-        "productowner": "bd507ca8-d68d-4e3b-9ba5-e780709d5c4b",
-        "name":"Air Computers",
-        "description":"Build computers that can float!",
-        "columns": 
-        [
-            {"name": "todo","tasks":["b454f548-c654-43a1-a805-9d7bb4b34f8c"]},
-            {"name": "progress","tasks":["0f241e31-c4ca-4f75-9cf3-fb7da18e692f"]},
-            {"name": "done","tasks":["b454f548-c654-43a1-a805-9d7bb4b34f8c"]}
+        "columns": [
+            {
+                "colname": "todo",
+                "tasks": [
+                    "b454f548-c654-43a1-a805-9d7bb4b34f8c"
+                ]
+            },
+            {
+                "colname": "progress",
+                "tasks": [
+                    "0f241e31-c4ca-4f75-9cf3-fb7da18e692f"
+                ]
+            },
+            {
+                "colname": "done",
+                "tasks": [
+                    "b454f548-c654-43a1-a805-9d7bb4b34f8c"
+                ]
+            }
         ],
-        "comments":[{"userid":"bd507ca8-d68d-4e3b-9ba5-e780709d5c4b", "date": "2023-10-12", "comment": "Need quick update"}]
+        "projdescription": "Build computers that can float!",
+        "projectID": "0b396c4a-ae0c-46b7-8f3c-0f7e56690c3f",
+        "productowner": "bd507ca8-d68d-4e3b-9ba5-e780709d5c4b"
     }
 ]

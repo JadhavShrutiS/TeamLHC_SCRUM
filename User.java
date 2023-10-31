@@ -6,7 +6,11 @@ public class User {
     private String lastName;
     public String userEmail;
     private String userPassword;
+<<<<<<< HEAD
     
+=======
+   
+>>>>>>> de86fda198dd95def8263e36005f966172de0acd
     //for existing user
     public User(UUID uuid, String firstName, String lastName, String userEmail, String userPassword) {
        this.uuid = uuid;

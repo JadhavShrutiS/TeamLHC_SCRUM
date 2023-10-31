@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * @author Shruti
@@ -28,11 +29,21 @@ public class TaskList {
     {
         for(int i=0;i<tasks.size();i++)
         {
-            //User user = users.get(i);
             if(tasks.get(i).getTaskName().equalsIgnoreCase(taskName))
             {
                 return tasks.get(i);
             }
+        }
+        return null;
+    }
+
+    public Task getTask(UUID taskID)
+    {
+        tasks = DataLoader.getTasks();
+        for(int i=0; i<tasks.size(); i++)
+        {
+            if(tasks.get(i).getTaskId().equals(taskID))
+                return tasks.get(i);
         }
         return null;
     }
@@ -43,7 +54,7 @@ public class TaskList {
         return this.tasks;
     }
 
-     //testing
+     //testing-
     public boolean addTask(String taskName) //only checking if we can add user based on emailID!!
     {
         //loop through userlist-check for unqiue email
@@ -75,11 +86,5 @@ public class TaskList {
     {
         DataWriter.saveTasks();
     }
-    
-
-
-    
-
-
 
 }

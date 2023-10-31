@@ -37,7 +37,6 @@ public class Project {
         this.comments=null;
         this.scrumMaster = null;
         this.productOwner = null;
-
     }
 
     public void addColumn(Column column) {
