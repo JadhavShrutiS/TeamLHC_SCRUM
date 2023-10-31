@@ -48,7 +48,7 @@ public class ProjectBoard {
 
     public Project getProject(String name) {
         for (int i=0; i<projects.size(); i++) {
-            if (projects.get(i).getProjectName() == name) {
+            if (projects.get(i).getProjectName().equalsIgnoreCase(name)) {
                 return projects.get(i);
             }
         }

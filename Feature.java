@@ -11,19 +11,19 @@ public class Feature extends Task{
     public String feature;
 
     /**
-     * Existing feature
+     * New feature
      * @param name The name of the task
      * @param description Information about the task
      * @param priority The level of importance of the task
      * @param feature The name of the feature
      */
-    Feature(String name, String description, int priority, String feature){
+    public Feature(String name, String description, int priority, String feature){
         super(name, description, priority);
         this.feature = feature;
     }
 
     /**
-     * New feature
+     * Existing feature
      * @param taskUUID The uuid of the task
      * @param users An array list of all current users
      * @param taskName The name of the task
@@ -33,7 +33,7 @@ public class Feature extends Task{
      * @param subtasks Smaller tasks within the main task
      * @param feature The name of the feature
      */
-    Feature(UUID taskUUID,ArrayList<User> users,String taskName, String taskDescription, int taskPriority, ArrayList<Comment> taskComments, ArrayList<String> subtasks, String feature) {
+    public Feature(UUID taskUUID,ArrayList<User> users,String taskName, String taskDescription, int taskPriority, ArrayList<Comment> taskComments, ArrayList<String> subtasks, String feature) {
         super(taskUUID, users, taskName, taskDescription, taskPriority, taskComments, subtasks);
         this.feature = feature;
     }

@@ -52,7 +52,6 @@ public class Project {
         this.comments=null;
         this.scrumMaster = null;
         this.productOwner = null;
-
     }
 
     /**
@@ -81,6 +80,37 @@ public class Project {
         return true;
 
     }
+
+    /**
+     * Adds a comment to an array list of comments
+     * @param comment A comment made by a user
+     */
+    public void addTask(Task task)
+    {
+        for(int i=0;i<columns.size();i++)
+        {
+            if(columns.get(i).name.equalsIgnoreCase("todo"))
+            {
+                columns.get(i).addtask(task);
+            }
+        }
+    }
+
+    public void moveTask(Task task, Column column)
+    {
+        for(int i=0;i<columns.size();i++)
+        {
+            for(int j=0;j<columns.get(i).getTasks().size();j++)
+            {
+                if(columns.get(i).getTasks().get(j).taskName.equalsIgnoreCase(task.taskName))
+                {
+                    
+                }
+            }
+        }
+    }
+
+
 
     /**
      * Adds a comment to an array list of comments
@@ -180,7 +210,15 @@ public class Project {
      */
     public String toString()
     {
-        return this.projectID+" "+this.projectName+" "+this.projectDescription+" "+this.columns+" "+this.comments+" "+this.scrumMaster+" "+this.productOwner+" USERSSSS!!!!!!!!!!!!!1"+this.users;
+        return "\n\nPROJECT\nNAME: "+this.projectName+"\nDESCRIPTION: "+this.projectDescription+"\nSCRUMMASTER: "+this.scrumMaster+"\nPRODUCTOWNER: "+this.productOwner+"\nUSERS: "+this.users+"\nCOLUMNS:\n"+this.columns+"\nPROJECT-COMMENTS"+this.comments;
+    }
+    public void setScrumMaster(User user)
+    {
+        this.scrumMaster = user;
+    }
+    public void setProductOwner(User user)
+    {
+        this.productOwner = user;
     }
 
 

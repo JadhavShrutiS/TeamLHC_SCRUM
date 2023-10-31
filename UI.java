@@ -1,5 +1,7 @@
 //import java.util.Scanner;
 
+import java.util.UUID;
+
 public class UI {
     //private Scanner scanner;
     private ProjectFACADE app;
@@ -8,29 +10,26 @@ public class UI {
         app = new ProjectFACADE();
 
         app.signUp("Atticus", "Madden", "amadden@gmail.com", "12345");
+        app.getTasks();
         app.logout();
         app.login("amadden@gmail.com", "12345");
         User currentUser = app.getUser();
-        System.out.println("Logged in as: " + currentUser);
+        System.out.print("Logged in as: " + currentUser.getFirstName()+" "+currentUser.getLastName());
+        System.out.println(" working for Code Mission Impossible");
 
-        //Task Related Checks
-        app.addTask("Trial", "Again", 3);
-        //System.out.println(app.getTask("Trial"));
-        //System.out.println(app.getTasks());
+        Project currentProject = app.getProject("Electric Missiles");
+        System.out.println("Current Project: "+currentProject.getProjectName());
+        Task task = new Feature("Initialize super algorithm to detonate at warp speed","going fast is good",1,"warp speed");
+        currentProject.addTask(task);
+        task.addComment(new Comment("Avoid Civilians Jeff", currentUser));
+        currentProject.addColumn(new Column("Abandoned", null));
+        
 
-        System.out.println(app.getAllProjects());
+
+        //System.out.println(app.getAllProjects());
 
         app.logout();//to save the tasks to json file
     }
-
-    public void displayMainMenu() {
-
-    }
-    public void runDW()
-    {
-
-    }
-
     public static void main(String[] args) {
         UI ui = new UI();
         ui.run();

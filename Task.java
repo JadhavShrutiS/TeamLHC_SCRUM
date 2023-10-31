@@ -81,8 +81,18 @@ public abstract class Task {
      * adds comments to ArrayList of comments
      * @param comment A comment from the task
      */
-    public void addComment(Comment comment){
-        taskComments.add(comment);
+    public void addComment(Comment comment)
+    {
+        if(taskComments==null)
+        {
+            taskComments= new ArrayList<Comment>();
+            taskComments.add(comment);
+        }
+        else
+        {
+            taskComments.add(comment);
+        }
+        
     }
 
     /**
@@ -108,7 +118,7 @@ public abstract class Task {
      */
     public String toString()
     {
-        return this.taskID+" "+this.users+" "+this.taskName+" "+this.taskDescription+" "+this.taskPriority+" "+this.taskComments;
+        return "TASK:\n     NAME: " + this.taskName+ "\n     DESCRIPTION: "+this.taskDescription+"\n     USERS:"+this.users+"\n     PRIORITY:"+this.taskPriority+"\n     COMMENTS"+this.taskComments;
     }
 
     /**

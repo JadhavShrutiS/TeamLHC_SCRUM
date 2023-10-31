@@ -12,9 +12,10 @@ public class Comment {
     /**
      * Initializes a comment
      */
-    public Comment() 
+    public Comment(String Comment, User user) 
     {
         this.comment = "comment";
+        this.userID = user.getId();
         this.date = new java.sql.Date(System.currentTimeMillis());
     }
 
@@ -30,6 +31,8 @@ public class Comment {
         this.date = date;
         this.userID = userID;
     }
+
+
 
     /**
      * Edits a comment
