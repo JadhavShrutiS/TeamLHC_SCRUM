@@ -113,6 +113,14 @@ public class Project {
     {
         return this.projectID+" "+this.projectName+" "+this.projectDescription+" "+this.columns+" "+this.comments+" "+this.scrumMaster+" "+this.productOwner+" USERSSSS!!!!!!!!!!!!!1"+this.users;
     }
+    public void setScrumMaster(User user)
+    {
+        this.scrumMaster = user;
+    }
+    public void setProductOwner(User user)
+    {
+        this.productOwner = user;
+    }
 
 
 }

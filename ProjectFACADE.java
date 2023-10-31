@@ -4,6 +4,7 @@ public class ProjectFACADE {
     private User user;
     private ProjectBoard projectBoard;
     private Task task;
+    private Project project;
 
     public User login(String emailID, String password) {
         user = UserList.getInstance().getUser(emailID,password);
@@ -37,8 +38,11 @@ public class ProjectFACADE {
         return user;
     }
 
-    public Project getProjectByName(String name) {
-        return projectBoard.getProject(name);
+    public Project getProject(String name) {
+        project = ProjectBoard.getInstance().getProject(name);
+        return project;
+        
+        //return projectBoard.getProject(name);
         //might need to do getInstance
     }
 
