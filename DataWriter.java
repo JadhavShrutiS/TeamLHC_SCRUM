@@ -41,7 +41,7 @@ public class DataWriter extends DataConstants
             jsonTasks.add(getTaskJSON(taskList.get(i)));
         }
 		
-        try (FileWriter file = new FileWriter("json/tasks.json")) {
+        try (FileWriter file = new FileWriter("json/tasks1.json")) {
  
             file.write(jsonTasks.toJSONString());
             file.flush();
@@ -145,7 +145,7 @@ public class DataWriter extends DataConstants
 			jsonProjects.add(getProjectJSON(projects.get(i)));
 		}
 		
-        try (FileWriter file = new FileWriter("json/projects.json")) {
+        try (FileWriter file = new FileWriter("json/projects1.json")) {
  
             file.write(jsonProjects.toJSONString());
             file.flush();
