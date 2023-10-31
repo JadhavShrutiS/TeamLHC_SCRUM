@@ -11,10 +11,10 @@ public class DataConstants {
     protected static final String PROJECT_USERS="userids";
     protected static final String PROJECT_USER_SCRUMMASTER = "scrummaster";
     protected static final String PROJECT_USER_PRODUCTOWNER = "productowner";
-    protected static final String PROJECT_NAME="name";
-    protected static final String PROJECT_DESCRIPTION="description";
+    protected static final String PROJECT_NAME="projname";
+    protected static final String PROJECT_DESCRIPTION="projdescription";
     protected static final String PROJECT_COLUMNS="columns";
-    protected static final String PROJECT_COLUMN_NAME = "name";
+    protected static final String PROJECT_COLUMN_NAME = "colname";
     protected static final String PROJECT_COLUMN_TASKS = "tasks";
     protected static final String PROEJCT_COMMENT ="comments";
     protected static final String PROJECT_COMMENT_USER_ID = "userid";

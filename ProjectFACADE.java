@@ -39,7 +39,7 @@ public class ProjectFACADE {
 
     public Project getProjectByName(String name) {
         return projectBoard.getProject(name);
-
+        //might need to do getInstance
     }
 
     public ArrayList<Project> getAllProjects() {
