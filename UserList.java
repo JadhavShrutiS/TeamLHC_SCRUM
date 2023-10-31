@@ -53,7 +53,10 @@ public class UserList {
     public boolean add(String firstName, String lastName, String userEmail, String userPassword)
     {
         User user = new User(firstName, lastName, userEmail, userPassword);
-        users.add(user);
+        if(addUser(userEmail))
+        {
+            users.add(user);
+        }
         return true;
     }
     public void saveUsers()
