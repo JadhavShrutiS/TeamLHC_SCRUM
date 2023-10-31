@@ -44,7 +44,8 @@ public class Column {
    * Removes a task from a column
    * @param task The specified task for a column
    */
-  public void deleteTask(Task task){
+  public void deleteTask(Task task)
+  {
     tasks.remove(task);
   }
 
