@@ -16,7 +16,16 @@ public abstract class Task {
     public ArrayList<Comment> taskComments;
     public ArrayList<String> subTasks;
     
-    //existing tasks
+    /**
+     * Loads an existing class
+     * @param taskUUID The uuid of the task
+     * @param users An array list of all current users
+     * @param taskName The name of the task
+     * @param taskDescription Information about the task
+     * @param taskPriority The level of importance of the task
+     * @param taskComments Comments from the task
+     * @param subtasks Smaller tasks within the main task
+     */
     public Task(UUID taskUUID,ArrayList<User> users,String taskName, String taskDescription, int taskPriority, ArrayList<Comment> taskComments,ArrayList<String> subtasks)
     {
         this.taskID = taskUUID; 
@@ -28,7 +37,12 @@ public abstract class Task {
         this.subTasks = subtasks;
     }
 
-    //for new Task
+    /**
+     * Creates a new class
+     * @param taskName The name of the task
+     * @param taskDescription Information about the task
+     * @param taskPriority The level of importance of the task
+     */
     public Task(String taskName, String taskDescription, int taskPriority){
         this.taskID = UUID.randomUUID(); 
         this.taskName = taskName;
@@ -39,22 +53,34 @@ public abstract class Task {
         this.users = null;
     }
 
-    //most helpful in setting/changing task Name
-    public  void setTaskName(String taskName){
+    /**
+     * Sets/Changes task name
+     * @param taskName The name of the task
+     */
+    public void setTaskName(String taskName){
         this.taskName = taskName;
     }
 
-    //most helpful in setting/changing task Description
+    /**
+     * Sets/Changes task description
+     * @param taskDescription Information about the task
+     */
     public void setTaskDescription(String taskDescription){
         this.taskDescription = taskDescription;
     }
 
-    //most helpful in setting/changing priority
+    /**
+     * Sets/Changes task priority
+     * @param taskPriority The level of importance of the task
+     */
     public void setPriority(int taskPriority){
         this.taskPriority = taskPriority;
     }
 
-    //adds comments to ArrayList of comments 
+    /**
+     * adds comments to ArrayList of comments
+     * @param comment A comment from the task
+     */
     public void addComment(Comment comment)
     {
         if(taskComments==null)
@@ -69,47 +95,84 @@ public abstract class Task {
         
     }
 
-    //adds subTask to the array list of subtask for a task
+    /**
+     * Adds subTask to the array list of subtask for a task
+     * @param subTask Smaller tasks within the main task
+     */
     public void addSubTask(String subTask)
     {
         subTasks.add(subTask);
     }
 
-    //adds user to a task with their uuid
+    /**
+     * Adds user to a task with their uuid
+     * @param user The ID for a user
+     */
     public void addUser(User user)
     {
         users.add(user);
     }
     //testing
+    /**
+     * Returns a string of the task's attributes
+     */
     public String toString()
     {
         return "TASK:\n     NAME: " + this.taskName+ "\n     DESCRIPTION: "+this.taskDescription+"\n     USERS:"+this.users+"\n     PRIORITY:"+this.taskPriority+"\n     COMMENTS"+this.taskComments;
     }
 
+    /**
+     * Returns the task ID
+     * @return The uuid of a task
+     */
     public UUID getTaskId()
     {
         return this.taskID;
     }
+    /**
+     * Returns the task name
+     * @return The name of a task
+     */
     public String getTaskName()
     {
         return this.taskName;
     }
+    /**
+     * Return the task description
+     * @return The description of a task
+     */
     public String getTaskDescription()
     {
         return this.taskDescription;
     }
+    /**
+     * Return the task priority
+     * @return The importance number of a task
+     */
     public int getTaskPriority()
     {
         return this.taskPriority;
     }
+    /**
+     * Returns all users in the array list
+     * @return The array list of all users
+     */
     public ArrayList<User> getUsers()
     {
         return this.users;
     }
+    /**
+     * Returns all comments in a task
+     * @return The array list of all comments
+     */
     public ArrayList<Comment> getTaskComments()
     {
         return this.taskComments;
     }
+    /**
+     * Returns all subtasks in a task
+     * @return The array list of all subtasks
+     */
     public ArrayList<String> getSubtasks()
     {
         return this.subTasks;
