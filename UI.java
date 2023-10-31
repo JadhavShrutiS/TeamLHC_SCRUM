@@ -34,10 +34,11 @@ public class UI {
         currentProject.moveTask(getTask, "Doing");
 
         User jeff = app.getUserbyName("Jeff", "Goldblum");
+        System.out.println(jeff);
 
 
-
-       // getTask.changeUser(currentUser, currentUser);
+        getTask.changeUser(jeff,currentUser);
+        System.out.println(getTask);
         
 
 
