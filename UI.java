@@ -28,6 +28,8 @@ public class UI {
         currentProject.moveTask(task, "Abandoned");
 
 
+        Task getTask = currentProject.getTask("Curve the metal to make a cylindrical shape");
+        currentProject.moveTask(getTask, "Doing");
         
 
 
