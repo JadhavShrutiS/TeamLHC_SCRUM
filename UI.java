@@ -12,7 +12,9 @@ public class UI {
         app.logout();
         app.login("amadden@gmail.com", "12345");
         User currentUser = app.getUser();
-        System.out.println("Logged in as: " + currentUser);
+        System.out.print("Logged in as: " + currentUser.getFirstName()+" "+currentUser.getLastName());
+        System.out.print(" working for Code Mission Impossible");
+
 
         System.out.println(app.getAllProjects());
 

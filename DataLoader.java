@@ -113,11 +113,9 @@ public class DataLoader extends DataConstants{
 				for(int j =0;j<comments.size();j++)
 				{
 					JSONObject commentJSON = (JSONObject)comments.get(j);
-
 					UUID commentUserID = UUID.fromString((String)commentJSON.get(TASK_COMMENT_USER_ID));
 					Date date = Date.valueOf((String)commentJSON.get(TASK_COMMENT_DATE));
 					String commentString = (String)commentJSON.get(TASK_COMMENT_STRING);
-
 					taskComments.add(new Comment(commentUserID, date, commentString));
 				}
 				ArrayList<String> subtasks = new ArrayList<String>();

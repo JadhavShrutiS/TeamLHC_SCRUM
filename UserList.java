@@ -34,10 +34,8 @@ public class UserList {
         return null;
     }
 
-    public boolean addUser(String emailID) //only checking if we can add user based on emailID!!
+    public boolean addUser(String emailID)
     {
-        //loop through userlist-check for unqiue email
-        //true if email is not found
         users = DataLoader.getUsers();
         for(int i=0;i<users.size();i++)
         {
