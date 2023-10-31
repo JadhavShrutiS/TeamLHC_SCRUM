@@ -16,9 +16,14 @@ public class UI {
         User currentUser = app.getUser();
         System.out.print("Logged in as: " + currentUser.getFirstName()+" "+currentUser.getLastName());
         System.out.print(" working for Code Mission Impossible");
-        Feature task = new Feature("Initialize super algorithm to detonate at warp speed", "Going fast is good", 1, "warp speed");
-        //ProjectBoard.getInstance().getProject("Electric Missiles").addTask(task);
-        System.out.println(ProjectBoard.getInstance().getProject("Electric Missiles"));
+
+        Project currentProject = app.getProject("Electric Missiles");
+        Task task = new Feature("Initialize super algorithm to detonate at warp speed","",1,"");
+        currentProject.addTask(task);
+        task.addComment(new Comment("Avoid Civilians Jeff", currentUser));
+        currentProject.addColumn(new Column("Abandoned", null));
+        
+
 
         System.out.println(app.getAllProjects());
 
