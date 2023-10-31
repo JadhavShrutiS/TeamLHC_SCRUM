@@ -6,12 +6,17 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import java.sql.Date;
 /**
+ * Data storage for users, projects, and tasks
  * @author Sri
  * @author Shruti
  */
 
 public class DataLoader extends DataConstants{
 	
+	/**
+	 * Get a list of users
+	 * @return An array list of users
+	 */
 	public static ArrayList<User> getUsers(){
 		ArrayList<User> users = new ArrayList<User>();
 		
@@ -41,7 +46,11 @@ public class DataLoader extends DataConstants{
 		return null;
 	}
 
-	//get user by uuid	
+	/**
+	 * Get user by uuid
+	 * @param uuid The ID of a user
+	 * @return The user specified by their uuid
+	 */
 	public static User getUser(UUID uuid)
 	{
 		try 
@@ -71,7 +80,10 @@ public class DataLoader extends DataConstants{
 		return null;
 	}
 
-
+	/**
+	 * Get a list of projects
+	 * @return An array list of projects
+	 */
     public static ArrayList<Project> getProjects()
 	{
 		ArrayList<Project> projects = new ArrayList<Project>();
@@ -149,7 +161,11 @@ public class DataLoader extends DataConstants{
 		return null;
 	}
 /****************************************************************** */
-	//Get task by uuid
+	/**
+	 * Get task by uuid
+	 * @param uuid The ID for a task
+	 * @return The task specified by its uuid
+	 */
 	public static Task getTask(UUID uuid)
 	{
 		try {
@@ -230,7 +246,11 @@ public class DataLoader extends DataConstants{
 	}
 
  /************************************************************* */
-	public static ArrayList<Task> getTasks()
+/**
+ * Get a list of tasks
+ * @return An array list of tasks
+ */	
+ public static ArrayList<Task> getTasks()
 	{
 		//test this out...first
 		ArrayList<Task> Tasks = new ArrayList<Task>();
