@@ -18,14 +18,14 @@ public class UI {
         System.out.print(" working for Code Mission Impossible");
 
         Project currentProject = app.getProject("Electric Missiles");
-        Task task = new Feature("Initialize super algorithm to detonate at warp speed","",1,"");
+        Task task = new Feature("Initialize super algorithm to detonate at warp speed","going fast is good",1,"warp speed");
         currentProject.addTask(task);
         task.addComment(new Comment("Avoid Civilians Jeff", currentUser));
         currentProject.addColumn(new Column("Abandoned", null));
         
 
 
-        System.out.println(app.getAllProjects());
+        //System.out.println(app.getAllProjects());
 
         app.logout();//to save the tasks to json file
     }
