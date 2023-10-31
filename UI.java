@@ -22,15 +22,6 @@ public class UI {
 
         app.logout();//to save the tasks to json file
     }
-
-    public void displayMainMenu() {
-
-    }
-    public void runDW()
-    {
-
-    }
-
     public static void main(String[] args) {
         UI ui = new UI();
         ui.run();
