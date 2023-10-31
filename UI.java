@@ -13,9 +13,10 @@ public class UI {
         app.login("amadden@gmail.com", "12345");
         User currentUser = app.getUser();
         System.out.print("Logged in as: " + currentUser.getFirstName()+" "+currentUser.getLastName());
-        System.out.print(" working for Code Mission Impossible");
+        System.out.println(" working for Code Mission Impossible");
 
         Project currentProject = app.getProject("Electric Missiles");
+        System.out.println("Current Project: "+currentProject.getProjectName());
         Task task = new Feature("Initialize super algorithm to detonate at warp speed","",1,"");
         currentProject.addTask(task);
         task.addComment(new Comment("Avoid Civilians Jeff", currentUser));
@@ -23,7 +24,7 @@ public class UI {
         
 
 
-        System.out.println(app.getAllProjects());
+        //System.out.println(app.getAllProjects());
 
         app.logout();//to save the tasks to json file
     }
