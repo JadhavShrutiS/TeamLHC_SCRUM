@@ -48,10 +48,15 @@ public class Project {
         columns.remove(column);
     }
 
-    //Marks a task as completed
-    public boolean completedTask(Task task) {
-        return true;
-
+    public void addTask(Task task)
+    {
+        for(int i=0;i<columns.size();i++)
+        {
+            if(columns.get(i).name.equalsIgnoreCase("todo"))
+            {
+                columns.get(i).addtask(task);
+            }
+        }
     }
 
     //Adds a comment to an array list of comments
