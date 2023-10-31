@@ -30,8 +30,14 @@ public class UI {
         currentProject.moveTask(task1, "Abandoned");
 
 
-        //Task getTask = currentProject.getTask("Curve the metal to make a cylindrical shape");
-        //currentProject.moveTask(getTask, "Doing");
+        Task getTask = currentProject.getTask("Curve the metal to make a cylindrical shape");
+        currentProject.moveTask(getTask, "Doing");
+
+        User jeff = app.getUserbyName("Jeff", "Goldblum");
+
+
+
+       // getTask.changeUser(currentUser, currentUser);
         
 
 

@@ -34,8 +34,14 @@ public class ProjectFACADE {
         return TaskList.getInstance().getTasks();
     }
 
-    public User getUser(){
+    public User getUser()
+    {
         return user;
+    }
+
+    public User getUserbyName(String firstName, String lastName){
+        
+        return user= UserList.getInstance().getUserbyName(firstName,lastName);
     }
 
     public Project getProject(String name) {

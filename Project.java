@@ -103,19 +103,6 @@ public class Project {
      */
     public void moveTask(Task task, String columnName)
     {
-        /*for(int i=0;i<columns.size();i++)
-        {
-            for(int j=0;j<columns.get(i).getTasks().size();j++)
-            {
-                if(columns.get(i).getTasks().get(j).taskName.equalsIgnoreCase(task.taskName))
-                {
-                    //columns.get(i).deleteTask(task);
-                    System.out.println(columns.get(i).getTasks());
-                    System.out.println("Column: "+columns.get(i).getName()+ "holds the task");
-                }
-            }
-        }
-        getColumn(columnName).addtask(task);*/
         for(int i=0; i<columns.size();i++) {
             if(columns.get(i).getTask(task.getTaskName()) != null) {
                 columns.get(i).deleteTask(task);

@@ -177,5 +177,17 @@ public abstract class Task {
     {
         return this.subTasks;
     }
+    
+    public void changeUser(User addUser, User removeUser)
+    {
+        for(int i=0;i<users.size();i++)
+        {
+            if(users.get(i).equals(removeUser))
+            {
+                users.remove(i);
+            }
+        }
+        users.add(addUser);
+    }
 
 }

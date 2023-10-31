@@ -114,4 +114,14 @@ public class UserList {
         return null;
     }
 
+    public User getUserbyName(String firstName, String lastName)
+    {
+        for(int i=0; i<users.size(); i++)
+        {
+            if(users.get(i).getFirstName().equalsIgnoreCase(firstName) && users.get(i).getLastName().equalsIgnoreCase(lastName))
+                return users.get(i);
+        }
+        return null;
+    }
+
 }
