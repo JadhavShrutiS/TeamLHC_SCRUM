@@ -41,7 +41,7 @@ public class DataWriter extends DataConstants
             jsonTasks.add(getTaskJSON(taskList.get(i)));
         }
 		
-        try (FileWriter file = new FileWriter("json/tasks1.json")) {
+        try (FileWriter file = new FileWriter("json/tasks.json")) {
  
             file.write(jsonTasks.toJSONString());
             file.flush();
@@ -115,7 +115,7 @@ public class DataWriter extends DataConstants
 
         if (task instanceof Bug) {
             taskDetails.put(TASK_TITLE, ((Bug)task).getBug());
-            taskDetails.put(TASK_TESTER, ((Bug)task).getTester().toString());
+            taskDetails.put(TASK_TESTER, ((Bug)task).getTester().getId().toString());
         } else {
             taskDetails.put(TASK_TITLE, ((Feature)task).getFeature());
             taskDetails.put(TASK_TESTER, null);
@@ -145,7 +145,7 @@ public class DataWriter extends DataConstants
 			jsonProjects.add(getProjectJSON(projects.get(i)));
 		}
 		
-        try (FileWriter file = new FileWriter("json/projects1.json")) {
+        try (FileWriter file = new FileWriter("json/projects.json")) {
  
             file.write(jsonProjects.toJSONString());
             file.flush();

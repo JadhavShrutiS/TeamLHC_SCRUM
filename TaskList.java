@@ -39,6 +39,7 @@ public class TaskList {
 
     public Task getTask(UUID taskID)
     {
+        tasks = DataLoader.getTasks();
         for(int i=0; i<tasks.size(); i++)
         {
             if(tasks.get(i).getTaskId().equals(taskID))
@@ -53,7 +54,7 @@ public class TaskList {
         return this.tasks;
     }
 
-     //testing
+     //testing-
     public boolean addTask(String taskName) //only checking if we can add user based on emailID!!
     {
         //loop through userlist-check for unqiue email

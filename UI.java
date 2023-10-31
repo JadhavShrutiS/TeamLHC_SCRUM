@@ -8,15 +8,11 @@ public class UI {
         app = new ProjectFACADE();
 
         app.signUp("Atticus", "Madden", "amadden@gmail.com", "12345");
+        app.getTasks();
         app.logout();
         app.login("amadden@gmail.com", "12345");
         User currentUser = app.getUser();
         System.out.println("Logged in as: " + currentUser);
-
-        //Task Related Checks
-        app.addTask("Trial", "Again", 3);
-        //System.out.println(app.getTask("Trial"));
-        //System.out.println(app.getTasks());
 
         System.out.println(app.getAllProjects());
 
