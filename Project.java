@@ -59,6 +59,22 @@ public class Project {
         }
     }
 
+    public void moveTask(Task task, Column column)
+    {
+        for(int i=0;i<columns.size();i++)
+        {
+            for(int j=0;j<columns.get(i).getTasks().size();j++)
+            {
+                if(columns.get(i).getTasks().get(j).taskName.equalsIgnoreCase(task.taskName))
+                {
+                    
+                }
+            }
+        }
+    }
+
+
+
     //Adds a comment to an array list of comments
     public void addComment(Comment comment) 
     {

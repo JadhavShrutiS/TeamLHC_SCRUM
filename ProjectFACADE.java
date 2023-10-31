@@ -17,10 +17,10 @@ public class ProjectFACADE {
 
     }
 
-    public Boolean addTask(String taskName, String taskDesc, int priority)
+    public Boolean addTask(String taskName, String taskDesc, int priority, String title, User tester)
     {
-        return TaskList.getInstance().addTask(taskName);
-        //return TaskList.getInstance().add(taskName, taskDesc, priority);
+        //return TaskList.getInstance().addTask(taskName);
+        return TaskList.getInstance().add(taskName, taskDesc, priority,title,tester);
     }
 
     public Task getTask(String taskName)
