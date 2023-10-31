@@ -21,6 +21,7 @@ public class UI {
         System.out.println("Current Project: "+currentProject.getProjectName());
         Task task = new Feature("Initialize super algorithm to detonate at warp speed","going fast is good",1,"warp speed");
         currentProject.addTask(task);
+        TaskList.getInstance().addTask("Initialie supeer algorithm to detonate at warp speed");
         task.addComment(new Comment("Avoid Civilians Jeff", currentUser));
         currentProject.addColumn(new Column("Abandoned", null));
         
