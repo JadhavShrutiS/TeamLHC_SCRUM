@@ -22,6 +22,11 @@ public class Column {
     this.tasks = tasks;
   }
 
+  public Column(String name) {
+   this.name = name;
+   this.tasks = new ArrayList<Task>();
+  }
+
   /**
    * Adds a task to a column
    * @param task The specified task for a column
