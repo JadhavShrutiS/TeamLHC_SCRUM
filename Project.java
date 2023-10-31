@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 /**
- * 
+ * Programming project for a group
  * @author Yug Desai
  */
 public class Project {
@@ -66,7 +66,6 @@ public class Project {
      * Removes a column from the project
      * @param column The section for a list of tasks
      */
-    //Remove a column
     public void deleteColumn(Column column) {
         columns.remove(column);
     }
@@ -97,6 +96,11 @@ public class Project {
         }
     }
 
+    /**
+     * Moves a task around a column
+     * @param task An objective for a project
+     * @param column The section for a list of tasks
+     */
     public void moveTask(Task task, String columnName)
     {
         for(int i=0;i<columns.size();i++)
@@ -240,10 +244,18 @@ public class Project {
     {
         return "\n\nPROJECT\nNAME: "+this.projectName+"\nDESCRIPTION: "+this.projectDescription+"\nSCRUMMASTER: "+this.scrumMaster+"\nPRODUCTOWNER: "+this.productOwner+"\nUSERS: "+this.users+"\nCOLUMNS:\n"+this.columns+"\nPROJECT-COMMENTS"+this.comments;
     }
+    /**
+     * Sets the SCRUM master for the project
+     * @param user The person who is part of the making of a project
+     */
     public void setScrumMaster(User user)
     {
         this.scrumMaster = user;
     }
+    /**
+     * Sets the product owner for the project
+     * @param user The person who is part of the making of a project
+     */
     public void setProductOwner(User user)
     {
         this.productOwner = user;
