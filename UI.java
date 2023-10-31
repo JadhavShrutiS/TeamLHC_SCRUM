@@ -32,12 +32,13 @@ public class UI {
 
         Task getTask = currentProject.getTask("Curve the metal to make a cylindrical shape");
         currentProject.moveTask(getTask, "Doing");
+        TaskList.getInstance().getTask("Curve the metal to make a cylindrical shape").addComment(new Comment("How about you do it, Jeff", currentUser));
 
         User jeff = app.getUserbyName("Jeff", "Goldblum");
         System.out.println(jeff);
 
 
-        getTask.changeUser(jeff,currentUser);
+        TaskList.getInstance().getTask("Curve the metal to make a cylindrical shape").changeUser(jeff,currentUser);
         System.out.println(getTask);
         
 
