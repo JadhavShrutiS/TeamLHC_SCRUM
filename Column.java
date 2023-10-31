@@ -86,6 +86,6 @@ public class Column {
    
    public String toString()
    {
-      return "Column "+this.name+" Tasks: "+this.tasks;
+      return ""+this.name.toUpperCase()+"\n "+this.tasks;
    }
 }
