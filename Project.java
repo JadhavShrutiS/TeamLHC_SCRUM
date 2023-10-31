@@ -125,6 +125,21 @@ public class Project {
         return null;
     }
 
+    public Task getTask(String taskName)
+    {
+        for(int i=0;i<columns.size();i++)
+        {
+            for(int j=0;j<columns.get(i).getTasks().size();j++)
+            {
+                if(columns.get(i).getTasks().get(j).taskName.equalsIgnoreCase(taskName))
+                {
+                    return columns.get(i).getTasks().get(j);
+                }
+            }
+        }
+        return null;
+    }
+
     /**
      * Adds a comment to an array list of comments
      * @param comment A comment made by a user
