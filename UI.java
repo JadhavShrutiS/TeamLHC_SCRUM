@@ -1,5 +1,7 @@
 //import java.util.Scanner;
 
+import java.util.UUID;
+
 public class UI {
     //private Scanner scanner;
     private ProjectFACADE app;
@@ -14,7 +16,9 @@ public class UI {
         User currentUser = app.getUser();
         System.out.print("Logged in as: " + currentUser.getFirstName()+" "+currentUser.getLastName());
         System.out.print(" working for Code Mission Impossible");
-
+        Feature task = new Feature("Initialize super algorithm to detonate at warp speed", "Going fast is good", 1, "warp speed");
+        //ProjectBoard.getInstance().getProject("Electric Missiles").addTask(task);
+        System.out.println(ProjectBoard.getInstance().getProject("Electric Missiles"));
 
         System.out.println(app.getAllProjects());
 
