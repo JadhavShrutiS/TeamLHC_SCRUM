@@ -109,7 +109,7 @@ public class Project {
             {
                 if(columns.get(i).getTasks().get(j).taskName.equalsIgnoreCase(task.taskName))
                 {
-                    columns.get(i).deleteTask(task);
+                    columns.get(i).getTasks().remove(task);
                 }
             }
         }
@@ -130,6 +130,21 @@ public class Project {
             if(columns.get(i).name.equalsIgnoreCase(columnName))
             {
                 return columns.get(i);
+            }
+        }
+        return null;
+    }
+
+    public Task getTask(String taskName)
+    {
+        for(int i=0;i<columns.size();i++)
+        {
+            for(int j=0;j<columns.get(i).getTasks().size();j++)
+            {
+                if(columns.get(i).getTasks().get(j).taskName.equalsIgnoreCase(taskName))
+                {
+                    return columns.get(i).getTasks().get(j);
+                }
             }
         }
         return null;
