@@ -55,7 +55,7 @@ public class Project {
             if(columns.get(i).name.equalsIgnoreCase("todo"))
             {
                 columns.get(i).addtask(task);
-                
+                TaskList.getInstance().add(task);
             }
         }
     }
