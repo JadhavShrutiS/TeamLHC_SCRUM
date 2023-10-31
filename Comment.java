@@ -14,7 +14,7 @@ public class Comment {
      */
     public Comment(String Comment, User user) 
     {
-        this.comment = "comment";
+        this.comment = Comment;
         this.userID = user.getId();
         this.date = new java.sql.Date(System.currentTimeMillis());
     }
