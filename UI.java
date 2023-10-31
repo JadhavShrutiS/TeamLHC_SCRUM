@@ -24,7 +24,10 @@ public class UI {
         task.addComment(new Comment("Avoid Civilians Jeff", currentUser));
         currentProject.addColumn(new Column("Abandoned", null));
 
-        currentProject
+        task = TaskList.getInstance().getTask("Make impossible burger possible");
+        currentProject.moveTask(task, "Abandoned");
+
+
         
 
 
