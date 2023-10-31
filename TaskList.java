@@ -82,6 +82,10 @@ public class TaskList {
         return true;
      }
 
+    public void add(Task task) {
+        tasks.add(task);
+    } 
+
     public void saveTasks()
     {
         DataWriter.saveTasks();
