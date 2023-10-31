@@ -55,8 +55,18 @@ public abstract class Task {
     }
 
     //adds comments to ArrayList of comments 
-    public void addComment(Comment comment){
-        taskComments.add(comment);
+    public void addComment(Comment comment)
+    {
+        if(taskComments==null)
+        {
+            taskComments= new ArrayList<Comment>();
+            taskComments.add(comment);
+        }
+        else
+        {
+            taskComments.add(comment);
+        }
+        
     }
 
     //adds subTask to the array list of subtask for a task
