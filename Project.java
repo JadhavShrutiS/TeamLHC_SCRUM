@@ -97,7 +97,7 @@ public class Project {
         }
     }
 
-    public void moveTask(Task task, Column column)
+    public void moveTask(Task task, String columnName)
     {
         for(int i=0;i<columns.size();i++)
         {
@@ -105,13 +105,25 @@ public class Project {
             {
                 if(columns.get(i).getTasks().get(j).taskName.equalsIgnoreCase(task.taskName))
                 {
-                    
+                    columns.get(i).deleteTask(task);
                 }
             }
         }
+        getColumn(columnName).addtask(task);
     }
 
 
+    public Column getColumn(String columnName)
+    {
+        for(int i=0;i<columns.size();i++)
+        {
+            if(columns.get(i).name.equalsIgnoreCase(columnName))
+            {
+                return columns.get(i);
+            }
+        }
+        return null;
+    }
 
     /**
      * Adds a comment to an array list of comments
