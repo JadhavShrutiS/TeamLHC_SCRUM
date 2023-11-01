@@ -9,7 +9,7 @@ public class UI {
     public void run() {
         app = new ProjectFACADE();
 
-        
+
         app.signUp("Atticus", "Madden", "amadden@gmail.com", "12345");
         app.getTasks();
         app.logout();
@@ -44,7 +44,8 @@ public class UI {
         
 
 
-        System.out.println(app.getAllProjects());
+        app.writeFile(app.getAllProjects(),"scrumboard.txt");
+        //System.out.println(app.getAllProjects());
 
         app.logout();//to save the tasks to json file
     }

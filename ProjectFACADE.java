@@ -1,7 +1,8 @@
  import java.util.ArrayList;
  import java.io.PrintWriter;
  import java.io.File;
- import java.io.IOException;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class ProjectFACADE {
     private User user;
@@ -69,7 +70,17 @@ public class ProjectFACADE {
         DataWriter.saveProjects();
     }
     
-    public void writeFile(){
-
+    public void writeFile(ArrayList<Project> output , String fileName){
+        try{
+            FileWriter file = new FileWriter(fileName);
+            
+            for (Project project : output) {
+                String projectStr = project.toString();
+                file.write(projectStr);
+            }
+            file.close();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
