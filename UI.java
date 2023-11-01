@@ -9,6 +9,7 @@ public class UI {
     public void run() {
         app = new ProjectFACADE();
 
+        
         app.signUp("Atticus", "Madden", "amadden@gmail.com", "12345");
         app.getTasks();
         app.logout();

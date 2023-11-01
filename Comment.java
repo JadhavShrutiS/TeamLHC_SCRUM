@@ -75,7 +75,8 @@ public class Comment {
      */
     public String toString()
     {
-        return "useriD "+this.getUserID()+" Date "+this.getDate()+" Comment "+this.getComment();
+        User tempUser = UserList.getInstance().getUser(this.userID);
+        return tempUser.getFirstName() + "-" + tempUser.getLastName() + " Commented: " +this.getComment() + " -- Date "+this.getDate();
     }
 
 }

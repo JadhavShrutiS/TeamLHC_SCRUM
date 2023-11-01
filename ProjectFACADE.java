@@ -1,4 +1,7 @@
  import java.util.ArrayList;
+ import java.io.PrintWriter;
+ import java.io.File;
+ import java.io.IOException;
 
 public class ProjectFACADE {
     private User user;
@@ -66,4 +69,7 @@ public class ProjectFACADE {
         DataWriter.saveProjects();
     }
     
+    public void writeFile(){
+
+    }
 }
