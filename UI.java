@@ -43,7 +43,7 @@ public class UI {
         
 
 
-        //System.out.println(app.getAllProjects());
+        System.out.println(app.getAllProjects());
 
         app.logout();//to save the tasks to json file
     }

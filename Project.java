@@ -237,7 +237,7 @@ public class Project {
      */
     public String toString()
     {
-        return "\n\nPROJECT\nNAME: "+this.projectName+"\nDESCRIPTION: "+this.projectDescription+"\nSCRUMMASTER: "+this.scrumMaster+"\nPRODUCTOWNER: "+this.productOwner+"\nUSERS: "+this.users+"\nCOLUMNS:\n"+this.columns+"\nPROJECT-COMMENTS"+this.comments;
+        return "\n\nPROJECT\nNAME: "+this.projectName+"\nDESCRIPTION: "+this.projectDescription+"\nSCRUMMASTER: "+this.scrumMaster+"\nPRODUCTOWNER: "+this.productOwner+"\nUSERS: "+this.users+"\nCOLUMNS:\n"+this.columns+"\nPROJECT-COMMENTS"+this.comments+"\n";
     }
     /**
      * Sets the SCRUM master for the project

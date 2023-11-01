@@ -150,6 +150,6 @@ public class Column {
     */
    public String toString()
    {
-      return ""+this.name.toUpperCase()+"\n "+this.tasks;
+      return "\n"+this.name.toUpperCase()+"\n "+this.tasks;
    }
 }

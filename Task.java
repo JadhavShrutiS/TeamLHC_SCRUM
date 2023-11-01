@@ -118,7 +118,7 @@ public abstract class Task {
      */
     public String toString()
     {
-        return "TASK:\n     NAME: " + this.taskName+ "\n     DESCRIPTION: "+this.taskDescription+"\n     USERS:"+this.users+"\n     PRIORITY:"+this.taskPriority+"\n     COMMENTS"+this.taskComments;
+        return "\n  TASKNAME: " + this.taskName+ "\n     DESCRIPTION: "+this.taskDescription+"\n     USERS:"+this.users+"\n     PRIORITY:"+this.taskPriority+"\n     SUBTASKS: "+this.subTasks+"\n     COMMENTS"+this.taskComments;
     }
 
     /**

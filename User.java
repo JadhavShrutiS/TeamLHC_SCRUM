@@ -48,7 +48,7 @@ public class User {
      */
     public String toString()
     {
-        return this.uuid+" "+this.firstName+" "+this.lastName+" "+this.userEmail+" "+this.userPassword;
+        return "Username: "+this.firstName+" "+this.lastName+" Email:"+this.userEmail;
     }
 
     /**
