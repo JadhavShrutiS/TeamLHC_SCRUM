@@ -12,7 +12,7 @@ public class User {
     
     /**
      * Existing users
-     * @param uuid The ID of a user
+     * @param uuid The ID of a usegir
      * @param firstName The user's first name
      * @param lastName The user's last name
      * @param userEmail The user's email
