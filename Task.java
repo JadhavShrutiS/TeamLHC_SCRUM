@@ -180,14 +180,14 @@ public abstract class Task {
     
     public void changeUser(User addUser, User removeUser)
     {
-        for(int i=0;i<users.size();i++)
+        for(int i=0;i<this.users.size();i++)
         {
-            if(users.get(i).equals(removeUser))
+            if(this.users.get(i).equals(removeUser))
             {
-                users.remove(i);
+                this.users.remove(i);
             }
         }
-        users.add(addUser);
+        this.users.add(addUser);
     }
 
 }

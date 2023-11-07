@@ -41,39 +41,6 @@ public class DataLoader extends DataConstants{
 	}
 
 	/**
-	 * Get user by uuid
-	 * @param uuid The ID of a user
-	 * @return The user specified by their uuid
-	 */
-	public static User getUser(UUID uuid)
-	{
-		try 
-		{
-			FileReader reader = new FileReader(USER_FILE_NAME);
-			JSONParser parser = new JSONParser();	
-			JSONArray peopleJSON = (JSONArray)parser.parse(reader);
-			for(int i=0; i < peopleJSON.size(); i++) 
-			{
-				JSONObject personJSON = (JSONObject)peopleJSON.get(i);
-				UUID id = UUID.fromString((String)personJSON.get(USER_ID));
-				if(id.equals(uuid))
-				{
-					String lastName = (String)personJSON.get(USER_LAST_NAME);
-					String userEmail = (String)personJSON.get(USER_EMAIL);
-					String userPassword = (String)personJSON.get(USER_PASSWORD);
-					String firstName = (String)personJSON.get(USER_FIRST_NAME);
-					User user = new User(id, firstName, lastName, userEmail, userPassword);
-					return user;
-				}
-			}
-		} 
-		catch (Exception e) 
-		{
-			e.printStackTrace();
-		}
-		return null;
-	}
-	/**
 	 * Get a list of projects
 	 * @return An array list of projects
 	 */
@@ -131,89 +98,6 @@ public class DataLoader extends DataConstants{
 			e.printStackTrace();
 		}
 		
-		return null;
-	}
-/****************************************************************** */
-	/**
-	 * Get task by uuid
-	 * @param uuid The ID for a task
-	 * @return The task specified by its uuid
-	 */
-	public static Task getTask(UUID uuid)
-	{
-		try {
-			FileReader reader = new FileReader(TASK_FILE_NAME);
-			JSONParser parser = new JSONParser();	
-			JSONArray TasksJSON = (JSONArray)parser.parse(reader);
-			
-			for(int i=0; i < TasksJSON.size(); i++) 
-			{
-				JSONObject TaskJSON = (JSONObject)TasksJSON.get(i);
-
-				UUID taskID = UUID.fromString((String)TaskJSON.get(TASK_ID));
-				if(taskID.equals(uuid))
-				{
-
-					//UUID userID = UUID.fromString((String)TaskJSON.get(TASK_USER_ID));//there can be multiple users
-
-					//multiple user ids in a list
-					ArrayList<User> Users = new ArrayList<User>();
-					JSONArray user = (JSONArray)TaskJSON.get(TASK_USER_ID);
-					for(int j=0;j<user.size();j++)
-					{
-						UUID userID = UUID.fromString((String)user.get(j));
-
-						Users.add(getUser(userID));
-					}
-
-					String taskName = (String)TaskJSON.get(TASK_NAME);
-					String taskDescription = (String)TaskJSON.get(TASK_DESCRIPTION);
-					int taskPriority = Integer.parseInt((String)TaskJSON.get(TASK_PRIORITY));
-
-					//comments
-					ArrayList<Comment> taskComments = new ArrayList<Comment>();
-					JSONArray comments = (JSONArray)TaskJSON.get(TASK_COMMENT);
-					for(int j =0;j<comments.size();j++)
-					{
-						JSONObject commentJSON = (JSONObject)comments.get(j);
-
-						UUID commentUserID = UUID.fromString((String)commentJSON.get(TASK_COMMENT_USER_ID));
-						Date date = Date.valueOf((String)commentJSON.get(TASK_COMMENT_DATE));
-						String commentString = (String)commentJSON.get(TASK_COMMENT_STRING);
-
-						taskComments.add(new Comment(commentUserID, date, commentString));
-					}
-
-					//subtasks
-					ArrayList<String> subtasks = new ArrayList<String>();
-					JSONArray subtask = (JSONArray)TaskJSON.get(TASK_SUBTASKS);
-					for(int j=0;j<subtask.size();j++)
-					{
-						subtasks.add((String)subtask.get(j));
-					}
-
-					String title = (String)TaskJSON.get(TASK_TITLE);
-					User tester = null;
-					if (TaskJSON.get(TASK_TESTER) != null) {
-						tester = getUser(UUID.fromString((String)TaskJSON.get(TASK_TESTER)));
-					}
-					Task task;
-					if(tester!=null)
-					{
-						task = new Bug(taskID,Users,taskName,taskDescription,taskPriority,taskComments,subtasks,title,tester);
-					}
-					else
-					{
-						task = new Feature(taskID, Users, taskName, taskDescription, taskPriority, taskComments, subtasks, title);
-					}
-					return task;
-				}
-				
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 		return null;
 	}
 
