@@ -40,12 +40,9 @@ public class UI {
 
 
         TaskList.getInstance().getTask("Curve the metal to make a cylindrical shape").changeUser(jeff,currentUser);
-        System.out.println(getTask);
-        
-
-
+             
         app.writeFile(app.getAllProjects(),"scrumboard.txt");
-        //System.out.println(app.getAllProjects());
+       // System.out.println(app.getAllProjects());
 
         app.logout();//to save the tasks to json file
     }
