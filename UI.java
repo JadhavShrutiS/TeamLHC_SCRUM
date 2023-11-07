@@ -38,16 +38,14 @@ public class UI {
         User jeff = app.getUserbyName("Jeff", "Goldblum");
         System.out.println(jeff);
 
-
         TaskList.getInstance().getTask("Curve the metal to make a cylindrical shape").changeUser(jeff,currentUser);
         System.out.println(getTask);
         
-
-
         app.writeFile(app.getAllProjects(),"scrumboard.txt");
         //System.out.println(app.getAllProjects());
 
         app.logout();//to save the tasks to json file
+        
     }
     public static void main(String[] args) {
         UI ui = new UI();
