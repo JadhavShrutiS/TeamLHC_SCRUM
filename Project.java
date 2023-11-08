@@ -3,7 +3,7 @@ import java.util.UUID;
 
 /**
  * Programming project for a group
- * @author Yug Desai
+ * @author Yug Desai 
  */
 public class Project {
     private String projectName;

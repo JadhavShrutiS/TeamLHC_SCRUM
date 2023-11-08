@@ -16,6 +16,11 @@ public class BugTest {
     }
 
     @Test
+    public void testStuff(){
+        assertTrue(true);
+    }
+
+    @Test
     public void testgettitle() {
         User user = new User("trent", "waterman", "email@email.com", "12345");
         Bug bug = new Bug("name", "description", 1, "bugs", user);
