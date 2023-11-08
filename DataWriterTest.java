@@ -96,7 +96,7 @@ class DataWriterTest {
 		taskList.add(new Bug("Its a bug","",1,"bugbug",new User("amy","smith","a1@email.com","1234")));
 		taskList.add(new Feature("its a feature", "", 1, "featurefeat"));
 		DataWriter.saveTasks();
-		assertEquals("Its a bug", taskList.get(0).getTaskName());
+		assertEquals("Its a bug", DataLoader.getTasks().get(0).getTaskName());
 
 	}
 
@@ -105,7 +105,7 @@ class DataWriterTest {
 	{
 		taskList.add(new Feature("","",1,""));
 		DataWriter.saveTasks();
-		assertEquals("",taskList.get(0).getTaskName());
+		assertEquals("",DataLoader.getTasks().get(0).getTaskName());
 	}
 
 	@Test
@@ -115,5 +115,38 @@ class DataWriterTest {
 		DataWriter.saveTasks();
 		assertNull(DataLoader.getTasks().get(0).getTaskName());
 	}
+
+	@Test
+	void testWritingZeroProjects()
+	{
+		projectList = DataLoader.getProjects();
+		assertEquals(0,projectList.size());
+	}
+	
+	@Test
+	void testWritingTwoProjects()
+	{
+		projectList.add(new Project("proj1", "dec1"));
+		projectList.add(new Project("proj2","desc2"));
+		DataWriter.saveProjects();
+		assertEquals("desc2", DataLoader.getProjects().get(1).getProjectDescription());
+	}
+
+	@Test
+	void testWritingNullProject()
+	{
+		projectList.add(new Project(null,null));
+		DataWriter.saveProjects();
+		assertNull(DataLoader.getProjects().get(0).getProjectName());
+	}
+
+	@Test
+	void testWritingEmptyProject()
+	{
+		projectList.add(new Project("", ""));
+		DataWriter.saveProjects();
+		assertEquals("",DataLoader.getProjects().get(0).getProjectName());
+	}
+
 
 }
