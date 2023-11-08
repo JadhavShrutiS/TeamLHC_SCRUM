@@ -1,18 +1,13 @@
 import static org.junit.jupiter.api.Assertions.*;
-
-/**
- * 
- * @author Shruti
- */
-
 import java.util.ArrayList;
-import java.util.UUID;
-
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+/**
+ * @author Shruti
+ */
 
 public class DataLoaderTest {
     private UserList users = UserList.getInstance();
@@ -66,6 +61,12 @@ public class DataLoaderTest {
     {
         userList = DataLoader.getUsers();
         assertEquals("sj@email.com",userList.get(0).getEmailID());
+    }
+
+    @Test
+    void testNullUser()
+    {
+
     }
 
     
