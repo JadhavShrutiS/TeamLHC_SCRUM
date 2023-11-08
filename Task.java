@@ -110,7 +110,16 @@ public abstract class Task {
      */
     public void addUser(User user)
     {
-        users.add(user);
+        if(users==null)
+        {
+            this.users = new ArrayList<User>();
+            users.add(user);
+        }
+        else
+        {
+            users.add(user);
+        }
+        
     }
     //testing
     /**

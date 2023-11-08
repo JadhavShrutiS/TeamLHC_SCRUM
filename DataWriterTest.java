@@ -9,17 +9,35 @@ import org.junit.jupiter.api.Test;
 class DataWriterTest {
 	private UserList users = UserList.getInstance();
 	private ArrayList<User> userList = users.getUsers();
+
+    private TaskList tasks = TaskList.getInstance();
+    private ArrayList<Task> taskList = tasks.getTasks();
+
+    private ProjectBoard projects = ProjectBoard.getInstance();
+    private ArrayList<Project> projectList = projects.getAllProjects();
 	
 	@BeforeEach
 	public void setup() {
 		UserList.getInstance().getUsers().clear();
 		DataWriter.saveUsers();
+
+        TaskList.getInstance().getTasks().clear();
+        DataWriter.saveTasks();
+        
+        ProjectBoard.getInstance().getAllProjects().clear();
+        DataWriter.saveProjects();
 	}
 	
 	@AfterEach
 	public void tearDown() {
 		UserList.getInstance().getUsers().clear();
 		DataWriter.saveUsers();
+
+        TaskList.getInstance().getTasks().clear();
+        DataWriter.saveTasks();
+        
+        ProjectBoard.getInstance().getAllProjects().clear();
+        DataWriter.saveProjects();
 	}
 	
 	
