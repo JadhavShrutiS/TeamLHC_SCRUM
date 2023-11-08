@@ -33,7 +33,7 @@ public class DataLoaderTest {
         taskList.add(new Feature("feat","",1,"add something"));
         taskList.get(0).addUser(amy2);
         taskList.get(1).addUser(amy1);
-        //DataWriter.saveTasks();
+        DataWriter.saveTasks();
 
         projectList.clear();
         projectList.add(new Project("proj1", null));
@@ -94,7 +94,7 @@ public class DataLoaderTest {
     void testGetTasksSize()
     {
         taskList = DataLoader.getTasks();
-        assertEquals(1,taskList.size());
+        assertEquals(2,taskList.size());
     }
 
     @Test
@@ -109,7 +109,7 @@ public class DataLoaderTest {
     void testGetUserOnTask()
     {
         taskList = DataLoader.getTasks();
-        assertEquals(null,taskList.get(0).getUsers());
+        assertNotNull(taskList.get(0).getUsers());
 
     }
 

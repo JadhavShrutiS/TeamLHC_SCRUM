@@ -83,4 +83,37 @@ class DataWriterTest {
         assertEquals(null, DataLoader.getUsers().get(0).getEmailID());
     }
 	
+	@Test
+	void testWritingZeroTasks()
+	{
+		taskList = DataLoader.getTasks();
+		assertEquals(0,taskList.size());
+	}
+
+	@Test
+	void testWritingTwoTasks()
+	{
+		taskList.add(new Bug("Its a bug","",1,"bugbug",new User("amy","smith","a1@email.com","1234")));
+		taskList.add(new Feature("its a feature", "", 1, "featurefeat"));
+		DataWriter.saveTasks();
+		assertEquals("Its a bug", taskList.get(0).getTaskName());
+
+	}
+
+	@Test
+	void testWritingEmptyTasks()
+	{
+		taskList.add(new Feature("","",1,""));
+		DataWriter.saveTasks();
+		assertEquals("",taskList.get(0).getTaskName());
+	}
+
+	@Test
+	void testWritingNullTasks()
+	{
+		taskList.add(new Feature(null,null,1,null));
+		DataWriter.saveTasks();
+		assertNull(DataLoader.getTasks().get(0).getTaskName());
+	}
+
 }
