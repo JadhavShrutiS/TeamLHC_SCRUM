@@ -38,7 +38,7 @@ public class DataLoaderTest {
         projectList.clear();
         projectList.add(new Project("proj1", null));
         projectList.add(new Project("proj2",""));
-        //DataWriter.saveProjects();
+        DataWriter.saveProjects();
 	}
 	
 	@AfterEach
@@ -119,6 +119,22 @@ public class DataLoaderTest {
         projectList = DataLoader.getProjects();
         assertEquals(3,projectList.size());
     }
+
+    @Test
+    void testGetProjectsSizeZero()
+    {
+        ProjectBoard.getInstance().getAllProjects().clear();
+        DataWriter.saveProjects();
+        assertEquals(0,projectList.size());
+    }
+
+    @Test
+    void testGetTasksInProject()
+    {
+        projectList = DataLoader.getProjects();
+        assertNull(projectList.get(0).getTask());
+    }
+
 
     
 }
