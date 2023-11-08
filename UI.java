@@ -39,7 +39,7 @@ public class UI {
         System.out.println(jeff);
 
         TaskList.getInstance().getTask("Curve the metal to make a cylindrical shape").changeUser(jeff,currentUser);
-        System.out.println(getTask);
+        
         
 
 
@@ -47,6 +47,7 @@ public class UI {
        // System.out.println(app.getAllProjects());
 
         app.logout();//to save the tasks to json file
+        System.out.println(getTask);
         
     }
     public static void main(String[] args) {
