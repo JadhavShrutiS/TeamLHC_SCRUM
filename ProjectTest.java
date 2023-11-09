@@ -30,5 +30,11 @@ public class ProjectTest {
     public void testProjectWithSpaces(){
         Project proj1 = new Project("      ", "      ");
         projects.addProject(proj1);
+        assertEquals("      ", proj1.getProjectName());
+    }
+
+    @Test
+    public void testProject(){
+        
     }
 }
