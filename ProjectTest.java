@@ -24,6 +24,7 @@ public class ProjectTest {
         User user = new User("Suzy", "william", "suzywilly@gmail.com", "newme123");
         userList.add(user);
         Project project = new Project("Moviess", "watchlist of movies");
+        projects.addProject(project);
     }
 
     @Test
@@ -35,6 +36,7 @@ public class ProjectTest {
 
     @Test
     public void testProject(){
-        
+        projects.getProject("Movies").addColumn(null);
+        assertEquals(null, projects.getProject("Movies").getColumns());
     }
 }
