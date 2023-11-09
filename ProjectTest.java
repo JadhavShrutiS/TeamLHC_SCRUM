@@ -27,7 +27,8 @@ public class ProjectTest {
     }
 
     @Test
-    public void testNullProject(){
-        
+    public void testProjectWithSpaces(){
+        Project proj1 = new Project("      ", "      ");
+        projects.addProject(proj1);
     }
 }
