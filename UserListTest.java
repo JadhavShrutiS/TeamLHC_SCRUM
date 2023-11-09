@@ -15,6 +15,6 @@ public class UserListTest {
         assertEquals(userList.getInstance().getUserbyName("Yug","Desai").getFirstName(), "Yug");
         assertEquals(userList.getInstance().getUserbyName("Yug","Desai").getLastName(), "Desai");
         assertEquals(userList.getInstance().getUserbyName("Yug","Desai").getEmailID(), "email@email.com");
-        assertEquals(userList.getInstance().getUserbyName("Yug","Desai").getPassword(), "12345");
+        assertEquals(userList.getInstance().getUserbyName("Yug","Desai").getPassword(), "12345");//fixe48d 
     }
 }
