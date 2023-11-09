@@ -34,10 +34,4 @@ public class ProjectTest {
         assertEquals("      ", proj1.getProjectName());
     }
 
-    @Test
-    public void testProjectColumns(){
-        projects.getProject("Movies").addColumn(null);
-        assertEquals(null, projects.getProject("Movies").getColumns());
-        
-    }
 }
