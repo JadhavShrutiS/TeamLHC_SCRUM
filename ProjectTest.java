@@ -41,4 +41,4 @@ public class ProjectTest {
         assertEquals("      ", proj1.getProjectDescription());
     }
 
-}
+} 
