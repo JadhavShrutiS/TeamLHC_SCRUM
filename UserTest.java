@@ -8,16 +8,13 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 public class UserTest {
-    @BeforeClass
-    public static void onetimesetup() {
-        //User user = new User("trent", "waterman", "email@email.com", "12345");
-        //Bug bug = new Bug("name", "description", 1, "bugs", user);
-    }
 
     @Test
-    public void testgettitle() {
-        User user = new User("trent", "waterman", "email@email.com", "12345");
-        Bug bug = new Bug("name", "description", 1, "bugs", user);
-        assertEquals(bug.getTester(), user);
+    public void testConstructor() {
+        User user = new User("Yug", "Desai", "email@email.com", "12345");
+        assertEquals(user.getFirstName(), "Yug");
+        assertEquals(user.getLastName(), "Desai");
+        assertEquals(user.getEmailID(), "email@email.com");
+        assertEquals(user.getPassword(), "12345");
     }
 }
