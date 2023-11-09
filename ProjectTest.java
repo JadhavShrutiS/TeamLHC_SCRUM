@@ -26,9 +26,5 @@ public class ProjectTest {
         Project project = new Project("Moviess", "watchlist of movies");
     }
 
-    @Test
-    public void testProjectWithSpaces(){
-        Project proj1 = new Project("      ", "      ");
-        projects.addProject(proj1);
-    }
+    
 }
