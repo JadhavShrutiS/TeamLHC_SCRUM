@@ -28,8 +28,8 @@ public class ProjectTest {
     }
 
     @Test
-    public void testProjectNameWithSpaces(){
-        Project proj1 = new Project("      ", "idk");
+    public void testProjectWithSpaces(){
+        Project proj1 = new Project("      ", "      ");
         projects.addProject(proj1);
         assertEquals("      ", proj1.getProjectName());
     }
@@ -38,7 +38,7 @@ public class ProjectTest {
     public void testProjectDescriotionWithSpaces(){
         Project proj1 = new Project("newer", "      ");
         projects.addProject(proj1);
-        assertEquals("      ", proj1.getProjectDescription());
+        assertEquals("      ", proj1.getProjectDescription());    
     }
 
 } 
