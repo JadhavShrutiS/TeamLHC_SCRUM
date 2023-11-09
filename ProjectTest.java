@@ -35,7 +35,9 @@ public class ProjectTest {
     }
 
     @Test
-    public void testProject(){
+    public void testProjectColumns(){
+        projects.getProject("Movies").addColumn(null);
+        assertEquals(null, projects.getProject("Movies").getColumns());
         
     }
 }
